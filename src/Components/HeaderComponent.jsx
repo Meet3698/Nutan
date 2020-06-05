@@ -6,9 +6,9 @@ import './bootstrap.css'
 class HeaderComponent extends Component {
     render() {
         return (
-            <div className="text-center text-white header mainContainer">
+            <div>
                 <header>
-                    <Navbar collapseOnSelect expand="lg">
+                    <Navbar collapseOnSelect expand="lg" className="header" fixed="top">
                         <Navbar.Brand>Account Management</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">

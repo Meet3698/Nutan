@@ -6,7 +6,7 @@ import './Components/style.css'
 import './Components/bootstrap.css'
 import './App.css';
 import FilterComponent from './Components/FilterComponent'
-import {Container, Row, Col} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 function App() {
   return (
@@ -18,13 +18,11 @@ function App() {
             <FilterComponent />
           </Col>
           <Col xs={10} className="page-content-wrapper">
-            <>
               <Router>
                 <Switch>
                   <Route path="/newarrivals" component={newArrivalComponent} />
                 </Switch>
               </Router>
-            </>
           </Col>
         </Row>
       </Container>
