@@ -1,0 +1,29 @@
+.newarrivalcard{
+    background-color: #e2d3c3;
+    margin-top: 200;
+}
+
+.block1{
+    display: inline;
+    float: left;
+    margin-top: 10px;
+}
+
+.block2{
+    display: inline;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+option{
+    color: grey;
+}
+
+hr{
+    border-color: black;
+}
+
+select {
+    padding: 1 1 1 1;
+}
