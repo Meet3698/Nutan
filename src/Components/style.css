@@ -1,21 +1,29 @@
 .newarrivalcard{
     background-color: #e2d3c3;
-    margin-top: 200;
+    margin-top: 10px;
+}
+
+.container{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 10px;
 }
 
 .block1{
-    display: inline;
     float: left;
-    margin-top: 10px;
+    /* position: relative; */
 }
 
 .block2{
-    display: inline;
     float: right;
-    margin-right: 10px;
-    margin-top: 10px;
+    /* position: relative; */
 }
 
+.GridContainer{
+    margin-top: 10px;
+}
+.hl{
+    margin-top: 50px;
+}
 option{
     color: grey;
 }
@@ -25,5 +33,9 @@ hr{
 }
 
 select {
-    padding: 1 1 1 1;
+    padding: 5px;
+}
+
+.btn{
+    background-color: #b07c83;
 }
