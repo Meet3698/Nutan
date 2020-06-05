@@ -1,11 +1,9 @@
 .newarrivalcard{
     background-color: #e2d3c3;
-    margin-top: 10px;
 }
 
-.container{
+.mainContainer{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-top: 10px;
 }
 
 .block1{
@@ -18,18 +16,16 @@
     /* position: relative; */
 }
 
-.GridContainer{
-    margin-top: 10px;
-}
 .hl{
     margin-top: 50px;
 }
+
+.header{
+    background-color: #b07c83;
+    padding: 5px;
+}
 option{
     color: grey;
-}
-
-hr{
-    border-color: black;
 }
 
 select {
