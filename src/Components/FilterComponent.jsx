@@ -5,7 +5,7 @@ import './style.css'
 class FilterComponent extends Component {
     render() {
         return (
-            <div className="mt-5">
+            <div>
                 <Nav className="col-md-2 d-none d-md-block bg-light sidebar"
                     activeKey="/home"
                     onSelect={selectedKey => alert(`selected ${selectedKey}`)}

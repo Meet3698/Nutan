@@ -9,9 +9,12 @@ class HeaderComponent extends Component {
             <div>
                 <header>
                     <Navbar collapseOnSelect expand="lg" className="header" fixed="top">
-                        <Navbar.Brand>Account Management</Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
+                        <div>Header</div>
+                    </Navbar>
+                    <Navbar collapseOnSelect expand="lg" className="header1" fixed="top">
+                        <Navbar.Brand>Nutan</Navbar.Brand>
+                        {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav"> */}
                             <Nav className="mr-auto">
                             </Nav>
                             <Nav>
@@ -20,6 +23,22 @@ class HeaderComponent extends Component {
                                     <Link className="nav-link" to="/register">Register/Login</Link>
                                     <Link className="nav-link" to="/login">Logout</Link>
                                 </Router>
+                            </Nav>
+                        {/* </Navbar.Collapse> */}
+                    </Navbar>
+                    <Navbar collapseOnSelect expand="lg" className="header2" fixed="top">
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="justify-content-center">
+                                <Nav.Item>
+                                    <Nav.Link href="/home">Active</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link href="/home">Active</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link href="/home">Active</Nav.Link>
+                                </Nav.Item>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
