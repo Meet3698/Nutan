@@ -1,29 +1,70 @@
 import React, { Component } from "react";
 import { Nav } from "react-bootstrap";
-import Accordion from 'react-collapsible'
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
 import './style.css'
 
 class FilterComponent extends Component {
     render() {
         return (
-            <div className="mt-5">
-
-                <Nav className="col-md-2 d-none d-md-block bg-light sidebar"
-                    activeKey="/home"
-                    onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-                >
+            <div>
+                <Nav className="col-md-2 d-md-block sidebar">
+                    <strong>FILTER BY</strong>
                     <Accordion>
-                        <div data-trigger="A nifty React accordion component">
-                            <p>So this is an Accordion component that used the component. How handy.</p>
-                        </div>
-
-                        <div data-trigger="What the difference?" data-trigger-when-open="THAT is the difference!">
-                            <p>An Accordion is different to a Collapsible in the sense that only one "tray" will be open at any one time.</p>
-                        </div>
-
-                        <div data-trigger="I'm responsive and I have a little secret. Look inside.">
-                            <p>And this Accordion component is also completely repsonsive. Hurrah for mobile users!</p>
-                        </div>
+                        <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
+                            CATEGORY
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>Hello! I'm the CATEGORY</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="1" className="accordianToggle">
+                            SIZE
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="1">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="2" className="accordianToggle">
+                            COLOR FAMILY
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="2">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="3" className="accordianToggle">
+                            PRICE
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="3">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="4" className="accordianToggle">
+                            STYLE
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="4">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="5" className="accordianToggle">
+                            FABRIC
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="5">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="6" className="accordianToggle">
+                            PRINT
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="6">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="7" className="accordianToggle">
+                            NECK
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="7">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
+                        <Accordion.Toggle as={Card.Header} eventKey="8" className="accordianToggle">
+                            COLLECTION
+                            </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="8">
+                            <Card.Body>Hello! I'm another SIZE</Card.Body>
+                        </Accordion.Collapse>
                     </Accordion>
                 </Nav>
 
@@ -34,20 +75,3 @@ class FilterComponent extends Component {
 export default FilterComponent
 
 
-
-
-// {/* <div className="sidebar-sticky"></div> */ }
-// {/* <Nav.Item>
-//                         <Nav.Link href="/home">Active</Nav.Link>
-//                     </Nav.Item>
-//                     <Nav.Item>
-//                         <Nav.Link eventKey="link-1">Link</Nav.Link>
-//                     </Nav.Item>
-//                     <Nav.Item>
-//                         <Nav.Link eventKey="link-2">Link</Nav.Link>
-//                     </Nav.Item>
-//                     <Nav.Item>
-//                         <Nav.Link eventKey="disabled" disabled>
-//                             Disabled
-//                 </Nav.Link>
-//                     </Nav.Item> */}

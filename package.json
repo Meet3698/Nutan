@@ -9,7 +9,6 @@
     "bootstrap": "^4.5.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
-    "react-collapsible": "^2.8.0",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-responsive-accordion": "^1.0.0",

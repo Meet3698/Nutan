@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './bootstrap.css'
 import './style.css'
 import image from '../images/sample.JPG'
+import banner from '../images/product_banner_desktop4june.jpg'
 import FilterComponent from './FilterComponent'
 import { Container, Row, Col } from "react-bootstrap";
 class newArrivalComponent extends Component {
@@ -28,9 +29,7 @@ class newArrivalComponent extends Component {
                     <Col xs={10} className="page-content-wrapper">
             
                             <div class="card text-black text-center newarrivalcard">
-                                <h5 class="card-title"><h3>Card title</h3></h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p>
+                                <img src={banner} width="100%"></img>
                             </div>
 
                             <div>
