@@ -1,0 +1,131 @@
+.newarrivalcard{
+    background-color: #e2d3c3;
+}
+
+.mainContainer{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 60px;
+}
+
+.block1{
+    float: left;
+    /* position: relative; */
+}
+
+.block2{
+    float: right;
+    /* position: relative; */
+}
+
+.hl{
+    margin-top: 50px;
+}
+
+.header{
+    background-color: #b07c83;
+}
+
+option{
+    color: grey;
+}
+
+select {
+    padding: 5px;
+}
+
+.btn{
+    background-color: #b07c83;
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+.sidebar-wrapper{
+    min-height: 100vh !important;
+    width: 100vw;
+    margin-left: -1rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+.sidebar-wrapper .sidebar-heading {
+    padding: 50;
+    font-size: 1.2rem;
+}
+
+.page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+}
+
+
+.top-container {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
+  
+  .img-hover-zoom {
+    height: 5%; /*[1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+  }
+  
+  
+  /* [2] Transition property for smooth transformation of images */
+  .img-hover-zoom img {
+    transition: transform .5s ease;
+  }
+  
+  /* [3] Finally, transforming the image when container gets hovered */
+  .img-hover-zoom:hover img {
+    transform: scale(1.2);
+  }
+
+  .img1-hover-zoom {
+    height: 3%; /*[1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+  }
+  
+  
+  /* [2] Transition property for smooth transformation of images */
+  .img1-hover-zoom img {
+    transition: transform .5s ease;
+  }
+  
+  /* [3] Finally, transforming the image when container gets hovered */
+  .img1-hover-zoom:hover img {
+    transform: scale(1.2);
+  }
+
+  .impact{
+      background-color: #e2d3c3;
+      height: 60vh;
+  }
+
+  .message{
+    background-color: #b07c83;
+    margin-top: 2%;
+    /* height:7%; */
+    padding:3%;
+    color:white;
+    text-align: center;
+  }
