@@ -13,7 +13,7 @@ class newArrivalComponent extends Component {
                 { title: "Item 2", description: "Description" },
                 { title: "Item 3", description: "Description" },
                 { title: "Item 4", description: "Description" },
-                { title: "Item 4", description: "Description" }
+                { title: "Item 5", description: "Description" }
             ]
         }
     }
