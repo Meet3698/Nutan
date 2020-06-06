@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './bootstrap.css'
 import './style.css'
-import image from './sample.JPG'
+import image from '../images/sample.JPG'
 import FilterComponent from './FilterComponent'
 import { Container, Row, Col } from "react-bootstrap";
 class newArrivalComponent extends Component {
