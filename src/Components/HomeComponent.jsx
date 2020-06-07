@@ -65,12 +65,12 @@ class HomeComponent extends Component {
                             </div>
                 <div style={{textAlign:'center'}}>
                     <h3 >NVB CATEGORIES</h3>
-                    <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
+                    <div className="GridContainer mr-2 ml-2 row row-cols-1 row-cols-md-4">
                                 {this.state.cards.map(card =>
                                     <div class="col mb-4">
                                         <div class="card">
                                             <div class="img-hover-zoom">
-                                                <img src={image} class="card-img-top" alt="img" width="100%" height="5%"/>
+                                                <img src={image} class="card-img-top" alt="img"/>
                                             </div>
                                             <div style={{backgroundColor:'lightgray',position:'absolute',opacity:'0.5', textAlign:'center', width:'100%', marginTop:'85%'}}>
                                         <h6>{card.description}</h6>
