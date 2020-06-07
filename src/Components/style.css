@@ -4,7 +4,7 @@
 
 .mainContainer{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-top: 60px;
+    margin-top: 11%;
 }
 
 .block1{
@@ -25,6 +25,16 @@
     background-color: #b07c83;
 }
 
+.header1{
+    margin-top: 40px;
+    background-color: white;
+}
+
+.header2{
+    margin-top: 90px;
+    background-color: white;
+}
+
 option{
     color: grey;
 }
@@ -40,13 +50,17 @@ select {
 .sidebar {
     position: fixed;
     z-index: 100;
-    padding: 48px 0 0;
+    /* padding: 48px 0 0; */
+    height: 100%;
+    border: none;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
+
 .sidebar-wrapper{
     min-height: 100vh !important;
     width: 100vw;
-    margin-left: -1rem;
+    border: none;
+    /* margin-left: -1rem; */
     -webkit-transition: margin .25s ease-out;
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
@@ -54,19 +68,19 @@ select {
 }
 
 .sidebar-wrapper .sidebar-heading {
-    padding: 50;
+    /* padding: 50; */
     font-size: 1.2rem;
 }
 
 .page-content-wrapper {
-    min-width: 0;
+    /* min-width: 0; */
     width: 100%;
 }
 
 
 .top-container {
     background-color: #f1f1f1;
-    padding: 30px;
+    /* padding: 30px; */
     text-align: center;
   }
   
@@ -129,3 +143,22 @@ select {
     color:white;
     text-align: center;
   }
+.accordianToggle{
+  padding-left: 0px;
+}
+
+.price{
+  border: none;
+}
+.home{
+  /* margin-top: 11vh; */
+  position: relative;
+}
+
+.breadCrumb{
+  background-color: white;
+}
+
+.productSpace{
+  margin-top: 2%;
+}

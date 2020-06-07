@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import Carousel from 'react-bootstrap/Carousel'
-import nutan from './nutan.jpg'
-import image from './sample.JPG'
-import impact from './impact.jpg'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
+import nutan from '../images/nutan.jpg'
+import image from '../images/sample.JPG'
+import impact from '../images/impact.jpg'
 import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
-import block from './block.jpg'
+import block from '../images/block.jpg'
 import {Instagram, Facebook} from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-class Home extends Component {
+class HomeComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -31,7 +28,7 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className="home" >
+            <div className="mainContainer" >
                 <div >
                 <Carousel>
                     <Carousel.Item style={{height:'60vh', marginTop:'8vh'}}>
@@ -144,6 +141,7 @@ class Home extends Component {
                     <div>
                         <Instagram/> <Facebook/>
                     </div>
+                    {/* eslint-disable-next-line */}
                     <marquee>
                     {this.state.crafts.map(craft =>
                         <img src={image} alt="img" width="20%" height="50%" style={{margin:"1%"}}/>
@@ -178,4 +176,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default HomeComponent
