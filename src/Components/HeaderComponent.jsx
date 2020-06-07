@@ -30,7 +30,7 @@ class HeaderComponent extends Component {
                                 <Link className="nav-link" to="/"><Phone /></Link>
                                 <Link className="nav-link" to="/"><User /></Link>
                                 <OverlayTrigger
-                                    // trigger='click'
+                                    trigger='click'
                                     key='bottom'
                                     placement='bottom'
                                     overlay={
