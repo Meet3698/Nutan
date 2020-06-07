@@ -8,7 +8,6 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import img from '../images/f_faridagupta_Logo.png'
 import IconButton from '@material-ui/core/IconButton';
 import StyledBadge from '@material-ui/core/Badge';
-
 import './bootstrap.css'
 import { Popover } from "react-bootstrap";
 class HeaderComponent extends Component {
