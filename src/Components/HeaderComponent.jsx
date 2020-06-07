@@ -25,7 +25,7 @@ class HeaderComponent extends Component {
                         <Nav className="mr-auto">
                         </Nav>
                         <Nav>
-                            <Router>
+                            {/* <Router> */}
                                 <Link className="nav-link" to="/"><Search /></Link>
                                 <Link className="nav-link" to="/"><Phone /></Link>
                                 <Link className="nav-link" to="/"><User /></Link>
@@ -50,7 +50,7 @@ class HeaderComponent extends Component {
                                     <option value="1">INR</option>
                                     <option value="2">USD</option>
                                 </select>
-                            </Router>
+                            {/* </Router> */}
                         </Nav>
                         {/* </Navbar.Collapse> */}
                     </Navbar>
@@ -58,13 +58,13 @@ class HeaderComponent extends Component {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="justify-content-center" style={{ marginLeft: '30vw' }}>
-                                <Router>
+                                {/* <Router> */}
                                     <Link className="nav-link" to="/basic">FG BASIC</Link>
                                     <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                                     <Link className="nav-link" to="/clothing">CLOTHING</Link>
                                     <Link className="nav-link" to="/">FG STEALS</Link>
                                     <Link className="nav-link" to="/">EXHIBITIONS</Link>
-                                </Router>
+                                {/* </Router> */}
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
