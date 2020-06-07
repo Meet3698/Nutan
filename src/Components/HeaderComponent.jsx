@@ -6,6 +6,8 @@ import { Search, Phone, User, ShoppingBag } from 'react-feather'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 // import Tooltip from 'react-bootstrap/Tooltip'
 import img from '../images/f_faridagupta_Logo.png'
+import IconButton from '@material-ui/core/IconButton';
+import StyledBadge from '@material-ui/core/Badge';
 
 import './bootstrap.css'
 import { Popover } from "react-bootstrap";
@@ -39,7 +41,11 @@ class HeaderComponent extends Component {
                                         </Popover>
                                     }
                                 >
-                                    <Link className="nav-link" to="/"><ShoppingBag /></Link>
+                                    <IconButton aria-label="cart">
+                                        <StyledBadge badgeContent={1} color="secondary">
+                                            <ShoppingBag />
+                                        </StyledBadge>
+                                    </IconButton>
                                 </OverlayTrigger>
                                 <select class="mdb-select md-form price">
                                     <option value="1">INR</option>
@@ -57,8 +63,8 @@ class HeaderComponent extends Component {
                                     <Link className="nav-link" to="/basic">FG BASIC</Link>
                                     <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                                     <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                                    <Link className="nav-link" to="/steals">FG STEALS</Link>
-                                    <Link className="nav-link" to="/exhibition">EXHIBITIONS</Link>
+                                    <Link className="nav-link" to="/">FG STEALS</Link>
+                                    <Link className="nav-link" to="/">EXHIBITIONS</Link>
                                 </Router>
                             </Nav>
                         </Navbar.Collapse>
