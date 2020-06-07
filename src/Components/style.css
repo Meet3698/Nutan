@@ -23,15 +23,16 @@
 
 .header{
     background-color: #b07c83;
+    font-size: small;
 }
 
 .header1{
-    margin-top: 40px;
+    margin-top: 2.5%;
     background-color: white;
 }
 
 .header2{
-    margin-top: 90px;
+    margin-top: 7%;
     background-color: white;
 }
 
@@ -154,4 +155,8 @@ select {
 .block{
   margin-left: 7%;
   margin-right: 7%;
+}
+
+.customLink{
+  color: black;
 }
