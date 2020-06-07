@@ -150,3 +150,15 @@ select {
 .price{
   border: none;
 }
+.home{
+  /* margin-top: 11vh; */
+  position: relative;
+}
+
+.breadCrumb{
+  background-color: white;
+}
+
+.productSpace{
+  margin-top: 2%;
+}

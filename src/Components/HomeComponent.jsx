@@ -8,7 +8,7 @@ import block from '../images/block.jpg'
 import {Instagram, Facebook} from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-class Home extends Component {
+class HomeComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -28,7 +28,7 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className="home" >
+            <div className="mainContainer" >
                 <div >
                 <Carousel>
                     <Carousel.Item style={{height:'60vh', marginTop:'8vh'}}>
@@ -141,6 +141,7 @@ class Home extends Component {
                     <div>
                         <Instagram/> <Facebook/>
                     </div>
+                    {/* eslint-disable-next-line */}
                     <marquee>
                     {this.state.crafts.map(craft =>
                         <img src={image} alt="img" width="20%" height="50%" style={{margin:"1%"}}/>
@@ -175,4 +176,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default HomeComponent

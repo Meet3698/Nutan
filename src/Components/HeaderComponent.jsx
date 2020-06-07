@@ -15,7 +15,7 @@ class HeaderComponent extends Component {
                         <div style={{marginLeft:'30vw'}}>New Orders Will Be Dispatched Within 12-15 Days | Prepaid Orders Only </div>
                     </Navbar>
                     <Navbar collapseOnSelect expand="lg" className="header1" fixed="top">
-                        <Navbar.Brand><img src={img} width="30%"></img></Navbar.Brand>
+                        <Navbar.Brand><img src={img} alt="logo" width="30%"></img></Navbar.Brand>
                         {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav"> */}
                             <Nav className="mr-auto">
