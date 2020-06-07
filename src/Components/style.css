@@ -150,3 +150,8 @@ select {
 .price{
   border: none;
 }
+
+.block{
+  margin-left: 7%;
+  margin-right: 7%;
+}
