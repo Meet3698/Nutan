@@ -15,8 +15,8 @@ import './App.css';
 function App() {
   return (
     <div>
-      <HeaderComponent />
       <Router>
+        <HeaderComponent />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home" component={Home} />
