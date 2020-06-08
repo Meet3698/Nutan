@@ -26,32 +26,32 @@ class HeaderComponent extends Component {
                         <Nav className="mr-auto">
                         </Nav>
                         <Nav>
-                            <Router>
-                                <Link className="nav-link" to="/"><Search /></Link>
-                                <Link className="nav-link" to="/"><Phone /></Link>
-                                <Link className="nav-link" to="/"><User /></Link>
-                                <OverlayTrigger
-                                    // trigger='click'
-                                    key='bottom'
-                                    placement='bottom'
-                                    overlay={
-                                        <Popover id='popover-positioned-bottom bg-info '>
-                                            <h6 className="ml-1 mr-1 mb-1">No items</h6>
-                                            <button class="btn ml-1 mr-1 mb-1 text-white">View Cart</button>
-                                        </Popover>
-                                    }
-                                >
-                                    <IconButton aria-label="cart">
-                                        <StyledBadge badgeContent={1} color="secondary">
-                                            <ShoppingBag />
-                                        </StyledBadge>
-                                    </IconButton>
-                                </OverlayTrigger>
-                                <select class="mdb-select md-form price">
-                                    <option value="1">INR</option>
-                                    <option value="2">USD</option>
-                                </select>
-                            </Router>
+
+                            <Link className="nav-link" to="/"><Search /></Link>
+                            <Link className="nav-link" to="/"><Phone /></Link>
+                            <Link className="nav-link" to="/"><User /></Link>
+                            <OverlayTrigger
+                                trigger='click'
+                                key='bottom'
+                                placement='bottom'
+                                overlay={
+                                    <Popover id='popover-positioned-bottom bg-info '>
+                                        <h6 className="ml-1 mr-1 mb-1">No items</h6>
+                                        <button class="btn ml-1 mr-1 mb-1 text-white">View Cart</button>
+                                    </Popover>
+                                }
+                            >
+                                <IconButton aria-label="cart">
+                                    <StyledBadge badgeContent={1} color="secondary">
+                                        <ShoppingBag />
+                                    </StyledBadge>
+                                </IconButton>
+                            </OverlayTrigger>
+                            <select class="mdb-select md-form price">
+                                <option value="1">INR</option>
+                                <option value="2">USD</option>
+                            </select>
+
                         </Nav>
                         {/* </Navbar.Collapse> */}
                     </Navbar>
@@ -59,13 +59,13 @@ class HeaderComponent extends Component {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="justify-content-center" style={{ marginLeft: '30vw' }}>
-                                <Router>
-                                    <Link className="nav-link" to="/basic">FG BASIC</Link>
-                                    <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
-                                    <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                                    <Link className="nav-link" to="/">FG STEALS</Link>
-                                    <Link className="nav-link" to="/">EXHIBITIONS</Link>
-                                </Router>
+
+                                <Link className="nav-link" to="/basic">FG BASIC</Link>
+                                <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
+                                <Link className="nav-link" to="/clothing">CLOTHING</Link>
+                                <Link className="nav-link" to="/steals">FG STEALS</Link>
+                                <Link className="nav-link" to="/exhibition">EXHIBITIONS</Link>
+
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
