@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Search, Phone, User, ShoppingBag } from 'react-feather'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 // import Tooltip from 'react-bootstrap/Tooltip'
