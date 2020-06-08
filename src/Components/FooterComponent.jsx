@@ -10,7 +10,6 @@ class FooterComponent extends Component {
     constructor(props) {
         super(props);
         this.state = { FooterActivate: false, Footer: false };
-        // this.FooterDrawer = this.FooterDrawer.bind(this);
     }
 
     componentWillMount() {
@@ -82,7 +81,7 @@ const PcFooter = () => {
     )
 }
 
-const MobileFooter = (props) => {
+const MobileFooter = () => {
     return (
         <div>
             <Nav >
