@@ -4,6 +4,7 @@ import './style.css'
 import image from '../images/sample.JPG'
 import banner from '../images/product_banner_desktop4june.jpg'
 import FilterComponent from './FilterComponent'
+import FooterComponent from './FooterComponent'
 import { Container, Row, Col } from "react-bootstrap";
 class newArrivalComponent extends Component {
     constructor(props) {
@@ -71,6 +72,9 @@ class newArrivalComponent extends Component {
                             </div>
                             
                         </Col>
+                    </Row>
+                    <Row>
+                        <FooterComponent/>
                     </Row>
                 </Container>
             </div>
