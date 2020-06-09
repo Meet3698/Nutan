@@ -67,11 +67,8 @@ class FilterComponent extends Component {
                         </Accordion.Collapse>
                     </Accordion>
                 </Nav>
-
             </div>
         )
     }
 }
 export default FilterComponent
-
-
