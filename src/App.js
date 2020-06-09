@@ -21,8 +21,8 @@ function App() {
       <Router>
         <HeaderComponent />
         <Switch>
-          <Route path="/" exact component={HomeComponent} />
-          <Route path="/home" component={HomeComponent} />
+          <Route path="/Nutan" exact component={HomeComponent} />
+          <Route path="/Nutan" component={HomeComponent} />
           <Route path="/newarrivals" component={newArrivalComponent} />
           <Route path="/productDetails" component={ProductComponent} />
           <Route path="/basic" component={BasicCompnent} />
