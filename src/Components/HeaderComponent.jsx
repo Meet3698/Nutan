@@ -4,8 +4,6 @@ import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom';
 import { Search, Phone, User, ShoppingBag } from 'react-feather'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-// import Tooltip from 'react-bootstrap/Tooltip'
-import img from '../images/f_faridagupta_Logo.png'
 import IconButton from '@material-ui/core/IconButton';
 import StyledBadge from '@material-ui/core/Badge';
 import './bootstrap.css'

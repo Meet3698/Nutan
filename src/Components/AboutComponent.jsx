@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import about1 from '../images/about1.jpg'
 import impact from '../images/impact.jpg'
-import FooterComponent from './FooterComponent'
 import './style.css'
 import { Container, Col, Row } from "react-bootstrap";
 

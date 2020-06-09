@@ -156,7 +156,7 @@ class ProductComponent extends Component {
                                 </Form>
                             </Tab>
                             <Tab eventKey="Return" title="Return & Exchange">
-                               <p className="productSpace"> -15 Days free return and exchange (<a>Read More</a>) </p>
+                               <p className="productSpace"> -15 Days free return and exchange (<a href="/">Read More</a>) </p>
                             </Tab>
                             </Tabs>
                         </Col>
