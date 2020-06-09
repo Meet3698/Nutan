@@ -43,7 +43,7 @@ const PcFooter = () => {
                 <Row style={{ width: '100vw' }}>
                     <Col>
                         <h5>DISCOVER NUTAN</h5><br />
-                        <Link className="customLink" to="">About Us</Link><br />
+                        <Link className="customLink" to="/aboutus">About Us</Link><br />
                         <Link className="customLink" to="">Our Exhibitions</Link><br />
                         <Link className="customLink" to="">Blog</Link><br />
                         <Link className="customLink" to="">Our Team</Link><br />
