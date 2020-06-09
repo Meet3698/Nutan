@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Nutan/precache-manifest.033a95085e6e869885930219a77014f1.js"
+  "/Nutan/precache-manifest.b48c7c7825a8a6f1c57e157b9b6a0a69.js"
 );
 
 self.addEventListener('message', (event) => {
