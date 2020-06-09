@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3ce1a96cb72e839ace8b149ba9bfb107",
+    "revision": "be113a5f8cb65b52ff77ef4902b3f229",
     "url": "/Nutan/index.html"
   },
   {
