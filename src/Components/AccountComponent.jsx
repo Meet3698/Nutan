@@ -29,7 +29,7 @@ class AccountComponent extends Component {
                                     <Nav.Link className="customLink" eventKey="fifth">Logout</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <img src={coin} className="ml-3"></img>My Credit ₹0.00
+                                    <img src={coin} alt="sample" className="ml-3"></img>My Credit ₹0.00
                                 </Nav.Item>
                             </Nav>
                         </Col>
