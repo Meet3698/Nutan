@@ -36,6 +36,7 @@ class newArrivalComponent extends Component {
                 this.setState({ drawerActivate: false })
             }
         });
+         window.scrollTo(0, 0)
 
         // window.addEventListener('scroll', this.listenScrollEvent)
 

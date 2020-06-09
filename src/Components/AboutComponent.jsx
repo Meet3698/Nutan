@@ -5,6 +5,9 @@ import './style.css'
 import { Container, Col, Row } from "react-bootstrap";
 
 class AboutComponent extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
     render() {
         return (
             <div className="mainContainer">

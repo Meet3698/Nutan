@@ -6,6 +6,9 @@ import coin from '../images/coin.png'
 import './style.css'
 
 class AccountComponent extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
     render() {
         return (
             <div className="mainContainer">
