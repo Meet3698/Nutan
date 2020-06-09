@@ -33,7 +33,7 @@ class BlockMakingComponent extends Component {
                 </div>
 
                 <div className="mt-5">
-                    <img src={blockBanner} width="100%" height="500"></img>
+                    <img src={blockBanner} alt="sample" width="100%" height="500"></img>
                 </div>
 
                 <div className="mt-3">
@@ -44,15 +44,15 @@ class BlockMakingComponent extends Component {
                 </div>
 
                 <div className="mt-3">
-                    <img src={blk1} width="50%" height="400" />
-                    <img src={blk2} width="50%" height="400" />
+                    <img src={blk1} alt="sample" width="50%" height="400" />
+                    <img src={blk2} alt="sample" width="50%" height="400" />
                 </div>
 
                 <div className="mt-3">
                     <p>
                         Employing an artillery of tools, the artisans sculpt these elaborate motifs into existence. Chiseled to perfection, a millimeter’s worth of distance can be depicted in the patterns orchestrated within the crevices of these blocks. Rough around the edges, yet refined in its intricacies, the art of block-making is truly remarkable.<br />
                         A little known fact about hand block-printed styles is that as per common practice, even a single buti motif usually requires multiple blocks to be recreated on fabric.<br />
-                        At FG, we celebrate this art-form in all its glory. For more such interesting articles, please subscribe to our newsletter <a>here.</a>
+                        At FG, we celebrate this art-form in all its glory. For more such interesting articles, please subscribe to our newsletter <a href="/">here.</a>
                     </p>
                 </div>
 
