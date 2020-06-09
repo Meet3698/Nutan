@@ -5,7 +5,7 @@ import image from '../images/sample.JPG'
 import banner from '../images/Nutan_opening.jpg'
 import FilterComponent from './FilterComponent'
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
-import { Link } from "react-feather";
+import { Link } from "react-router-dom";
 
 class newArrivalComponent extends Component {
     constructor(props) {
@@ -90,11 +90,11 @@ const ForPC = (props) => {
                         {props.cards.map(card =>
                             <div class="col mb-4">
                                 <div class="card">
-                                <a href="/productDetails"><img src={image} class="card-img-top" alt="img" width="10" height="500" /></a>
+                                <img src={image} class="card-img-top" alt="img" width="10" height="500" />
                                     <div class="card-body">
                                         <h5 class="card-title">{card.title}</h5>
                                         <p class="card-text">{card.description}</p>
-                                        <button class="btn">Buy</button>
+                                        <button class="btn"><Link to="/productDetails">Buy</Link></button>
                                     </div>
                                 </div>
                             </div>
@@ -216,11 +216,11 @@ const ForMobile = (props) => {
                 {props.cards.map(card =>
                     <div class="col mb-4">
                         <div class="card">
-                            <a href="/productDetails"><img src={image} class="card-img-top" alt="img" width="20%" /></a>
+                            <img src={image} class="card-img-top" alt="img" width="20%" />
                             <div class="card-body">
                                 <h5 class="card-title">{card.title}</h5>
                                 <p class="card-text">{card.description}</p>
-                                <button class="btn">Buy</button>
+                                <button class="btn"><Link to="/productDetails">Buy</Link></button>
                             </div>
                         </div>
                     </div>
