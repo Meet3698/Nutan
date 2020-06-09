@@ -4,7 +4,8 @@ import './style.css'
 import image from '../images/sample.JPG'
 import banner from '../images/Nutan_opening.jpg'
 import FilterComponent from './FilterComponent'
-import { Container, Row, Col, Accordion, Card} from "react-bootstrap";
+import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
+
 class newArrivalComponent extends Component {
     constructor(props) {
         super(props)
@@ -139,15 +140,15 @@ const ForMobile = (props) => {
                 }} />
             </div>
             <div>
-            {/* <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
+                {/* <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
                 <Tab eventKey="filter" title="filter"> */}
                 <Accordion>
-                        <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
-                            Filter
+                    <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
+                        Filter
                             </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>
-                                <Accordion>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                            <Accordion>
                                 <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
                                     CATEGORY
                                     </Accordion.Toggle>
@@ -204,9 +205,9 @@ const ForMobile = (props) => {
                                 </Accordion.Collapse>
                             </Accordion>
 
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Accordion>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Accordion>
 
             </div>
 
@@ -223,6 +224,7 @@ const ForMobile = (props) => {
                         </div>
                     </div>
                 )}
+
             </div>
 
         </div>

@@ -36,10 +36,106 @@ class AccountComponent extends Component {
                         <Col sm={9}>
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
-                                    <h1>hello 1</h1>
+                                    <div><h6>Welcome to your account. Nothing matters more to us than a Happy Consumer.</h6></div>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
-                                    <h1>hello 2</h1>
+                                    <div>
+                                        <div className="mt-3" style={{ color: '#b07c83' }}>ACCOUNT INFORMATION</div>
+                                        <hr style={{
+                                            color: '#000000',
+                                            backgroundColor: '#000000',
+                                            // height: .5,
+                                            borderColor: '#000000',
+                                        }} />
+                                        <div style={{ float: 'left', marginRight: '2%' }}>
+                                            First Name<br />
+                                            <input type="text" placeholder="First Name" />
+                                        </div>
+                                        <div>
+                                            Last Name<br />
+                                            <input type="text" placeholder="Last Name" />
+                                        </div>
+                                        <div style={{ float: 'left', marginRight: '2%', marginTop: '2%' }}>
+                                            Email<br />
+                                            <input type="email" placeholder="Email" />
+                                        </div>
+                                        <div style={{ marginTop: '2%' }}>
+                                            Mobile Number<br />
+                                            <input type="text" placeholder="Phone Number" />
+                                        </div>
+                                        <div style={{ marginTop: '2%' }}>
+                                            <input type="checkbox" /> &nbsp;
+                                            Change Password?
+                                        </div>
+                                        <button style={{ backgroundColor: '#b07c83', padding: '1px 4px 1px 4px' }} className="btn mt-2 text-white">SAVE</button>
+                                    </div>
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="third">
+                                    <div>
+                                        <div className="mt-3" style={{ color: '#b07c83' }}>CONTACT INFORMATION</div>
+                                        <hr style={{
+                                            color: '#000000',
+                                            backgroundColor: '#000000',
+                                            // height: .5,
+                                            borderColor: '#000000',
+                                        }} />
+                                        <div style={{ float: 'left', marginRight: '2%' }}>
+                                            First Name<br />
+                                            <input type="text" placeholder="First Name" />
+                                        </div>
+                                        <div>
+                                            Last Name<br />
+                                            <input type="text" placeholder="Last Name" />
+                                        </div>
+                                        <div style={{ marginRight: '2%', marginTop: '2%' }}>
+                                            COMPANY<br />
+                                            <input type="email" placeholder="Company" />
+                                        </div>
+                                        <div style={{ float: 'left', marginRight: '2%', marginTop: '2%' }}>
+                                            Mobile Number<br />
+                                            <input type="text" placeholder="Mobile Number" />
+                                        </div>
+                                        <div style={{ marginTop: '2%' }}>
+                                            FAX<br />
+                                            <input type="text" placeholder="FAX" />
+                                        </div>
+                                        <div className="mt-3" style={{ color: '#b07c83' }}>ADDRESS</div>
+                                        <hr style={{
+                                            color: '#000000',
+                                            backgroundColor: '#000000',
+                                            // height: .5,
+                                            borderColor: '#000000',
+                                        }} />
+                                        <div style={{ marginRight: '2%', marginTop: '2%' }}>
+                                            Street Address<br />
+                                            <input type="text" placeholder="" /><br /><br />
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                        <div style={{ float: 'left', marginRight: '2%', marginTop: '2%' }}>
+                                            City<br />
+                                            <input type="text" placeholder="City" />
+                                        </div>
+                                        <div style={{ marginTop: '2%' }}>
+                                            State/Province<br />
+                                            <select name="state">
+                                                <option value="default">Please select region, state or privince</option>
+                                            </select>
+                                        </div>
+                                        <div style={{ float: 'left', marginRight: '2%', marginTop: '2%' }}>
+                                            ZIP/Postal Code<br />
+                                            <input type="number" placeholder="ZIP" />
+                                        </div>
+                                        <div style={{ marginTop: '2%' }}>
+                                            Country<br />
+                                            <select name="state">
+                                                <option value="default">India</option>
+                                            </select>
+                                        </div>
+                                        <button style={{ backgroundColor: '#b07c83', padding: '1px 4px 1px 4px' }} className="btn mt-2 text-white">SAVE ADDRESS</button>
+                                    </div>
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="fourth">
+                                    <div><h6>Welcome to your account. Nothing matters more to us than a Happy Consumer.</h6></div>
                                 </Tab.Pane>
                             </Tab.Content>
                         </Col>
