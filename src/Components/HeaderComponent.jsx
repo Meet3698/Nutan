@@ -69,7 +69,7 @@ const ForMobile = () => {
             <Nav>
                     <Link className="nav-link" to="/"><Search /></Link>
                     <Link className="nav-link" to="/"><Phone /></Link>
-                    <Link className="nav-link" to="/"><User /></Link>
+                    <Link className="nav-link" to="/account"><User /></Link>
                     <OverlayTrigger
                         trigger='click'
                         key='bottom'
@@ -114,7 +114,7 @@ const ForPC = () => {
                 <Nav>
                         <Link className="nav-link" to="/"><Search /></Link>
                         <Link className="nav-link" to="/"><Phone /></Link>
-                        <Link className="nav-link" to="/"><User /></Link>
+                        <Link className="nav-link" to="/account"><User /></Link>
                         <OverlayTrigger
                             trigger='click'
                             key='bottom'

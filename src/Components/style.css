@@ -198,6 +198,7 @@ select {
 .footer{
   position: absolute;
   background-color: white;
+  margin-top:5%;
 }
 
 .about{

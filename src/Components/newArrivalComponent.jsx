@@ -94,7 +94,7 @@ const ForPC = (props) => {
                                     <div class="card-body">
                                         <h5 class="card-title">{card.title}</h5>
                                         <p class="card-text">{card.description}</p>
-                                        <button class="btn"><Link to="/productDetails">Buy</Link></button>
+                                        <button class="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@ const ForMobile = (props) => {
                             <div class="card-body">
                                 <h5 class="card-title">{card.title}</h5>
                                 <p class="card-text">{card.description}</p>
-                                <button class="btn"><Link to="/productDetails">Buy</Link></button>
+                                <button class="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
                             </div>
                         </div>
                     </div>
