@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f71e6a98afede9086e474789e8447752",
+    "revision": "5b96ef891ec63f4b0b589c2241cc1fbb",
     "url": "/Nutan/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Nutan/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "2d927ddd64be1221dc4b",
+    "revision": "12e97f0f6e56f2495419",
     "url": "/Nutan/static/css/main.45e9139b.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Nutan/static/js/2.43b8e63d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2d927ddd64be1221dc4b",
-    "url": "/Nutan/static/js/main.4d3eeb64.chunk.js"
+    "revision": "12e97f0f6e56f2495419",
+    "url": "/Nutan/static/js/main.439c7ef1.chunk.js"
   },
   {
     "revision": "7d59d5e86a182413011e",
