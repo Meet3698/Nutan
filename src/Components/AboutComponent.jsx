@@ -85,9 +85,6 @@ In 2011, almost as an epiphany, having realized that her passion had boundless p
                         </Container>
                     </div>
                 </div>
-                <div className="mt-5">
-                    <FooterComponent />
-                </div>
             </div>
         )
     }

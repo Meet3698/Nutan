@@ -8,7 +8,8 @@ import block from '../images/block.jpg'
 import {Instagram, Facebook} from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-class Home extends Component {
+import {Link} from 'react-router-dom'
+class HomeComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -70,7 +71,7 @@ class Home extends Component {
                                     <div class="col mb-4">
                                         <div class="card">
                                             <div class="img-hover-zoom">
-                                                <img src={image} class="card-img-top" alt="img"/>
+                                                <Link to="/newarrivals"><img src={image} class="card-img-top" alt="img"/></Link>
                                             </div>
                                             <div style={{backgroundColor:'lightgray',position:'absolute',opacity:'0.5', textAlign:'center', width:'100%', marginTop:'85%'}}>
                                         <h6>{card.description}</h6>
@@ -117,7 +118,7 @@ class Home extends Component {
                                     <div class="col mb-4">
                                         <div class="card">
                                             <div class="img1-hover-zoom">
-                                                <img src={block} class="card-img-top" alt="img" width="100%" />
+                                                <Link to="/block-making"><img src={block} class="card-img-top" alt="img" width="100%" /></Link>
                                             </div>
                                             <div style={{backgroundColor:'lightgray',position:'absolute',opacity:'0.5', textAlign:'center', width:'100%', marginTop:'40%'}}>
                                         <h6>{craft.description}</h6>
@@ -141,6 +142,7 @@ class Home extends Component {
                     <div>
                         <Instagram/> <Facebook/>
                     </div>
+                    {/* eslint-disable-next-line */}
                     <marquee>
                     {this.state.crafts.map(craft =>
                         <img src={image} alt="img" width="20%" height="50%" style={{margin:"1%"}}/>
@@ -169,10 +171,10 @@ class Home extends Component {
                         </Form.Row>
                         </Form>
                 </div>
-
+                
             </div>
         )
     }
 }
 
-export default Home
+export default HomeComponent
