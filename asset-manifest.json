@@ -1,24 +1,25 @@
 {
   "files": {
     "main.css": "/nutan/static/css/main.ac741f4d.chunk.css",
-    "main.js": "/nutan/static/js/main.936b4f3f.chunk.js",
-    "main.js.map": "/nutan/static/js/main.936b4f3f.chunk.js.map",
+    "main.js": "/nutan/static/js/main.df8e7f63.chunk.js",
+    "main.js.map": "/nutan/static/js/main.df8e7f63.chunk.js.map",
     "runtime-main.js": "/nutan/static/js/runtime-main.b2d072bf.js",
     "runtime-main.js.map": "/nutan/static/js/runtime-main.b2d072bf.js.map",
-    "static/js/2.d5728fef.chunk.js": "/nutan/static/js/2.d5728fef.chunk.js",
-    "static/js/2.d5728fef.chunk.js.map": "/nutan/static/js/2.d5728fef.chunk.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/nutan/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.43b8e63d.chunk.js": "/nutan/static/js/2.43b8e63d.chunk.js",
+    "static/js/2.43b8e63d.chunk.js.map": "/nutan/static/js/2.43b8e63d.chunk.js.map",
     "index.html": "/nutan/index.html",
-    "precache-manifest.fc60e47b08b777d4380c3911a2aa6838.js": "/nutan/precache-manifest.fc60e47b08b777d4380c3911a2aa6838.js",
+    "precache-manifest.2fec037301385ce4e156f24a463208af.js": "/nutan/precache-manifest.2fec037301385ce4e156f24a463208af.js",
     "service-worker.js": "/nutan/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/nutan/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.ac741f4d.chunk.css.map": "/nutan/static/css/main.ac741f4d.chunk.css.map",
-    "static/js/2.d5728fef.chunk.js.LICENSE.txt": "/nutan/static/js/2.d5728fef.chunk.js.LICENSE.txt",
+    "static/js/2.43b8e63d.chunk.js.LICENSE.txt": "/nutan/static/js/2.43b8e63d.chunk.js.LICENSE.txt",
     "static/media/Nutan_opening.jpg": "/nutan/static/media/Nutan_opening.9f1d4885.jpg",
     "static/media/about1.jpg": "/nutan/static/media/about1.8ef3ee5d.jpg",
     "static/media/blk1.jpg": "/nutan/static/media/blk1.35936528.jpg",
     "static/media/blk2.jpg": "/nutan/static/media/blk2.8e62c361.jpg",
     "static/media/block_banner.jpg": "/nutan/static/media/block_banner.62d43eae.jpg",
     "static/media/conserve.jpg": "/nutan/static/media/conserve.444c2cbd.jpg",
-    "static/media/f_faridagupta_Logo.png": "/nutan/static/media/f_faridagupta_Logo.f45b436e.png",
     "static/media/gb.jpg": "/nutan/static/media/gb.3d832ac4.jpg",
     "static/media/impact.jpg": "/nutan/static/media/impact.80f6f43f.jpg",
     "static/media/nm.gif": "/nutan/static/media/nm.2031a5c6.gif",
@@ -30,8 +31,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b2d072bf.js",
-    "static/js/2.d5728fef.chunk.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.43b8e63d.chunk.js",
     "static/css/main.ac741f4d.chunk.css",
-    "static/js/main.936b4f3f.chunk.js"
+    "static/js/main.df8e7f63.chunk.js"
   ]
 }

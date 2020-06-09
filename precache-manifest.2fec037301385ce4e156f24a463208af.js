@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5d720812dcb2d10c42e0710ed4fbdcf3",
+    "revision": "7e8da1395b6e4439c60025414f023527",
     "url": "/nutan/index.html"
   },
   {
-    "revision": "9bdd77c70910f7b4e125",
+    "revision": "7dd7eb4fe405dabb8f2b",
+    "url": "/nutan/static/css/2.af3c1da9.chunk.css"
+  },
+  {
+    "revision": "2790671d8829ed53e7f5",
     "url": "/nutan/static/css/main.ac741f4d.chunk.css"
   },
   {
-    "revision": "be60298ec496ea900a49",
-    "url": "/nutan/static/js/2.d5728fef.chunk.js"
+    "revision": "7dd7eb4fe405dabb8f2b",
+    "url": "/nutan/static/js/2.43b8e63d.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/nutan/static/js/2.d5728fef.chunk.js.LICENSE.txt"
+    "url": "/nutan/static/js/2.43b8e63d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9bdd77c70910f7b4e125",
-    "url": "/nutan/static/js/main.936b4f3f.chunk.js"
+    "revision": "2790671d8829ed53e7f5",
+    "url": "/nutan/static/js/main.df8e7f63.chunk.js"
   },
   {
     "revision": "e1299ec98349d03e1b07",
@@ -46,10 +50,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "444c2cbd5be25b7a9bb806527953d9e0",
     "url": "/nutan/static/media/conserve.444c2cbd.jpg"
-  },
-  {
-    "revision": "f45b436e6c982b5ae8d1e0eceebafa11",
-    "url": "/nutan/static/media/f_faridagupta_Logo.f45b436e.png"
   },
   {
     "revision": "3d832ac40452978d67d20e2277c8cc87",
