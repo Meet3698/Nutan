@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/nutan/static/css/main.ac741f4d.chunk.css",
+    "main.js": "/nutan/static/js/main.936b4f3f.chunk.js",
+    "main.js.map": "/nutan/static/js/main.936b4f3f.chunk.js.map",
+    "runtime-main.js": "/nutan/static/js/runtime-main.b2d072bf.js",
+    "runtime-main.js.map": "/nutan/static/js/runtime-main.b2d072bf.js.map",
+    "static/js/2.d5728fef.chunk.js": "/nutan/static/js/2.d5728fef.chunk.js",
+    "static/js/2.d5728fef.chunk.js.map": "/nutan/static/js/2.d5728fef.chunk.js.map",
+    "index.html": "/nutan/index.html",
+    "precache-manifest.fc60e47b08b777d4380c3911a2aa6838.js": "/nutan/precache-manifest.fc60e47b08b777d4380c3911a2aa6838.js",
+    "service-worker.js": "/nutan/service-worker.js",
+    "static/css/main.ac741f4d.chunk.css.map": "/nutan/static/css/main.ac741f4d.chunk.css.map",
+    "static/js/2.d5728fef.chunk.js.LICENSE.txt": "/nutan/static/js/2.d5728fef.chunk.js.LICENSE.txt",
+    "static/media/Nutan_opening.jpg": "/nutan/static/media/Nutan_opening.9f1d4885.jpg",
+    "static/media/about1.jpg": "/nutan/static/media/about1.8ef3ee5d.jpg",
+    "static/media/blk1.jpg": "/nutan/static/media/blk1.35936528.jpg",
+    "static/media/blk2.jpg": "/nutan/static/media/blk2.8e62c361.jpg",
+    "static/media/block_banner.jpg": "/nutan/static/media/block_banner.62d43eae.jpg",
+    "static/media/conserve.jpg": "/nutan/static/media/conserve.444c2cbd.jpg",
+    "static/media/f_faridagupta_Logo.png": "/nutan/static/media/f_faridagupta_Logo.f45b436e.png",
+    "static/media/gb.jpg": "/nutan/static/media/gb.3d832ac4.jpg",
+    "static/media/impact.jpg": "/nutan/static/media/impact.80f6f43f.jpg",
+    "static/media/nm.gif": "/nutan/static/media/nm.2031a5c6.gif",
+    "static/media/now_shopping.jpg": "/nutan/static/media/now_shopping.5608d155.jpg",
+    "static/media/nutan.jpg": "/nutan/static/media/nutan.8ef3ee5d.jpg",
+    "static/media/product_banner_desktop4june.jpg": "/nutan/static/media/product_banner_desktop4june.8e0d9ebe.jpg",
+    "static/media/sample.JPG": "/nutan/static/media/sample.09ef117e.JPG",
+    "static/media/ss.jpg": "/nutan/static/media/ss.9497eed4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2d072bf.js",
+    "static/js/2.d5728fef.chunk.js",
+    "static/css/main.ac741f4d.chunk.css",
+    "static/js/main.936b4f3f.chunk.js"
+  ]
+}
