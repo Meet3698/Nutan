@@ -51,7 +51,7 @@ const ForMobile = () => {
                 </div>
         </Navbar>
         <Navbar collapseOnSelect expand='lg' className="header1" fixed="top">
-            <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
+            <Navbar.Brand><Link to="/" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav style={{backgroundColor:'white',zIndex:'100',width:'100vw'}}>
@@ -106,7 +106,7 @@ const ForPC = () => {
                 </div>
             </Navbar>
             <Navbar collapseOnSelect className="header1" fixed="top">
-                <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
                 {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav"> */}
                 <Nav className="mr-auto">
