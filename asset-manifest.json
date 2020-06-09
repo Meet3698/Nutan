@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Nutan/static/css/main.b2fc31af.chunk.css",
-    "main.js": "/Nutan/static/js/main.65dde5b2.chunk.js",
-    "main.js.map": "/Nutan/static/js/main.65dde5b2.chunk.js.map",
+    "main.css": "/Nutan/static/css/main.45e9139b.chunk.css",
+    "main.js": "/Nutan/static/js/main.954f47a1.chunk.js",
+    "main.js.map": "/Nutan/static/js/main.954f47a1.chunk.js.map",
     "runtime-main.js": "/Nutan/static/js/runtime-main.bdf1ed8e.js",
     "runtime-main.js.map": "/Nutan/static/js/runtime-main.bdf1ed8e.js.map",
     "static/css/2.af3c1da9.chunk.css": "/Nutan/static/css/2.af3c1da9.chunk.css",
     "static/js/2.43b8e63d.chunk.js": "/Nutan/static/js/2.43b8e63d.chunk.js",
     "static/js/2.43b8e63d.chunk.js.map": "/Nutan/static/js/2.43b8e63d.chunk.js.map",
     "index.html": "/Nutan/index.html",
-    "precache-manifest.51f704dccce75bc8dafc4d0385dbeeb6.js": "/Nutan/precache-manifest.51f704dccce75bc8dafc4d0385dbeeb6.js",
+    "precache-manifest.033a95085e6e869885930219a77014f1.js": "/Nutan/precache-manifest.033a95085e6e869885930219a77014f1.js",
     "service-worker.js": "/Nutan/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/Nutan/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.b2fc31af.chunk.css.map": "/Nutan/static/css/main.b2fc31af.chunk.css.map",
+    "static/css/main.45e9139b.chunk.css.map": "/Nutan/static/css/main.45e9139b.chunk.css.map",
     "static/js/2.43b8e63d.chunk.js.LICENSE.txt": "/Nutan/static/js/2.43b8e63d.chunk.js.LICENSE.txt",
     "static/media/Nutan_opening.jpg": "/Nutan/static/media/Nutan_opening.9f1d4885.jpg",
     "static/media/about1.jpg": "/Nutan/static/media/about1.8ef3ee5d.jpg",
@@ -33,7 +33,7 @@
     "static/js/runtime-main.bdf1ed8e.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.43b8e63d.chunk.js",
-    "static/css/main.b2fc31af.chunk.css",
-    "static/js/main.65dde5b2.chunk.js"
+    "static/css/main.45e9139b.chunk.css",
+    "static/js/main.954f47a1.chunk.js"
   ]
 }
