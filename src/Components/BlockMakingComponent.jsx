@@ -74,10 +74,10 @@ class BlockMakingComponent extends Component {
                     </div>
                     <div className="GridContainer mr-2 ml-2 row row-cols-1 row-cols-md-3">
                         {this.state.cards.map(card =>
-                            <div class="col mb-4">
-                                <div class="card">
-                                    <img src={card.image} class="card-img-top" alt="img" width="10%" height="200" />
-                                    <div class="card-body text-left">
+                            <div className="col mb-4">
+                                <div className="card">
+                                    <img src={card.image} className="card-img-top" alt="img" width="10%" height="200" />
+                                    <div className="card-body text-left">
                                         <h6>{card.description}</h6>
                                     </div>
                                 </div>

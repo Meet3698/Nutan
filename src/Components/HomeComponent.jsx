@@ -71,10 +71,10 @@ class HomeComponent extends Component {
                     <h3 >NVB CATEGORIES</h3>
                     <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
                         {this.state.cards.map(card =>
-                            <div class="col mb-4">
-                                <div class="card">
-                                    <div class="img-hover-zoom">
-                                        <Link to="/newarrivals"><img src={image} class="card-img-top" alt="img" /></Link>
+                            <div className="col mb-4">
+                                <div className="card">
+                                    <div className="img-hover-zoom">
+                                        <Link to="/newarrivals"><img src={image} className="card-img-top" alt="img" /></Link>
                                     </div>
                                     <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.5', textAlign: 'center', width: '100%', marginTop: '85%' }}>
                                         <h6>{card.description}</h6>
@@ -118,10 +118,10 @@ class HomeComponent extends Component {
                     <h3 >NVB CRAFTS</h3>
                     <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
                         {this.state.crafts.map(craft =>
-                            <div class="col mb-4">
-                                <div class="card">
-                                    <div class="img1-hover-zoom">
-                                        <Link to="/block-making"><img src={block} class="card-img-top" alt="img" width="100%" /></Link>
+                            <div className="col mb-4">
+                                <div className="card">
+                                    <div className="img1-hover-zoom">
+                                        <Link to="/block-making"><img src={block} className="card-img-top" alt="img" width="100%" /></Link>
                                     </div>
                                     <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.5', textAlign: 'center', width: '100%', marginTop: '40%' }}>
                                         <h6>{craft.description}</h6>
