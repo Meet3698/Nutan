@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8489ee6ce4ec211ef7c301791de25dff",
+    "revision": "e709fff6c780296e196451c84513cee5",
     "url": "/Nutan/index.html"
   },
   {
-    "revision": "f9107b2e02181a2bbc8c",
+    "revision": "67f9642c2b181dd574c1",
     "url": "/Nutan/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "af814d597b1f992403ec",
-    "url": "/Nutan/static/css/main.a23680a9.chunk.css"
+    "revision": "6c877185a9a8b2ef3baf",
+    "url": "/Nutan/static/css/main.59791e1b.chunk.css"
   },
   {
-    "revision": "f9107b2e02181a2bbc8c",
-    "url": "/Nutan/static/js/2.1a4ca38b.chunk.js"
+    "revision": "67f9642c2b181dd574c1",
+    "url": "/Nutan/static/js/2.afe54d1f.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/Nutan/static/js/2.1a4ca38b.chunk.js.LICENSE.txt"
+    "url": "/Nutan/static/js/2.afe54d1f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "af814d597b1f992403ec",
-    "url": "/Nutan/static/js/main.397ab326.chunk.js"
+    "revision": "6c877185a9a8b2ef3baf",
+    "url": "/Nutan/static/js/main.7af6c154.chunk.js"
   },
   {
     "revision": "7d59d5e86a182413011e",
