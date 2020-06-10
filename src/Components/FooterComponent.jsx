@@ -61,17 +61,16 @@ const PcFooter = () => {
                     <Col style={{ marginLeft: '80px' }}>
                         <h5>Follow Us</h5><br />
                         <Link className="customLink" to=""><Facebook /> Facebook </Link><br />
-                        <Link className="customLink" to="">Pinterest </Link><br />
                         <Link className="customLink" to=""><Instagram /> Instagram</Link><br />
                         <Link className="customLink" to=""><Twitter /> Twitter</Link><br />
                         <Link className="customLink" to=""><Youtube /> YouTube</Link>
                     </Col>
                     <Col style={{ marginLeft: '80px' }}>
                         <h5>CONTACT US</h5><br />
-                        <Link className="customLink" to=""><Facebook /> 123456789 </Link><br />
+                        <Link className="customLink" to="">123456789 </Link><br />
                         <Link className="customLink" to="">mail@email.com </Link><br />
-                        <Link className="customLink" to=""><Instagram /> 9:30 AM - 8:00 PM</Link><br />
-                        <Link className="customLink" to=""><Twitter /> (MON - SAT)</Link><br />
+                        <Link className="customLink" to="">9:30 AM - 8:00 PM</Link><br />
+                        <Link className="customLink" to="">(MON - SAT)</Link><br />
                     </Col>
 
 
