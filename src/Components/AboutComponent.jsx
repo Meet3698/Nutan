@@ -4,6 +4,9 @@ import impact from '../images/impact.jpg'
 import './style.css'
 
 class AboutComponent extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
     render() {
         return (
             <div className="mainContainer">
