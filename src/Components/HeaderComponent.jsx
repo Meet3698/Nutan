@@ -143,7 +143,7 @@ const ForPC = () => {
                             <Link className="nav-link" to="/basic">NVB BASIC</Link>
                             <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                             <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                            <Link className="nav-link" to="/">NVB STEALS</Link>
+                            <Link className="nav-link" to="/steals">NVB STEALS</Link>
                             <Link className="nav-link" to="/">EXHIBITIONS</Link>
                     </Nav>
             </Navbar>
