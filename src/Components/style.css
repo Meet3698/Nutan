@@ -3,7 +3,7 @@
 }
 
 .mainContainer{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 22vh;
 }
 .logoLink{
@@ -20,6 +20,7 @@
 .block2{
     float: right;
     /* position: relative; */
+
 }
 
 .hl{
@@ -209,13 +210,14 @@ select {
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
+  padding: 0px 4px 0px 10px;
+  width: 100vw;
 }
 
 /* Create four equal columns that sits next to each other */
 .column {
   flex: 25%;
-  max-width: 25%;
+  max-width: 33%;
   padding: 0 4px;
 }
 
