@@ -5,7 +5,7 @@ import image from '../images/sample.JPG'
 import banner from '../images/Nutan_opening.jpg'
 import FilterComponent from './FilterComponent'
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
-
+import {Link} from 'react-router-dom';
 class newArrivalComponent extends Component {
     constructor(props) {
         super(props)

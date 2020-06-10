@@ -9,6 +9,8 @@ import { Instagram, Facebook } from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import { Parallax } from "react-parallax";
+
 class HomeComponent extends Component {
     constructor(props) {
         super(props)
@@ -30,8 +32,15 @@ class HomeComponent extends Component {
     render() {
         return (
             <div className="mainContainer" >
-                <div >
-                    <Carousel>
+                <div>
+
+                    <Parallax bgImage={impact} bgImageSizes={'300px'} bgImageStyle={{width:'100%', opacity:'0.7'}} strength={0}>
+                        <div style={{ height: 500}}>
+                            {/* <div className="insideStyles">HTML inside the parallax</div> */}
+                        </div>
+                    </Parallax>
+
+                    {/* <Carousel>
                         <Carousel.Item >
                             <img
                                 className="d-block w-100"
@@ -56,7 +65,7 @@ class HomeComponent extends Component {
                                 style={{ height: '400px'}}
                             />
                         </Carousel.Item>
-                    </Carousel>
+                    </Carousel> */}
                 </div>
                 <div className="hl">
                     <hr style={{
