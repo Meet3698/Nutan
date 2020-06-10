@@ -23,7 +23,7 @@
 }
 
 .hl{
-    margin-top: 50px;
+    margin-top: 2%;
 }
 
 .header{
@@ -198,6 +198,7 @@ select {
 .footer{
   position: absolute;
   background-color: white;
+  margin-top: 10%;
 }
 
 .about{

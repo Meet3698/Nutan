@@ -2,7 +2,7 @@
   "name": "nutan",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://meet3698.github.io/nutan/",
+  "homepage": "https://meet3698.github.io/Nutan/",
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@testing-library/jest-dom": "^4.2.4",

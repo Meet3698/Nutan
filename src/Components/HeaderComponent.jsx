@@ -51,7 +51,7 @@ const ForMobile = () => {
                 </div>
         </Navbar>
         <Navbar collapseOnSelect expand='lg' className="header1" fixed="top">
-            <Navbar.Brand><Link to="/" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
+            <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav style={{backgroundColor:'white',zIndex:'100',width:'100vw'}}>
@@ -106,7 +106,7 @@ const ForPC = () => {
                 </div>
             </Navbar>
             <Navbar collapseOnSelect className="header1" fixed="top">
-                <Navbar.Brand><Link to="/" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
                 {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav"> */}
                 <Nav className="mr-auto">
@@ -143,7 +143,7 @@ const ForPC = () => {
                             <Link className="nav-link" to="/basic">NVB BASIC</Link>
                             <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                             <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                            <Link className="nav-link" to="/">NVB STEALS</Link>
+                            <Link className="nav-link" to="/steals">NVB STEALS</Link>
                             <Link className="nav-link" to="/">EXHIBITIONS</Link>
                     </Nav>
             </Navbar>

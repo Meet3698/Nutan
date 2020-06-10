@@ -89,7 +89,7 @@ const ForPC = (props) => {
                         {props.cards.map(card =>
                             <div class="col mb-4">
                                 <div class="card">
-                                    <img src={image} class="card-img-top" alt="img" width="10" height="500" />
+                                <a href="/productDetails"><img src={image} class="card-img-top" alt="img" width="10" height="500" /></a>
                                     <div class="card-body">
                                         <h5 class="card-title">{card.title}</h5>
                                         <p class="card-text">{card.description}</p>
@@ -215,7 +215,7 @@ const ForMobile = (props) => {
                 {props.cards.map(card =>
                     <div class="col mb-4">
                         <div class="card">
-                            <img src={image} class="card-img-top" alt="img" width="20%" />
+                            <a href="/productDetails"><img src={image} class="card-img-top" alt="img" width="20%" /></a>
                             <div class="card-body">
                                 <h5 class="card-title">{card.title}</h5>
                                 <p class="card-text">{card.description}</p>
