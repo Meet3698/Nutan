@@ -4,7 +4,9 @@ import './style.css'
 import image from '../images/sample.JPG'
 import banner from '../images/Nutan_opening.jpg'
 import FilterComponent from './FilterComponent'
-import { Container, Row, Col, Accordion, Card} from "react-bootstrap";
+import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 class newArrivalComponent extends Component {
     constructor(props) {
         super(props)
@@ -34,6 +36,7 @@ class newArrivalComponent extends Component {
                 this.setState({ drawerActivate: false })
             }
         });
+         window.scrollTo(0, 0)
 
         // window.addEventListener('scroll', this.listenScrollEvent)
 
@@ -88,11 +91,11 @@ const ForPC = (props) => {
                         {props.cards.map(card =>
                             <div class="col mb-4">
                                 <div class="card">
-                                    <img src={image} class="card-img-top" alt="img" width="10" height="500" />
+                                <img src={image} class="card-img-top" alt="img" width="10" height="500" />
                                     <div class="card-body">
                                         <h5 class="card-title">{card.title}</h5>
                                         <p class="card-text">{card.description}</p>
-                                        <button class="btn">Buy</button>
+                                        <button class="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
                                     </div>
                                 </div>
                             </div>
@@ -139,15 +142,15 @@ const ForMobile = (props) => {
                 }} />
             </div>
             <div>
-            {/* <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
+                {/* <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
                 <Tab eventKey="filter" title="filter"> */}
                 <Accordion>
-                        <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
-                            Filter
+                    <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
+                        Filter
                             </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>
-                                <Accordion>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                            <Accordion>
                                 <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
                                     CATEGORY
                                     </Accordion.Toggle>
@@ -204,9 +207,9 @@ const ForMobile = (props) => {
                                 </Accordion.Collapse>
                             </Accordion>
 
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Accordion>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Accordion>
 
             </div>
 
@@ -218,11 +221,12 @@ const ForMobile = (props) => {
                             <div class="card-body">
                                 <h5 class="card-title">{card.title}</h5>
                                 <p class="card-text">{card.description}</p>
-                                <button class="btn">Buy</button>
+                                <button class="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
                             </div>
                         </div>
                     </div>
                 )}
+
             </div>
 
         </div>

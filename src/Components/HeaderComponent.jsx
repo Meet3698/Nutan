@@ -4,8 +4,6 @@ import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom';
 import { Search, Phone, User, ShoppingBag } from 'react-feather'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-// import Tooltip from 'react-bootstrap/Tooltip'
-import img from '../images/f_faridagupta_Logo.png'
 import IconButton from '@material-ui/core/IconButton';
 import StyledBadge from '@material-ui/core/Badge';
 import './bootstrap.css'
@@ -53,7 +51,7 @@ const ForMobile = () => {
                 </div>
         </Navbar>
         <Navbar collapseOnSelect expand='lg' className="header1" fixed="top">
-            <Navbar.Brand><Link to="/" className="logoLink">Nutan Vastra Bhandar</Link></Navbar.Brand>
+            <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav style={{backgroundColor:'white',zIndex:'100',width:'100vw'}}>
@@ -71,7 +69,7 @@ const ForMobile = () => {
             <Nav>
                     <Link className="nav-link" to="/"><Search /></Link>
                     <Link className="nav-link" to="/"><Phone /></Link>
-                    <Link className="nav-link" to="/"><User /></Link>
+                    <Link className="nav-link" to="/account"><User /></Link>
                     <OverlayTrigger
                         trigger='click'
                         key='bottom'
@@ -108,7 +106,7 @@ const ForPC = () => {
                 </div>
             </Navbar>
             <Navbar collapseOnSelect className="header1" fixed="top">
-                <Navbar.Brand><Link to="/" className="logoLink">Nutan Vastra Bhandar</Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
                 {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav"> */}
                 <Nav className="mr-auto">
@@ -116,7 +114,7 @@ const ForPC = () => {
                 <Nav>
                         <Link className="nav-link" to="/"><Search /></Link>
                         <Link className="nav-link" to="/"><Phone /></Link>
-                        <Link className="nav-link" to="/"><User /></Link>
+                        <Link className="nav-link" to="/account"><User /></Link>
                         <OverlayTrigger
                             trigger='click'
                             key='bottom'

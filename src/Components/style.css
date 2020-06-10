@@ -23,7 +23,7 @@
 }
 
 .hl{
-    margin-top: 50px;
+    margin-top: 2%;
 }
 
 .header{
@@ -71,9 +71,9 @@ select {
 
 .sidebar {
     position: fixed;
-    z-index: 100;
+    /* z-index: 100; */
     /* padding: 48px 0 0; */
-    height: 100%;
+    height: auto;
     border: none;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     background-color: white;
@@ -193,4 +193,15 @@ select {
 
 .customLink{
   color: black;
+}
+
+.footer{
+  position: absolute;
+  background-color: white;
+  margin-top:5%;
+}
+
+.about{
+  margin-left: 8%;
+  margin-right: 8%;
 }

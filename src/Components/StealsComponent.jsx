@@ -30,7 +30,7 @@ class StealsComponent extends Component {
                         <Col xs={10} className="page-content-wrapper">
 
                             <div class="card text-black text-center newarrivalcard">
-                                <img src={banner} width="100%"></img>
+                                <img src={banner} alt="sample" width="100%"></img>
                             </div>
 
                             <div>
