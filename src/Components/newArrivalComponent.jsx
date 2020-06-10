@@ -60,7 +60,7 @@ const ForPC = (props) => {
                 </Col>
                 <Col xs={10} className="page-content-wrapper">
 
-                    <div class="card text-black text-center newarrivalcard">
+                    <div className="card text-black text-center newarrivalcard">
                         <img src={banner} alt="banner" width="100%" height="500px"></img>
                     </div>
 
@@ -70,7 +70,7 @@ const ForPC = (props) => {
                         </div>
                         <div className="block2 mt-2">
                             <label className="hidden-xs hidden-sm">Sort By : </label> &nbsp;
-                            <select class="mdb-select md-form">
+                            <select className="mdb-select md-form">
                                 <option value="1">What's new</option>
                                 <option value="2">Option 1</option>
                                 <option value="3">Option 2</option>
@@ -89,13 +89,13 @@ const ForPC = (props) => {
                     </div>
                     <div className="GridContainer mr-2 ml-2 row row-cols-1 row-cols-md-3">
                         {props.cards.map(card =>
-                            <div class="col mb-4">
-                                <div class="card">
-                                <img src={image} class="card-img-top" alt="img" width="10" height="500" />
-                                    <div class="card-body">
-                                        <h5 class="card-title">{card.title}</h5>
-                                        <p class="card-text">{card.description}</p>
-                                        <button class="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
+                            <div className="col mb-4">
+                                <div className="card">
+                                <img src={image} className="card-img-top" alt="img" width="10" height="500" />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{card.title}</h5>
+                                        <p className="card-text">{card.description}</p>
+                                        <button className="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ const ForMobile = (props) => {
         //     <Row>
         <div className="page-content-wrapper">
             {console.log("hello")}
-            <div class="card text-black text-center newarrivalcard">
+            <div className="card text-black text-center newarrivalcard">
                 <img src={banner} alt="banner" width="100%" height="300px"></img>
             </div>
 
@@ -124,7 +124,7 @@ const ForMobile = (props) => {
                 </div>
                 <div className="block2 mt-2">
                     <label className="hidden-xs hidden-sm">Sort By : </label> &nbsp;
-                            <select class="mdb-select md-form">
+                            <select className="mdb-select md-form">
                         <option value="1">What's new</option>
                         <option value="2">Option 1</option>
                         <option value="3">Option 2</option>
@@ -215,13 +215,13 @@ const ForMobile = (props) => {
 
             <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-3">
                 {props.cards.map(card =>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src={image} class="card-img-top" alt="img" width="20%" />
-                            <div class="card-body">
-                                <h5 class="card-title">{card.title}</h5>
-                                <p class="card-text">{card.description}</p>
-                                <button class="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
+                    <div className="col mb-4">
+                        <div className="card">
+                            <img src={image} className="card-img-top" alt="img" width="20%" />
+                            <div className="card-body">
+                                <h5 className="card-title">{card.title}</h5>
+                                <p className="card-text">{card.description}</p>
+                                <button className="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
                             </div>
                         </div>
                     </div>

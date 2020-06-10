@@ -17,7 +17,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div style={{overflowX:'hidden'}}>
       <Router>
         <HeaderComponent />
         <Switch>
