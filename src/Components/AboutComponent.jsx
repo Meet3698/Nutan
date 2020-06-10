@@ -38,31 +38,28 @@ class AboutComponent extends Component {
                     </div>
                     <div style={{ marginTop: '8%' }}>
 
-                        <img src={impact} alt="" width="50%" height="450" style={{ float:'left',marginRight:'2%' }} />
+                        <img src={impact} alt="" width="50%" height="450" style={{ float: 'left', marginRight: '2%' }} />
 
                         <h3>Our Vision</h3>
                         <h6 className="text-justify" style={{ lineHeight: "30px" }}>Working towards our goals on a daily basis, we envision ourselves as the world’s leading brand for Indian Ethnic Wear. Driven by customer obsession and technological prowess, we respect the divide between modern automation and the irrefutable subtleties of hand-made precision. We aspire to stay true to our core values whilst focusing on the customer and the artisan in an equal sense. Providing a flawless shopping experience through and through, we’re gradually increasing artisanal employment every single step of the way. </h6>
 
                     </div>
                     <div style={{ marginTop: '25%' }}>
-                        <Container>
-                            <Row>
-                                <Col>
-                                    <img src={impact} alt="" width="100%" height="600" style={{ paddingTop: "40%" }} />
-                                </Col>
-                                <Col>
-                                    <Row>
-                                        <img src={impact} alt="" width="100%" height="400" style={{ paddingTop: "1%", marginBottom: '2%' }} />
-                                    </Row>
-                                    <Row>
-                                        <img src={impact} alt="" width="100%" height="250" style={{ paddingTop: "1%" }} />
-                                    </Row>
-                                </Col>
-                                <Col>
-                                    <img src={impact} alt="" width="100%" height="600" style={{ paddingTop: "40%" }} />
-                                </Col>
-                            </Row>
-                        </Container>
+                        <div class="row">
+                            <div class="column">
+                                <img src={impact} alt="" />
+                            </div>
+                            <div class="column">
+                                <img src={impact} alt="" />
+                                <img src={impact} alt="" />
+                            </div>
+                            <div class="column">
+                                <img src={impact} alt="" />
+                            </div>
+                            <div class="column">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
