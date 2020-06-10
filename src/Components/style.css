@@ -20,6 +20,7 @@
 .block2{
     float: right;
     /* position: relative; */
+
 }
 
 .hl{
@@ -209,13 +210,14 @@ select {
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
+  padding: 0px 4px 0px 10px;
+  width: 100vw;
 }
 
 /* Create four equal columns that sits next to each other */
 .column {
   flex: 25%;
-  max-width: 25%;
+  max-width: 33%;
   padding: 0 4px;
 }
 .panels{
@@ -265,4 +267,22 @@ select {
     flex: 100%;
     max-width: 100%;
   }
+}
+
+.parallax_section{
+    height: 600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center 22vh ;
+    position:relative;
+    /* width: 100%; */
+ }
+
+ .parallax_image_first{
+  background-image: url("../images/nutan.jpg");
+}
+
+.parallax_image_second{
+  background-image: url("../images/block_banner.jpg");
 }

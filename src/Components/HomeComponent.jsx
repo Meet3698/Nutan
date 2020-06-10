@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import Carousel from 'react-bootstrap/Carousel'
-import nutan from '../images/nutan.jpg'
 import image from '../images/sample.JPG'
-import impact from '../images/impact.jpg'
 import Col from 'react-bootstrap/Col'
 import block from '../images/block.jpg'
 import { Instagram, Facebook } from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
-import { Parallax } from "react-parallax";
 
 class HomeComponent extends Component {
     constructor(props) {
@@ -32,15 +28,8 @@ class HomeComponent extends Component {
     render() {
         return (
             <div className="mainContainer" >
-                <div>
-
-                    <Parallax bgImage={impact} bgImageSizes={'300px'} bgImageStyle={{width:'100%', opacity:'0.7'}} strength={0}>
-                        <div style={{ height: 500}}>
-                            {/* <div className="insideStyles">HTML inside the parallax</div> */}
-                        </div>
-                    </Parallax>
-
-                    {/* <Carousel>
+                {/* <div >
+                    <Carousel>
                         <Carousel.Item >
                             <img
                                 className="d-block w-100"
@@ -65,7 +54,9 @@ class HomeComponent extends Component {
                                 style={{ height: '400px'}}
                             />
                         </Carousel.Item>
-                    </Carousel> */}
+                    </Carousel>
+                </div> */}
+                <div class="parallax_section parallax_image_first">
                 </div>
                 <div className="hl">
                     <hr style={{
@@ -102,7 +93,9 @@ class HomeComponent extends Component {
                         borderColor: '#000000'
                     }} />
                 </div>
-                <div>
+                <div class="parallax_section parallax_image_second">
+                </div>
+                {/* <div>
                     <h3 style={{ textAlign: 'center' }}>NVB IMPACT</h3>
                     <div className="impact">
                         <div style={{ float: 'left', width: '50vw' }}>
@@ -113,7 +106,7 @@ class HomeComponent extends Component {
                         </div>
 
                     </div>
-                </div>
+                </div> */}
                 <div className="hl">
                     <hr style={{
                         color: '#000000',
