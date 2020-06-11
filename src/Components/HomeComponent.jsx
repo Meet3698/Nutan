@@ -56,7 +56,7 @@ class HomeComponent extends Component {
                         </Carousel.Item>
                     </Carousel>
                 </div> */}
-                <div class="parallax_section parallax_image_first">
+                <div className="parallax_section parallax_image_first">
                 </div>
                 <div className="hl">
                     <hr style={{
@@ -71,7 +71,7 @@ class HomeComponent extends Component {
                     <h3 >NVB CATEGORIES</h3>
                     <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
                         {this.state.cards.map(card =>
-                            <div className="col mb-4">
+                            <div className="col mb-4" key={card.description}>
                                 <div className="card">
                                     <div className="img-hover-zoom">
                                         <Link to="/newarrivals"><img src={image} className="card-img-top" alt="img" /></Link>
@@ -93,7 +93,7 @@ class HomeComponent extends Component {
                         borderColor: '#000000'
                     }} />
                 </div>
-                <div class="parallax_section parallax_image_second">
+                <div className="parallax_section parallax_image_second">
                 </div>
                 {/* <div>
                     <h3 style={{ textAlign: 'center' }}>NVB IMPACT</h3>
@@ -120,7 +120,7 @@ class HomeComponent extends Component {
                     <h3 >NVB CRAFTS</h3>
                     <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
                         {this.state.crafts.map(craft =>
-                            <div className="col mb-4">
+                            <div className="col mb-4" key={craft.description}>
                                 <div className="card">
                                     <div className="img1-hover-zoom">
                                         <Link to="/block-making"><img src={block} className="card-img-top" alt="img" width="100%" /></Link>
@@ -150,7 +150,7 @@ class HomeComponent extends Component {
                     {/* eslint-disable-next-line */}
                     <marquee>
                         {this.state.crafts.map(craft =>
-                            <img src={image} alt="img" width="20%" height="300px" style={{ margin: "1%" }} />
+                            <img src={image} alt="img" width="20%" height="300px" style={{ margin: "1%" }} key={craft.description}/>
                         )}
                     </marquee>
                 </div>
