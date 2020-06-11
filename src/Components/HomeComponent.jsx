@@ -55,7 +55,9 @@ class HomeComponent extends Component {
                             />
                         </Carousel.Item>
                     </Carousel>
+                    {}
                 </div> */}
+                
                 <div className="parallax_section parallax_image_first">
                 </div>
                 <div className="hl">

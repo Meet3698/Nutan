@@ -19,7 +19,7 @@ function App() {
   return (
     <div style={{overflowX:'hidden'}}>
       <Router>
-        <HeaderComponent />
+        <HeaderComponent/>
         <Switch>
           <Route path="/Nutan" component={HomeComponent} />
           <Route path="/home" component={HomeComponent} />

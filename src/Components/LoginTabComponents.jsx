@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -50,19 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FullWidthTabs() {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     name : "",
-  //     email : "",
-  //     phone : 0,
-  //     password : "",
-  //     cpassword : ""
-  //   }
-  // }
-
-  // render(){
+const FullWidthTabs = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -97,13 +85,26 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <LoginComponent/>
+          <LoginComponent methods={props.methods}/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <RegisterComponent/>
+          <RegisterComponent  methods={props.methods}/>
         </TabPanel>
       </SwipeableViews>
     </div>
   );
   // }
+}
+
+export default class LoginTabComponent extends Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    return(
+      <div>
+        <FullWidthTabs methods={this.props.methods}/>
+      </div>
+    )
+  }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
 class RegisterComponent extends Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class RegisterComponent extends Component {
             email: "",
             phone: "",
             password: "",
-            cpassword: ""
+            cpassword: "",
+            flag:false
         }
 
         this.change = this.change.bind(this)
@@ -43,7 +45,7 @@ class RegisterComponent extends Component {
             alert("Mobile number should be 10 digits only")
         }
         else {
-            Axios.post("http://localhost:4000/register", { name: this.state.name, email: this.state.email, phone: this.state.phone, password: this.state.password }).then((response) => {
+            Axios.post("http://localhost:4000/user/register", this.state).then((response) => {
                 console.log(response.data);
 
                 if (response.data === "Email") {
@@ -53,7 +55,9 @@ class RegisterComponent extends Component {
                     alert(response.data + " is already registered")
                 }
                 else {
-                    console.log("in else part");
+                    this.setState({
+                        flag:true
+                    })
                 }
             })
         }
@@ -74,13 +78,12 @@ class RegisterComponent extends Component {
                         {/* <Form.Label>Confirm Password</Form.Label> */}
                         <Form.Control type="password" placeholder="Confirm Password" name="cpassword" value={this.state.cpassword} onChange={this.change} style={{ margin: '1%' }} />
                     </Form.Group>
-                    <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
                     <Button variant="primary" onClick={this.submit}>
                         Register
                     </Button>
                 </Form>
+                {this.state.flag && <><Redirect to='/account'/>{this.props.methods.onHide()}</>}
+
             </div>
         )
     }
