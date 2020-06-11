@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import about1 from '../images/about1.jpg'
 import impact from '../images/impact.jpg'
 import './style.css'
-import { Container, Col, Row } from "react-bootstrap";
 
 class AboutComponent extends Component {
     componentDidMount() {
@@ -47,19 +46,19 @@ class AboutComponent extends Component {
                         <h6 className="text-justify" style={{ lineHeight: "30px" }}>Working towards our goals on a daily basis, we envision ourselves as the world’s leading brand for Indian Ethnic Wear. Driven by customer obsession and technological prowess, we respect the divide between modern automation and the irrefutable subtleties of hand-made precision. We aspire to stay true to our core values whilst focusing on the customer and the artisan in an equal sense. Providing a flawless shopping experience through and through, we’re gradually increasing artisanal employment every single step of the way. </h6>
 
                     </div>
-                    <div style={{ marginTop: '25%' }}>
-                        <div class="row">
-                            <div class="column">
+                    <div style={{ marginTop: '25%'}}>
+                        <div className="row">
+                            <div className="column">
                                 <img src={impact} alt="" />
                             </div>
-                            <div class="column">
+                            <div className="column">
                                 <img src={impact} alt="" />
                                 <img src={impact} alt="" />
                             </div>
-                            <div class="column">
+                            <div className="column">
                                 <img src={impact} alt="" />
                             </div>
-                            <div class="column">
+                            <div className="column">
 
                             </div>
                         </div>

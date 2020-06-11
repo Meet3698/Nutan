@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Modal, Button, Tabs, Tab, Form } from 'react-bootstrap'
+import { Navbar, Nav, Modal, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { Search, Phone, User, ShoppingBag } from 'react-feather'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
@@ -8,6 +8,7 @@ import StyledBadge from '@material-ui/core/Badge';
 import './bootstrap.css'
 import { Popover } from "react-bootstrap";
 import LoginTab from './LoginTabComponents'
+
 class HeaderComponent extends Component {
     constructor(props) {
         super(props)
@@ -56,56 +57,6 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Header>
             <Modal.Body style={{padding:'0px',textAlign:'center'}}>
                 <LoginTab/>
-                {/* <Tabs defaultActiveKey="login" id="uncontrolled-tab-example" >
-                    <Tab eventKey="login" title="Login">
-                        <Form>
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
-                                <Form.Text className="text-muted">
-                                    We'll never share your email with anyone else.
-    </Form.Text>
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-                            <Button variant="primary" type="submit">
-                                Login
-  </Button>
-                        </Form>
-                    </Tab>
-                    <Tab eventKey="register" title="Register">
-                    <Form>
-                            <Form.Group controlId="formBasicEmail">
-                            <Form.Label> Name </Form.Label>
-                                <Form.Control type="text" placeholder="Enter Name" />
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
-                                <Form.Text className="text-muted">
-                                    We'll never share your email with anyone else.
-    </Form.Text>
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
-                                <Form.Label>Confirm Password</Form.Label>
-                                <Form.Control type="password" placeholder="Confirm Password" />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-                            <Button variant="primary" type="submit">
-                                Register
-  </Button>
-                        </Form>
-                    </Tab>
-                </Tabs> */}
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Close</Button>
