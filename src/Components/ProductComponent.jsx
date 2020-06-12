@@ -28,8 +28,6 @@ class ProductComponent extends Component {
             this.setState({
                 cards: response.data[0]
             })
-            // console.log(this.state.cards);
-            
         })
         if (window.innerWidth <= 600) {
             this.setState({ drawerActivate: true });
@@ -91,7 +89,15 @@ class ProductComponent extends Component {
                                     borderColor: '#000000'
                                 }} />
                             </div>
-                            <h6> SELECT SIZE : </h6> 
+                            <h6> SELECT SIZE : </h6>
+                            {this.state.buttons.map(button => {
+                                <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
+                            })}
+                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
+                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
+                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
+                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
+                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button> 
                             <div>
                             <h6 style={{float:'left'}}>Quantity : &nbsp;&nbsp;</h6> 
                                 
