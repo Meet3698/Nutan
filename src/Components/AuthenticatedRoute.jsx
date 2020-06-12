@@ -1,19 +1,31 @@
-import React,{ Component } from "react"
+import React, { Component } from "react"
 import AuthenticationService from "../AuthenticationService";
 import { Route, Redirect } from "react-router-dom";
 
-class AuthenticatedRoute extends Component{
-    
-    render(){    
-        console.log(AuthenticationService.isUserLoggedIn())
-        if(AuthenticationService.isUserLoggedIn()===true)
-        {            
-            return <Route {...this.props}/>
+class AuthenticatedRoute extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            res: ''
         }
-        else
-        {
-            return <Redirect to="/home"/>
-        }
+    }
+    componentDidMount() {
+        AuthenticationService.isUserLoggedIn().then((response) => {
+            if (response) {
+                this.setState({
+                    res: <Route {...this.props} />
+                })
+            }
+            else {
+                this.setState({
+                    res: <Redirect to="/home" />
+                })
+            }
+        })
+    }
+
+    render() {
+        return (this.state.res)
     }
 }
 
