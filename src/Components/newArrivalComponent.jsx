@@ -5,7 +5,8 @@ import image from '../images/sample.JPG'
 import banner from '../images/Nutan_opening.jpg'
 import FilterComponent from './FilterComponent'
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Axios from "axios";
 
 class newArrivalComponent extends Component {
     constructor(props) {
@@ -13,21 +14,25 @@ class newArrivalComponent extends Component {
         this.state = {
             drawerActivate: false,
             drawer: false,
-            cards: [
-                { title: "Item 1", description: "Description" },
-                { title: "Item 2", description: "Description" },
-                { title: "Item 3", description: "Description" },
-                { title: "Item 4", description: "Description" },
-                { title: "Item 5", description: "Description" }
-            ]
+            cards: [],
+            props:{}
         }
     }
 
     componentWillMount() {
         if (window.innerWidth <= 600) {
             this.setState({ drawerActivate: true });
+           
         }
-
+        Axios.get("http://localhost:4000/product/newarrival").then((response) => {
+            console.log(response.data);
+            
+            this.setState({
+                cards: response.data
+            })
+            // console.log(this.state.cards);
+            
+        })
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 600) {
                 this.setState({ drawerActivate: true });
@@ -36,7 +41,7 @@ class newArrivalComponent extends Component {
                 this.setState({ drawerActivate: false })
             }
         });
-         window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
 
         // window.addEventListener('scroll', this.listenScrollEvent)
 
@@ -44,7 +49,7 @@ class newArrivalComponent extends Component {
     render() {
         return (
             <div className="mainContainer">
-                {this.state.drawerActivate ? <ForMobile cards={this.state.cards} /> : <ForPC cards={this.state.cards} />}
+                {this.state.drawerActivate ? <ForMobile cards={this.state.cards} props={this.props}/> : <ForPC cards={this.state.cards} props={this.props} />}
             </div>
         )
     }
@@ -90,23 +95,29 @@ const ForPC = (props) => {
                         {props.cards.map(card =>
                             <div className="col mb-4">
                                 <div className="card">
-                                <img src={image} className="card-img-top" alt="img" width="10" height="500" />
+                                    <img src={image} className="card-img-top" alt="img" width="10" height="500" />
                                     <div className="card-body">
-                                        <h5 className="card-title">{card.title}</h5>
-                                        <p className="card-text">{card.description}</p>
-                                        <button className="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
+                                        <h5 className="card-title">{card.productName}</h5>
+                                        <p className="card-text">{card.productDescription}</p>
+                                        <p className="card-text">₹ {card.productPrice}</p>
+                                        <button className="btn" onClick={()=>buy(props.props,card.productName)}>Buy</button>
                                     </div>
                                 </div>
                             </div>
                         )}
                     </div>
-
                 </Col>
             </Row>
         </Container>
     )
 }
 
+const buy = (props,name) => {
+    props.history.push({
+        pathname: '/productDetails',
+        productName : name
+    })
+}
 const ForMobile = (props) => {
     return (
         // <Container fluid>
@@ -218,9 +229,10 @@ const ForMobile = (props) => {
                         <div className="card">
                             <img src={image} className="card-img-top" alt="img" width="20%" />
                             <div className="card-body">
-                                <h5 className="card-title">{card.title}</h5>
-                                <p className="card-text">{card.description}</p>
-                                <button className="btn"><Link className="nav-link" to="/productDetails">Buy</Link></button>
+                                <h5 className="card-title">{card.productName}</h5>
+                                <p className="card-text">{card.productDescription}</p>
+                                <p className="card-text">₹ {card.productPrice}</p>
+                                <button className="btn" onClick={()=>buy(props.props,card.productName)}>Buy</button>
                             </div>
                         </div>
                     </div>

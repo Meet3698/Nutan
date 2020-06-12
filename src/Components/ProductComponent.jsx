@@ -4,7 +4,7 @@ import './style.css'
 import { Table, Carousel,Card, Accordion } from 'react-bootstrap'
 import image from '../images/sample.JPG'
 import CursorZoom from 'react-cursor-zoom';
-
+import Axios from 'axios'
 // import Tab from 'react-bootstrap/Tab'
 import { Container, Row, Col, Tab, Tabs, Nav, Breadcrumb, Form, Button } from "react-bootstrap";
 class ProductComponent extends Component {
@@ -14,19 +14,23 @@ class ProductComponent extends Component {
             drawerActivate: false,
             drawer: false,
             count:0,
-            cards: [
-                { title: "Item 1", description: "Description" },
-                { title: "Item 2", description: "Description" },
-                { title: "Item 3", description: "Description" },
-                { title: "Item 4", description: "Description" }
-            ]
+            cards: {},
+            cards1:[]
         }
         this.increment = this.increment.bind(this)
         this.decrement = this.decrement.bind(this)
     }
     componentWillMount() {
         window.scrollTo(0, 0)
-
+        Axios.post("http://localhost:4000/product/productdetail",{productName : this.props.location.productName}).then((response) => {
+            console.log(response.data[0]);
+            
+            this.setState({
+                cards: response.data[0]
+            })
+            // console.log(this.state.cards);
+            
+        })
         if (window.innerWidth <= 600) {
             this.setState({ drawerActivate: true });
         }
@@ -74,11 +78,11 @@ class ProductComponent extends Component {
                                 <Breadcrumb.Item>
                                     Top Wear
                             </Breadcrumb.Item>
-                                <Breadcrumb.Item active>Roz Meher Nida Kurta</Breadcrumb.Item>
+                                <Breadcrumb.Item active>{this.state.cards.productName}</Breadcrumb.Item>
                             </Breadcrumb>
-                            <h5>Roz Meher Nida Kurta</h5>
-                            Pink Block Printed Straight Cotton Kurta<br />
-                            1,950.00
+                            <h5>{this.state.cards.productName}</h5>
+                            {this.state.cards.productDescription}<br />
+                            {this.state.cards.productPrice}
                             <div className="hl">
                                 <hr style={{
                                     color: '#000000',
@@ -112,7 +116,7 @@ class ProductComponent extends Component {
                     </div>
                 <div className="productSpace" >
                     <h3 style={{ textAlign: 'center' }}>PRODUCT DETAILS</h3>
-                    {this.state.drawerActivate ? <MobileProductDetails /> : <PCProductDetails />}
+                    {this.state.drawerActivate ? <MobileProductDetails cards={this.state.cards}/> : <PCProductDetails cards={this.state.cards}/>}
                 </div>
                 <Container>
                     <div className="hl">
@@ -127,7 +131,7 @@ class ProductComponent extends Component {
                     <div className="productSpace" style={{ textAlign: 'center' }}>
                         <h3>RELATED PRODUCTS</h3>
                         <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
-                            {this.state.cards.map(card =>
+                            {this.state.cards1.map(card =>
                                 <div className="col mb-3">
                                     <div className="card">
                                         <img src={image} className="card-img-top" alt="img" width="100%" height="200px" />
@@ -158,27 +162,27 @@ const PCProductDetails = (props) => {
                                 <tbody>
                                     <tr>
                                         <td><strong>Color</strong></td>
-                                        <td>Pink, Green, White</td>
+                                        <td>{props.cards.productColor}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Size</strong></td>
-                                        <td>Refer to size chart. Model is wearing size XS/UK 8.</td>
+                                        <td>{props.cards.productSize}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Length</strong></td>
-                                        <td>46 Inches</td>
+                                        <td>{props.cards.productLength}</td>
                                     </tr>
                                     <tr>
                                         <td> <strong>Wash Care</strong> </td>
-                                        <td>Hand wash separately in cold water. Do not soak & scrub. Dry in Shade.</td>
+                                        <td>{props.cards.productCare}</td>
                                     </tr>
                                     <tr>
                                         <td> <strong>Composition</strong></td>
-                                        <td>Cambric (100% Cotton)</td>
+                                        <td>{props.cards.productComposition}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Style No.</strong></td>
-                                        <td>FGMK20-15</td>
+                                        <td>{props.cards.productStyleNo}</td>
                                     </tr>
                                 </tbody>
                             </Table>
@@ -228,30 +232,30 @@ const MobileProductDetails = (props) => {
                 <Card.Body>
                 <h6 className="productSpace">Laden with an exquisite hand block-printed jaal pattern, the Roz Meher Nida Kurta comes in a fusion of floral hues. Exemplifying expert craftsmanship, this soft cotton kurta is embellished with hand-embroidered thread work, mirror work and sequins work. The yoke features buti motifs and delicate lace detailing. Wear it with the Roz Meher Nida Straight Farsi pants to complete the look.</h6> 
                             <Table responsive style={{width:'100%'}}>
-                                <tbody>
+                            <tbody>
                                     <tr>
                                         <td><strong>Color</strong></td>
-                                        <td>Pink, Green, White</td>
+                                        <td>{props.cards.productColor}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Size</strong></td>
-                                        <td>Refer to size chart. Model is wearing size XS/UK 8.</td>
+                                        <td>{props.cards.productSize}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Length</strong></td>
-                                        <td>46 Inches</td>
+                                        <td>{props.cards.productLength}</td>
                                     </tr>
                                     <tr>
                                         <td> <strong>Wash Care</strong> </td>
-                                        <td>Hand wash separately in cold water. Do not soak & scrub. Dry in Shade.</td>
+                                        <td>{props.cards.productCare}</td>
                                     </tr>
                                     <tr>
                                         <td> <strong>Composition</strong></td>
-                                        <td>Cambric (100% Cotton)</td>
+                                        <td>{props.cards.productComposition}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Style No.</strong></td>
-                                        <td>FGMK20-15</td>
+                                        <td>{props.cards.productStyleNo}</td>
                                     </tr>
                                 </tbody>
                             </Table>

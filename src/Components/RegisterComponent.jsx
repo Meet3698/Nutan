@@ -46,7 +46,6 @@ class RegisterComponent extends Component {
         }
         else {
             Axios.post("http://localhost:4000/user/register", this.state).then((response) => {
-                console.log(response.data);
 
                 if (response.data === "Email") {
                     alert(response.data + " is already registered")
