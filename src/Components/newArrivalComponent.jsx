@@ -44,7 +44,6 @@ class newArrivalComponent extends Component {
     render() {
         return (
             <div className="mainContainer">
-                {console.log("hello")}
                 {this.state.drawerActivate ? <ForMobile cards={this.state.cards} /> : <ForPC cards={this.state.cards} />}
             </div>
         )
