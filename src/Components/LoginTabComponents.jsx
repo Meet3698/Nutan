@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -7,7 +7,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { Form, Button } from 'react-bootstrap';
+import RegisterComponent from './RegisterComponent'
+import LoginComponent from './LoginComponent';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -48,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FullWidthTabs() {
+const FullWidthTabs = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -60,6 +62,7 @@ export default function FullWidthTabs() {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
+
 
   return (
     <div className={classes.root}>
@@ -82,42 +85,26 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <Form style={{ padding: 'auto' }}>
-            <Form.Group controlId="formBasicEmail">
-              {/* <Form.Label>Email address</Form.Label> */}
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-              {/* <Form.Label>Password</Form.Label> */}
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Login
-  </Button>
-          </Form>
+          <LoginComponent methods={props.methods}/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-              {/* <Form.Label> Name </Form.Label> */}
-              <Form.Control type="text" placeholder="Enter Name" style={{ margin: '1%' }} />
-              {/* <Form.Label>Email address</Form.Label> */}
-              <Form.Control type="email" placeholder="Enter email" style={{ margin: '1%' }} />
-              {/* <Form.Label>Password</Form.Label> */}
-              <Form.Control type="password" placeholder="Password" style={{ margin: '1%' }} />
-              {/* <Form.Label>Confirm Password</Form.Label> */}
-              <Form.Control type="password" placeholder="Confirm Password" style={{ margin: '1%' }} />
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Register
-  </Button>
-          </Form>
+          <RegisterComponent  methods={props.methods}/>
         </TabPanel>
       </SwipeableViews>
     </div>
   );
+  // }
+}
+
+export default class LoginTabComponent extends Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    return(
+      <div>
+        <FullWidthTabs methods={this.props.methods}/>
+      </div>
+    )
+  }
 }

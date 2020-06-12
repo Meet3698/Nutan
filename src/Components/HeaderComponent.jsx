@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Modal, Button} from 'react-bootstrap'
+import { Navbar, Nav, Modal, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { Search, Phone, User, ShoppingBag } from 'react-feather'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
@@ -15,6 +15,7 @@ class HeaderComponent extends Component {
         this.state = { drawerActivate: false, drawer: false };
     }
     componentWillMount() {
+        
         if (window.innerWidth <= 600) {
             this.setState({ drawerActivate: true });
         }
@@ -55,8 +56,8 @@ function MyVerticallyCenteredModal(props) {
                     Login/Register
           </Modal.Title>
             </Modal.Header>
-            <Modal.Body style={{padding:'0px',textAlign:'center'}}>
-                <LoginTab/>
+            <Modal.Body style={{ padding: '0px', textAlign: 'center' }}>
+                <LoginTab methods={props}/>
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Close</Button>
@@ -65,7 +66,7 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-const ForMobile = () => {
+const ForMobile = (props) => {
     const [modalShow, setModalShow] = React.useState(false);
     return (
         <header>
@@ -126,7 +127,7 @@ const ForMobile = () => {
     )
 }
 
-const ForPC = () => {
+const ForPC = (props) => {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
@@ -147,6 +148,7 @@ const ForPC = () => {
                     <Link className="nav-link" to="/"><Search /></Link>
                     <Link className="nav-link" to="/"><Phone /></Link>
                     <Link className="nav-link" onClick={() => setModalShow(true)}><User /></Link>
+                    
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
