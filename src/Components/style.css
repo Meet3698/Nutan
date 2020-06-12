@@ -276,7 +276,7 @@ select {
     background-size: cover;
     background-position: center 22vh ;
     position:relative;
-    /* width: 100%; */
+    max-width: 100%;
  }
 
  .parallax_image_first{
