@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import AuthenticationService from '../AuthenticationService'
 
 class LoginComponent extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class LoginComponent extends Component {
     this.state = {
       email: "",
       password: "",
-      flag : false
+      flag: false
     }
 
     this.change = this.change.bind(this)
@@ -23,7 +24,7 @@ class LoginComponent extends Component {
   }
 
   submit() {
-    
+
     if (this.state.email === "") {
       alert("Email is required")
     }
@@ -33,12 +34,13 @@ class LoginComponent extends Component {
     else {
       Axios.post("http://localhost:4000/user/login", this.state).then((response) => {
 
-        if(response.data==="success"){
+        if (response.data.message === "success") {
+          AuthenticationService.setSession(response.data.token)
           this.setState({
-            flag : true
+            flag: true
           })
         }
-        else{
+        else {
           alert("Invalid Cred")
         }
       })
@@ -58,7 +60,7 @@ class LoginComponent extends Component {
             Login
             </Button>
         </Form>
-        {this.state.flag && <><Redirect to='/account'/>{this.props.methods.onHide()}</>}
+        {this.state.flag && <><Redirect to='/account' />{this.props.methods.onHide()}</>}
       </div>
     )
   }

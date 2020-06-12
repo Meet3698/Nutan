@@ -14,12 +14,13 @@ import FooterComponent from './Components/FooterComponent'
 import './Components/style.css'
 import './Components/bootstrap.css'
 import './App.css';
+import AuthenticatedRoute from './Components/AuthenticatedRoute'
 
 function App() {
   return (
-    <div style={{overflowX:'hidden'}}>
+    <div style={{ overflowX: 'hidden' }}>
       <Router>
-        <HeaderComponent/>
+        <HeaderComponent />
         <Switch>
           <Route path="/Nutan" component={HomeComponent} />
           <Route path="/home" component={HomeComponent} />
@@ -29,7 +30,7 @@ function App() {
           <Route path="/new-arrivals" component={newArrivalComponent} />
           <Route path="/steals" component={StealsComponent} />
           <Route path="/exhibition" component={ExhibitionComponent} />
-          <Route path="/account" component={AccountComponent} />
+          <AuthenticatedRoute path="/account" component={AccountComponent} />
           <Route path="/block-making" component={BlockMakingComponent} />
           <Route path="/aboutus" component={AboutComponent} />
         </Switch>
