@@ -35,7 +35,7 @@ class LoginComponent extends Component {
       Axios.post("http://localhost:4000/user/login", this.state).then((response) => {
 
         if (response.data.message === "success") {
-          AuthenticationService.setSession(response.data.token)
+          AuthenticationService.setSession(response.data.token,this.state.email)
           this.setState({
             flag: true
           })

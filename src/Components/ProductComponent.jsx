@@ -4,6 +4,7 @@ import './style.css'
 import { Table, Carousel, Card, Accordion } from 'react-bootstrap'
 import image from '../images/sample.JPG'
 // import CursorZoom from 'react-cursor-zoom';
+import AuthenticationService from '../AuthenticationService'
 import Axios from 'axios'
 // import Tab from 'react-bootstrap/Tab'
 import { Container, Row, Col, Tab, Tabs, Nav, Breadcrumb, Form, Button } from "react-bootstrap";
@@ -30,6 +31,7 @@ class ProductComponent extends Component {
         this.increment = this.increment.bind(this)
         this.decrement = this.decrement.bind(this)
         this.select = this.select.bind(this)
+        this.addToCart = this.addToCart.bind(this)
     }
     componentWillMount() {
         window.scrollTo(0, 0)
@@ -59,13 +61,36 @@ class ProductComponent extends Component {
         });
 
     }
-    increment = () => {
-        if(this.state.count <= this.state.sizes[this.state.prev] )
-        {this.setState(prevState => {
-            return { count: prevState.count + 1 }
-        })
+
+    addToCart() {
+        if (this.state.count === 0) {
+            alert("Quantity should not be zero")
+        } else {
+            const email = AuthenticationService.getSession()
+            console.log(email);
+
+            if (email === null) {
+                alert('Please Login')
+            }
+            else {
+                Axios.post("http://localhost:4000/product/addorder", { email: email, productName: this.props.location.productName, productQuantity: this.state.count, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
+                    if (response.data === 'OK') {
+                        this.props.history.push('/cart')
+                    } else {
+                        alert("Internal Server Error")
+                    }
+                })
+            }
+        }
     }
-        else{
+
+    increment = () => {
+        if (this.state.count <= this.state.sizes[this.state.prev]) {
+            this.setState(prevState => {
+                return { count: prevState.count + 1 }
+            })
+        }
+        else {
             alert("This is the maximum quantity available in this size")
         }
     }
@@ -83,7 +108,7 @@ class ProductComponent extends Component {
     select(id) {
         try {
             this.setState({
-                count : 0
+                count: 0
             })
             document.getElementById(this.state.prev).disabled = false
         } catch (error) {
@@ -95,6 +120,17 @@ class ProductComponent extends Component {
         })
     }
 
+    // selectColor(id) {
+    //     try {
+    //         document.getElementById(this.state.prev).disabled = false
+    //     } catch (error) {
+
+    //     }
+    //     document.getElementById(id).disabled = true
+    //     this.setState({
+    //         prev: id
+    //     })
+    // }
     render() {
         return (
             <div className="mainContainer">
@@ -127,17 +163,15 @@ class ProductComponent extends Component {
                             </div>
                             <h6> SELECT SIZE : </h6>
                             {/* eslint-disable-next-line */}
-                            {this.state.buttons.map(button => 
-                            {if (this.state.sizes[button.id] !== 0) {
-                                   return <Button style={{ borderRadius: '50%', backgroundColor: 'white', color: 'black', borderColor: 'black', height: '50px', width: '50px', margin: '5px' }} name="size" value={button.id} key={button.id} id={button.id} onClick={() => this.select(button.id)}>{button.id}</Button>
+                            {this.state.buttons.map(button => {
+                                if (this.state.sizes[button.id] !== 0) {
+                                    return <Button style={{ borderRadius: '50%', backgroundColor: 'white', color: 'black', borderColor: 'black', height: '50px', width: '50px', margin: '5px' }} name="size" value={button.id} key={button.id} id={button.id} onClick={() => this.select(button.id)}>{button.id}</Button>
                                 }
                             })}
-
-                            {/* <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
-                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
-                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
-                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>
-                            <Button style={{borderRadius:'50%', backgroundColor:'white',color:'black',borderColor:'black'}} name="size" value="xs">xs</Button>  */}
+                            {/* <h6>Select Color : </h6>
+                            {this.state.cards.productColor.map(color => {
+                                return <Button style={{ borderRadius: '50%', backgroundColor: color, height: '30px', width: '30px', margin: '5px' }} name="color" value={color} key={color} id={color} onClick={() => this.selectColor(color)}/>
+                            })} */}
                             <div>
                                 <h6 style={{ float: 'left' }}>Quantity : &nbsp;&nbsp;</h6>
 
@@ -146,7 +180,7 @@ class ProductComponent extends Component {
                                 <button onClick={this.increment} className="btn" style={{ border: 'solid 1px' }}>+</button>
                             </div>
                             <div style={{ marginTop: '5%' }}>
-                                <button className="btn" style={{ border: 'solid 1px' }}>ADD TO BAG</button>
+                                <button className="btn" style={{ border: 'solid 1px' }} onClick={this.addToCart}>ADD TO BAG</button>
                             </div>
                         </Col>
                     </Row>

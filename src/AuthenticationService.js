@@ -1,12 +1,19 @@
 import Axios from "axios"
 
 class AuthenticationService {
-    setSession(token) {
+    setSession(token,email) {
         sessionStorage.setItem("token", token)
+        sessionStorage.setItem("email",email )
     }
 
     removeSession() {
         sessionStorage.removeItem("token")
+        sessionStorage.removeItem("email")
+
+    }
+
+    getSession(){
+        return sessionStorage.getItem("email")
     }
 
     isUserLoggedIn() {
