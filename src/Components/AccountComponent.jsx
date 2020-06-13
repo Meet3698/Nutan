@@ -3,9 +3,9 @@ import { Row, Col } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav'
 import Tab from 'react-bootstrap/Tab'
 import coin from '../images/coin.png'
-import './style.css'
 import AuthenticationService from "../AuthenticationService";
 import {Link} from 'react-router-dom'
+
 class AccountComponent extends Component {
     componentDidMount() {
 

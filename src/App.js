@@ -12,9 +12,6 @@ import AccountComponent from './Components/AccountComponent'
 import AboutComponent from './Components/AboutComponent'
 import FooterComponent from './Components/FooterComponent'
 import CartComponent from './Components/CartComponent'
-
-import './Components/style.css'
-import './Components/bootstrap.css'
 import './App.css';
 import AuthenticatedRoute from './Components/AuthenticatedRoute'
 

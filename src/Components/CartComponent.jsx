@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react'
-import './style.css'
 import Card from 'react-bootstrap/Card'
 import Axios from 'axios'
 import AuthenticationService from '../AuthenticationService'

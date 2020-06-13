@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import './bootstrap.css'
-import './style.css'
 import image from '../images/sample.JPG'
 import banner from '../images/product_banner_desktop4june.jpg'
 import FilterComponent from './FilterComponent'

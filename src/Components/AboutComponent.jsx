@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import about1 from '../images/about1.jpg'
 import impact from '../images/impact.jpg'
-import './style.css'
 
 class AboutComponent extends Component {
     componentDidMount() {

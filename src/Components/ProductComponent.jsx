@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Sample from '../images/sample.JPG'
-import './style.css'
+// import './style.css'
 import { Table, Carousel, Card, Accordion } from 'react-bootstrap'
 import image from '../images/sample.JPG'
 // import CursorZoom from 'react-cursor-zoom';
@@ -139,10 +139,9 @@ class ProductComponent extends Component {
     render() {
         return (
             <div className="mainContainer">
-                {/* {this.state.flag &&
-                    <> */}
                 <Container>
-                    <Row>
+                    <Row style={{ width: '100%' }}>
+
                         <Col sm={12} md={6}>
                             {this.state.drawerActivate ? <ForMobile /> : <ForPC />}
                         </Col>
@@ -242,71 +241,67 @@ class ProductComponent extends Component {
 const PCProductDetails = (props) => {
     return (
         <Container>
-            <Row>
-                <Col>
-                    <Tabs defaultActiveKey="productDetails" id="uncontrolled-tab-example">
-                        <Tab eventKey="productDetails" title="Product Details">
-                            <h6 className="productSpace" style={{ wordWrap: 'break-word' }}>Laden with an exquisite hand block-printed jaal pattern, the Roz Meher Nida Kurta comes in a fusion of floral hues. Exemplifying expert craftsmanship, this soft cotton kurta is embellished with hand-embroidered thread work, mirror work and sequins work. The yoke features buti motifs and delicate lace detailing. Wear it with the Roz Meher Nida Straight Farsi pants to complete the look.</h6>
-                            <Table className="responsive">
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Color</strong></td>
-                                        <td>{props.cards.productColor}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Size</strong></td>
-                                        <td>{props.cards.productSize}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Length</strong></td>
-                                        <td>{props.cards.productLength}</td>
-                                    </tr>
-                                    <tr>
-                                        <td> <strong>Wash Care</strong> </td>
-                                        <td>{props.cards.productCare}</td>
-                                    </tr>
-                                    <tr>
-                                        <td> <strong>Composition</strong></td>
-                                        <td>{props.cards.productComposition}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Style No.</strong></td>
-                                        <td>{props.cards.productStyleNo}</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Tab>
-                        <Tab eventKey="Review" title="Product Review">
-                            <h6 className="productSpace"> Product Review </h6>
-                        </Tab>
-                        <Tab eventKey="checkDeliveryOptions" title="Check Delivery Options">
-                            <h4 className="productSpace">Does NVB deliver to my Location?</h4>
-                            <Form style={{ display: 'inline-block' }}>
-                                <Form.Row className="align-items-center">
-                                    <Col xs="auto">
-                                        <Form.Label htmlFor="inlineFormInput" srOnly>
-                                            Enter Your Pincode
+            <Tabs defaultActiveKey="productDetails" id="uncontrolled-tab-example">
+                <Tab eventKey="productDetails" title="Product Details">
+                    <h6 className="productSpace">Laden with an exquisite hand block-printed jaal pattern, the Roz Meher Nida Kurta comes in a fusion of floral hues. Exemplifying expert craftsmanship, this soft cotton kurta is embellished with hand-embroidered thread work, mirror work and sequins work. The yoke features buti motifs and delicate lace detailing. Wear it with the Roz Meher Nida Straight Farsi pants to complete the look.</h6>
+                    <Table className="responsive">
+                        <tbody>
+                            <tr>
+                                <td><strong>Color</strong></td>
+                                <td>{props.cards.productColor}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Size</strong></td>
+                                <td>{props.cards.productSize}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Length</strong></td>
+                                <td>{props.cards.productLength}</td>
+                            </tr>
+                            <tr>
+                                <td> <strong>Wash Care</strong> </td>
+                                <td>{props.cards.productCare}</td>
+                            </tr>
+                            <tr>
+                                <td> <strong>Composition</strong></td>
+                                <td>{props.cards.productComposition}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Style No.</strong></td>
+                                <td>{props.cards.productStyleNo}</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </Tab>
+                <Tab eventKey="Review" title="Product Review">
+                    <h6 className="productSpace"> Product Review </h6>
+                </Tab>
+                <Tab eventKey="checkDeliveryOptions" title="Check Delivery Options">
+                    <h4 className="productSpace">Does NVB deliver to my Location?</h4>
+                    <Form style={{ display: 'inline-block' }}>
+                        <Form.Row className="align-items-center">
+                            <Col xs="auto">
+                                <Form.Label htmlFor="inlineFormInput" srOnly>
+                                    Enter Your Pincode
                                     </Form.Label>
-                                        <Form.Control
-                                            className="mb-2"
-                                            id="inlineFormInput"
-                                            placeholder="Enter Your Pincode"
-                                        />
-                                    </Col>
-                                    <Col xs="auto">
-                                        <Button type="submit" className="mb-2">
-                                            Check
+                                <Form.Control
+                                    className="mb-2"
+                                    id="inlineFormInput"
+                                    placeholder="Enter Your Pincode"
+                                />
+                            </Col>
+                            <Col xs="auto">
+                                <Button type="submit" className="mb-2">
+                                    Check
                                     </Button>
-                                    </Col>
-                                </Form.Row>
-                            </Form>
-                        </Tab>
-                        <Tab eventKey="Return" title="Return & Exchange">
-                            <h6 className="productSpace"> -15 Days free return and exchange (<a href="/">Read More</a>) </h6>
-                        </Tab>
-                    </Tabs>
-                </Col>
-            </Row>
+                            </Col>
+                        </Form.Row>
+                    </Form>
+                </Tab>
+                <Tab eventKey="Return" title="Return & Exchange">
+                    <h6 className="productSpace"> -15 Days free return and exchange (<a href="/">Read More</a>) </h6>
+                </Tab>
+            </Tabs>
         </Container>
     )
 }
@@ -400,8 +395,8 @@ const MobileProductDetails = (props) => {
 const ForPC = (props) => {
     return (
         <Tab.Container id="bottom-tabs-example" defaultActiveKey="first">
-            <Row>
-                <Col sm={3} >
+            <Row style={{ width: '100%' }}>
+                <Col sm={2} >
                     <Nav variant="pills" className="flex-column">
                         <Nav.Item>
                             <Nav.Link eventKey="first"><img src={Sample} alt="sample" style={{ width: "100%", height: "15vh" }} /></Nav.Link>
@@ -414,10 +409,10 @@ const ForPC = (props) => {
                         </Nav.Item>
                     </Nav>
                 </Col>
-                <Col sm={9}>
+                <Col sm={10}>
                     <Tab.Content>
                         <Tab.Pane eventKey="first">
-                            <img src={Sample} alt="sample" style={{ width: "50%", height: "80vh" }} />
+                            <img src={Sample} alt="sample" style={{ width: "100%", height: "80vh" }} />
                             {/* <CursorZoom
                                 image={{
                                     src: Sample,

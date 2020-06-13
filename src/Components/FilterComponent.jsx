@@ -2,15 +2,14 @@ import React, { Component } from "react";
 import { Nav } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
-import './style.css'
 
 class FilterComponent extends Component {
     render() {
         return (
             <div>
-                <Nav className="col-md-2 d-md-block sidebar">
+                <Nav className="d-md-block sidebar">
                     <strong>FILTER BY</strong>
-                    <Accordion>
+                    <Accordion defaultActiveKey='0'>
                         <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
                             CATEGORY
                             </Accordion.Toggle>

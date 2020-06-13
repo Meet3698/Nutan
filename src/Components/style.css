@@ -5,8 +5,8 @@
 .mainContainer{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 22vh;
-    width: 100%;
 }
+
 .logoLink{
   color:#b07c83; 
   text-decoration:none;
@@ -76,7 +76,7 @@ select {
     border: none;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     background-color: white;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .sidebar-wrapper{
@@ -175,10 +175,7 @@ select {
 
 .productSpace{
   margin-top: 2%;
-}
-.block{
-  margin-left: 7%;
-  margin-right: 7%;
+  width: 100%;
 }
 
 .customLink{

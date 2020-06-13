@@ -8,7 +8,7 @@ import ss from '../images/ss.jpg'
 import gb from '../images/gb.jpg'
 import nm from '../images/nm.gif'
 import conserve from '../images/conserve.jpg'
-import './style.css'
+
 class BlockMakingComponent extends Component {
     constructor(props) {
         super(props)

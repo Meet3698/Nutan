@@ -59,8 +59,8 @@ const ForPC = (props) => {
     return (
         <div className="mainContainer">
             <Container fluid>
-                <Row>
-                    <Col xs={2} className="sidebar-wrapper">
+                <Row style={{width:'100%'}}>
+                    <Col xs={2} className="sidebar-wrapper" >
                         <FilterComponent />
                     </Col>
                     <Col xs={10} className="page-content-wrapper">
