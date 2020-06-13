@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import image from '../images/sample.JPG'
-import Col from 'react-bootstrap/Col'
 import block from '../images/block.jpg'
 import { Instagram, Facebook } from 'react-feather'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import CountUp from 'react-countup'
+import {Carousel, Button, Col, Form} from 'react-bootstrap'
+import nutan from '../images/nutan.jpg'
+import impact from '../images/impact.jpg'
 class HomeComponent extends Component {
     constructor(props) {
         super(props)
@@ -28,7 +28,7 @@ class HomeComponent extends Component {
     render() {
         return (
             <div className="mainContainer" >
-                {/* <div >
+                <div >
                     <Carousel>
                         <Carousel.Item >
                             <img
@@ -55,10 +55,10 @@ class HomeComponent extends Component {
                             />
                         </Carousel.Item>
                     </Carousel>
-                </div> */}
-                <div class="parallax_section parallax_image_first">
-                    
                 </div>
+                {/* <div className="parallax_section parallax_image_first">
+                    
+                </div> */}
                 <div className="hl">
                     <hr style={{
                         color: '#000000',
@@ -94,15 +94,15 @@ class HomeComponent extends Component {
                         borderColor: '#000000'
                     }} />
                 </div>
-                <div class="parallax_section parallax_image_second" >
+                {/* <div className="parallax_section parallax_image_second" >
                    <div style={{color:'white',textAlign:'center',height:'300px'}}>
                     <h2 className='mt-5'>Number of Clients : </h2>
                    <h2 >
                        <CountUp end={1000} duration={6} />
                     </h2>
                     </div>
-                </div>
-                {/* <div>
+                </div> */}
+                <div>
                     <h3 style={{ textAlign: 'center' }}>NVB IMPACT</h3>
                     <div className="impact">
                         <div style={{ float: 'left', width: '50vw' }}>
@@ -113,7 +113,7 @@ class HomeComponent extends Component {
                         </div>
 
                     </div>
-                </div> */}
+                </div>
                 <div className="hl">
                     <hr style={{
                         color: '#000000',
@@ -157,7 +157,7 @@ class HomeComponent extends Component {
                     {/* eslint-disable-next-line */}
                     <marquee>
                         {this.state.crafts.map(craft =>
-                            <img src={image} alt="img" width="20%" height="300px" style={{ margin: "1%" }} />
+                            <img src={image} alt="img" width="20%" height="150px" style={{ margin: "1%" }} />
                         )}
                     </marquee>
                 </div>
