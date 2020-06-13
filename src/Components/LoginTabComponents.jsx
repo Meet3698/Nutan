@@ -99,6 +99,7 @@ const FullWidthTabs = (props) => {
 export default class LoginTabComponent extends Component{
   constructor(props){
     super(props)
+    this.state={}
   }
   render(){
     return(
