@@ -5,6 +5,7 @@
 .mainContainer{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 22vh;
+    width: 100%;
 }
 .logoLink{
   color:#b07c83; 
@@ -16,7 +17,6 @@
     /* position: relative; */
 }
 
-
 .block2{
     float: right;
     /* position: relative; */
@@ -24,7 +24,7 @@
 }
 
 .hl{
-    margin-top: 2%;
+    margin-top: 5%;
 }
 
 .header{
@@ -44,14 +44,14 @@
 .header2{
     margin-top: 13vh;
     background-color: white;
-    /* position:fixed; */
+    position:fixed;
     height:4vh;
 }
 .header2_Mobile{
   padding-left:15vw;
   margin-top: 13vh;
   background-color: white;
-  /* position:fixed; */
+  position:fixed;
   height:8vh;
   z-index:50;
   width:100vw;
@@ -72,19 +72,18 @@ select {
 
 .sidebar {
     position: fixed;
-    /* z-index: 100; */
-    /* padding: 48px 0 0; */
     height: auto;
     border: none;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     background-color: white;
+    width: 100%;
 }
 
 .sidebar-wrapper{
     min-height: 100vh !important;
     width: 100vw;
     border: none;
-    /* margin-left: -1rem; */
+    margin-left: -1rem;
     -webkit-transition: margin .25s ease-out;
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
@@ -92,15 +91,14 @@ select {
 }
 
 .sidebar-wrapper .sidebar-heading {
-    /* padding: 50; */
+    padding: 50;
     font-size: 1.2rem;
 }
 
 .page-content-wrapper {
-    /* min-width: 0; */
+    min-width: 0;
     width: 100%;
 }
-
 
 .top-container {
     background-color: #f1f1f1;
@@ -123,33 +121,26 @@ select {
   }
   
   .img-hover-zoom {
-    height: 5%; /*[1.1] Set it as per your need */
-    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+    height: 5%;
+    overflow: hidden; 
   }
-  
-  
-  /* [2] Transition property for smooth transformation of images */
   .img-hover-zoom img {
     transition: transform .5s ease;
   }
   
-  /* [3] Finally, transforming the image when container gets hovered */
   .img-hover-zoom:hover img {
     transform: scale(1.2);
   }
 
   .img1-hover-zoom {
-    height: 3%; /*[1.1] Set it as per your need */
-    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+    height: 3%; 
+    overflow: hidden; 
   }
   
-  
-  /* [2] Transition property for smooth transformation of images */
   .img1-hover-zoom img {
     transition: transform .5s ease;
   }
   
-  /* [3] Finally, transforming the image when container gets hovered */
   .img1-hover-zoom:hover img {
     transform: scale(1.2);
   }
@@ -162,7 +153,6 @@ select {
   .message{
     background-color: #b07c83;
     margin-top: 2%;
-    /* height:7%; */
     padding:3%;
     color:white;
     text-align: center;
@@ -176,7 +166,6 @@ select {
   height : 6vh;
 }
 .home{
-  /* margin-top: 11vh; */
   position: relative;
 }
 
@@ -214,20 +203,20 @@ select {
   width: 100vw;
 }
 
-/* Create four equal columns that sits next to each other */
 .column {
   flex: 25%;
   max-width: 33%;
   padding: 0 4px;
 }
-.panels{
+
+/* .panels{
   position:relative;
     height:100%;
     min-height:100%;
     width:100%;
     z-index:1000;
-}
-#a{
+} */
+/* #a{
   background:#eee;
    position:fixed;
    top:0;
@@ -235,7 +224,7 @@ select {
 }
 #b{
   margin-top:100%;
-}
+} */
 .column img {
   margin-top: 8px;
   vertical-align: middle;
@@ -251,7 +240,6 @@ select {
   transform: translate(-50%,-50%);
 };
 
-/* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
     flex: 50%;
@@ -261,7 +249,7 @@ select {
 .tabs{
   display: inline-flex !important;
 }
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 600px) {
   .column {
     flex: 100%;
@@ -269,7 +257,7 @@ select {
   }
 }
 
-.parallax_section{
+/* .parallax_section{
     height: 600px;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -285,5 +273,8 @@ select {
 
 .parallax_image_second{
   background-image: url("../images/block_banner.jpg");
-}
+} */
 
+.GridContainer{
+  width: 100%;
+}

@@ -8,18 +8,32 @@ import StyledBadge from '@material-ui/core/Badge';
 import './bootstrap.css'
 import { Popover } from "react-bootstrap";
 import LoginTab from './LoginTabComponents'
+import AuthenticationService from "../AuthenticationService";
+import Axios from 'axios'
 
 class HeaderComponent extends Component {
     constructor(props) {
         super(props)
-        this.state = { drawerActivate: false, drawer: false };
+        this.state = { drawerActivate: false, drawer: false, notify: 0 };
     }
     componentWillMount() {
-        
+
         if (window.innerWidth <= 600) {
             this.setState({ drawerActivate: true });
         }
 
+        Axios.post("http://localhost:4000/product/getcount", { email: AuthenticationService.getSession()}).then((response) => {
+            if (response.data.message === "empty") {
+                this.setState({
+                    notify: 0
+                })
+            } else {
+                this.setState({
+                    notify: response.data.message
+                })
+            }
+        })
+        
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 600) {
                 this.setState({ drawerActivate: true });
@@ -28,16 +42,12 @@ class HeaderComponent extends Component {
                 this.setState({ drawerActivate: false })
             }
         });
-
-        // window.addEventListener('scroll', this.listenScrollEvent)
-
     }
 
     render() {
-        // const isMobile = window.innerWidth < 600;
         return (
             <div>
-                {this.state.drawerActivate ? <ForMobile /> : <ForPC />}
+                {this.state.drawerActivate ? <ForMobile /> : <ForPC state={this.state} />}
             </div>
         )
     }
@@ -57,7 +67,7 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
             </Modal.Header>
             <Modal.Body style={{ padding: '0px', textAlign: 'center' }}>
-                <LoginTab methods={props}/>
+                <LoginTab methods={props} />
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Close</Button>
@@ -148,7 +158,7 @@ const ForPC = (props) => {
                     <Link className="nav-link" to="/"><Search /></Link>
                     <Link className="nav-link" to="/"><Phone /></Link>
                     <Link className="nav-link" onClick={() => setModalShow(true)}><User /></Link>
-                    
+
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
@@ -160,12 +170,12 @@ const ForPC = (props) => {
                         overlay={
                             <Popover id='popover-positioned-bottom bg-info '>
                                 <h6 className="ml-1 mr-1 mb-1">No items</h6>
-                                <button className="btn ml-1 mr-1 mb-1 text-white">View Cart</button>
+                                <Link className="nav-link" style={{color:'white',backgroundColor: '#b07c83' ,border:'solid 1px', padding:'3px' ,margin:'3px'}} to="/cart">View Cart</Link>
                             </Popover>
                         }
                     >
                         <IconButton aria-label="cart">
-                            <StyledBadge badgeContent={1} color="secondary">
+                            <StyledBadge badgeContent={props.state.notify} color="secondary">
                                 <ShoppingBag />
                             </StyledBadge>
                         </IconButton>

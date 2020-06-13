@@ -6,6 +6,8 @@ import image from '../images/sample.JPG'
 // import CursorZoom from 'react-cursor-zoom';
 import AuthenticationService from '../AuthenticationService'
 import Axios from 'axios'
+import Storage from '../Storage'
+
 // import Tab from 'react-bootstrap/Tab'
 import { Container, Row, Col, Tab, Tabs, Nav, Breadcrumb, Form, Button } from "react-bootstrap";
 class ProductComponent extends Component {
@@ -25,8 +27,9 @@ class ProductComponent extends Component {
                 { id: "XL" },
                 { id: "XXL" }
             ],
-            prev: 'M',
-            sizes: {}
+            prev: '',
+            sizes: {},
+            // flag: false
         }
         this.increment = this.increment.bind(this)
         this.decrement = this.decrement.bind(this)
@@ -35,36 +38,37 @@ class ProductComponent extends Component {
     }
     componentWillMount() {
         window.scrollTo(0, 0)
-        Axios.post("http://localhost:4000/product/productdetail", { productName: this.props.location.productName }).then((response) => {
-            this.setState({
-                cards: response.data[0]
-            })
-        })
 
-        Axios.post("http://localhost:4000/product/getsize", { productName: this.props.location.productName }).then((response) => {
-            this.setState({
-                sizes: response.data[0]
-            })
-        })
-
-        if (window.innerWidth <= 600) {
-            this.setState({ drawerActivate: true });
+        if (Storage.getOrder() === null) {
+            this.props.history.push('/home')
         }
+        else {
+            this.setState({
+                cards: Storage.getOrder(),
+                sizes: Storage.getSize()
+            })
 
-        window.addEventListener('resize', () => {
             if (window.innerWidth <= 600) {
                 this.setState({ drawerActivate: true });
             }
-            else {
-                this.setState({ drawerActivate: false })
-            }
-        });
 
+            window.addEventListener('resize', () => {
+                if (window.innerWidth <= 600) {
+                    this.setState({ drawerActivate: true });
+                }
+                else {
+                    this.setState({ drawerActivate: false })
+                }
+            });
+
+        }
     }
 
     addToCart() {
         if (this.state.count === 0) {
             alert("Quantity should not be zero")
+        } else if (this.state.prev === '') {
+            alert("Please Select Size")
         } else {
             const email = AuthenticationService.getSession()
             console.log(email);
@@ -73,9 +77,10 @@ class ProductComponent extends Component {
                 alert('Please Login')
             }
             else {
-                Axios.post("http://localhost:4000/product/addorder", { email: email, productName: this.props.location.productName, productQuantity: this.state.count, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
+                Axios.post("http://localhost:4000/product/addorder", { email: email, productName: Storage.getOrder().productName, productQuantity: this.state.count, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
                     if (response.data === 'OK') {
                         this.props.history.push('/cart')
+                        window.location.reload(false)
                     } else {
                         alert("Internal Server Error")
                     }
@@ -85,7 +90,7 @@ class ProductComponent extends Component {
     }
 
     increment = () => {
-        if (this.state.count <= this.state.sizes[this.state.prev]) {
+        if (this.state.count < this.state.sizes[this.state.prev]) {
             this.setState(prevState => {
                 return { count: prevState.count + 1 }
             })
@@ -134,6 +139,8 @@ class ProductComponent extends Component {
     render() {
         return (
             <div className="mainContainer">
+                {/* {this.state.flag &&
+                    <> */}
                 <Container>
                     <Row>
                         <Col sm={12} md={6}>
@@ -226,6 +233,8 @@ class ProductComponent extends Component {
                         </div>
                     </div>
                 </Container>
+                {/* </>
+                } */}
             </div>
         )
     }
