@@ -17,7 +17,7 @@ import AuthenticatedRoute from './Components/AuthenticatedRoute'
 
 function App() {
   return (
-    <div style={{ overflowX: 'hidden'}}>
+    <div style={{ overflowX: 'hidden',padding:'0px 0px 0px 0px'}}>
       <Router>
         <HeaderComponent />
         <Switch>

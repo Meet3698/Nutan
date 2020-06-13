@@ -21,11 +21,11 @@ class BasicComponent extends Component {
         return (
             <div className="mainContainer">
                 <Container fluid>
-                    <Row>
+                    <Row style={{width:'100%'}}>
                         <Col xs={2} className="sidebar-wrapper">
                             <FilterComponent />
                         </Col>
-                        <Col xs={10} className="page-content-wrapper">
+                        <Col xs={10} className="page-content-wrapper ml-3">
 
                             <div className="card text-black text-center newarrivalcard">
                                 <img src={banner} alt="sample" width="100%"></img>
@@ -58,7 +58,7 @@ class BasicComponent extends Component {
                                 {this.state.cards.map(card =>
                                     <div className="col mb-4">
                                         <div className="card">
-                                            <img src={image} className="card-img-top" alt="img" width="10" height="500" />
+                                            <img src={image} className="card-img-top" alt="img" width="10" height="450" />
                                             <div className="card-body">
                                                 <h5 className="card-title">{card.title}</h5>
                                                 <p className="card-text">{card.description}</p>

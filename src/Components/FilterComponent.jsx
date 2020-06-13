@@ -10,55 +10,55 @@ class FilterComponent extends Component {
                 <Nav className="d-md-block sidebar">
                     <strong>FILTER BY</strong>
                     <Accordion defaultActiveKey='0'>
-                        <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle pl-0">
                             CATEGORY
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>Hello! I'm the CATEGORY</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="1" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="1" className="accordianToggle pl-0">
                             SIZE
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="1">
                             <Card.Body>Hello! I'm another SIZE</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="2" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="2" className="accordianToggle pl-0">
                             COLOR FAMILY
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="2">
                             <Card.Body>Hello! I'm another SIZE</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="3" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="3" className="accordianToggle pl-0">
                             PRICE
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="3">
                             <Card.Body>Hello! I'm another SIZE</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="4" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="4" className="accordianToggle pl-0">
                             STYLE
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="4">
                             <Card.Body>Hello! I'm another SIZE</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="5" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="5" className="accordianToggle pl-0">
                             FABRIC
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="5">
                             <Card.Body>Hello! I'm another SIZE</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="6" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="6" className="accordianToggle pl-0">
                             PRINT
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="6">
                             <Card.Body>Hello! I'm another SIZE</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="7" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="7" className="accordianToggle pl-0">
                             NECK
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="7">
                             <Card.Body>Hello! I'm another SIZE</Card.Body>
                         </Accordion.Collapse>
-                        <Accordion.Toggle as={Card.Header} eventKey="8" className="accordianToggle">
+                        <Accordion.Toggle as={Card.Header} eventKey="8" className="accordianToggle pl-0">
                             COLLECTION
                             </Accordion.Toggle>
                         <Accordion.Collapse eventKey="8">
