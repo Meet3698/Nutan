@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Nutan/static/css/main.4caca938.chunk.css",
-    "main.js": "/Nutan/static/js/main.56683894.chunk.js",
-    "main.js.map": "/Nutan/static/js/main.56683894.chunk.js.map",
+    "main.css": "/Nutan/static/css/main.210dc55d.chunk.css",
+    "main.js": "/Nutan/static/js/main.efef69c3.chunk.js",
+    "main.js.map": "/Nutan/static/js/main.efef69c3.chunk.js.map",
     "runtime-main.js": "/Nutan/static/js/runtime-main.bdf1ed8e.js",
     "runtime-main.js.map": "/Nutan/static/js/runtime-main.bdf1ed8e.js.map",
     "static/css/2.af3c1da9.chunk.css": "/Nutan/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.8fec655b.chunk.js": "/Nutan/static/js/2.8fec655b.chunk.js",
-    "static/js/2.8fec655b.chunk.js.map": "/Nutan/static/js/2.8fec655b.chunk.js.map",
+    "static/js/2.776b3e19.chunk.js": "/Nutan/static/js/2.776b3e19.chunk.js",
+    "static/js/2.776b3e19.chunk.js.map": "/Nutan/static/js/2.776b3e19.chunk.js.map",
     "index.html": "/Nutan/index.html",
-    "precache-manifest.31a58a8f4088093f8e0079c384106695.js": "/Nutan/precache-manifest.31a58a8f4088093f8e0079c384106695.js",
+    "precache-manifest.88001667832b5ac9b3054543e10de4dd.js": "/Nutan/precache-manifest.88001667832b5ac9b3054543e10de4dd.js",
     "service-worker.js": "/Nutan/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/Nutan/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.4caca938.chunk.css.map": "/Nutan/static/css/main.4caca938.chunk.css.map",
-    "static/js/2.8fec655b.chunk.js.LICENSE.txt": "/Nutan/static/js/2.8fec655b.chunk.js.LICENSE.txt",
+    "static/css/main.210dc55d.chunk.css.map": "/Nutan/static/css/main.210dc55d.chunk.css.map",
+    "static/js/2.776b3e19.chunk.js.LICENSE.txt": "/Nutan/static/js/2.776b3e19.chunk.js.LICENSE.txt",
     "static/media/Kurti1.JPG": "/Nutan/static/media/Kurti1.09ef117e.JPG",
     "static/media/Nutan_opening.jpg": "/Nutan/static/media/Nutan_opening.9f1d4885.jpg",
     "static/media/about1.jpg": "/Nutan/static/media/about1.8ef3ee5d.jpg",
@@ -33,8 +33,8 @@
   "entrypoints": [
     "static/js/runtime-main.bdf1ed8e.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.8fec655b.chunk.js",
-    "static/css/main.4caca938.chunk.css",
-    "static/js/main.56683894.chunk.js"
+    "static/js/2.776b3e19.chunk.js",
+    "static/css/main.210dc55d.chunk.css",
+    "static/js/main.efef69c3.chunk.js"
   ]
 }
