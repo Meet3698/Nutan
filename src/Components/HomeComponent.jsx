@@ -6,7 +6,7 @@ import { Instagram, Facebook } from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
-
+import CountUp from 'react-countup'
 class HomeComponent extends Component {
     constructor(props) {
         super(props)
@@ -57,6 +57,7 @@ class HomeComponent extends Component {
                     </Carousel>
                 </div> */}
                 <div class="parallax_section parallax_image_first">
+                    
                 </div>
                 <div className="hl">
                     <hr style={{
@@ -93,7 +94,13 @@ class HomeComponent extends Component {
                         borderColor: '#000000'
                     }} />
                 </div>
-                <div class="parallax_section parallax_image_second">
+                <div class="parallax_section parallax_image_second" >
+                   <div style={{color:'white',textAlign:'center',height:'300px'}}>
+                    <h2 className='mt-5'>Number of Clients : </h2>
+                   <h2 >
+                       <CountUp end={1000} duration={6} />
+                    </h2>
+                    </div>
                 </div>
                 {/* <div>
                     <h3 style={{ textAlign: 'center' }}>NVB IMPACT</h3>

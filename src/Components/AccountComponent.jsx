@@ -4,9 +4,11 @@ import Nav from 'react-bootstrap/Nav'
 import Tab from 'react-bootstrap/Tab'
 import coin from '../images/coin.png'
 import './style.css'
-
+import AuthenticationService from "../AuthenticationService";
+import {Link} from 'react-router-dom'
 class AccountComponent extends Component {
     componentDidMount() {
+
         window.scrollTo(0, 0)
       }
     render() {
@@ -29,7 +31,7 @@ class AccountComponent extends Component {
                                     <Nav.Link className="customLink" eventKey="fourth">My Orders</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="customLink" eventKey="fifth">Logout</Nav.Link>
+                                    <Link className="nav-link" to="/home" onClick={AuthenticationService.removeSession}>Logout</Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <img src={coin} alt="sample" className="ml-3"></img>My Credit ₹0.00

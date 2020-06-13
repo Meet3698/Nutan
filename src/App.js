@@ -11,26 +11,30 @@ import ExhibitionComponent from './Components/ExhibitionComponent'
 import AccountComponent from './Components/AccountComponent'
 import AboutComponent from './Components/AboutComponent'
 import FooterComponent from './Components/FooterComponent'
+import CartComponent from './Components/CartComponent'
+
 import './Components/style.css'
 import './Components/bootstrap.css'
 import './App.css';
+import AuthenticatedRoute from './Components/AuthenticatedRoute'
 
 function App() {
   return (
-    <div style={{overflowX:'hidden'}}>
+    <div style={{ overflowX: 'hidden' }}>
       <Router>
         <HeaderComponent />
         <Switch>
           <Route path="/Nutan" component={HomeComponent} />
           <Route path="/home" component={HomeComponent} />
           <Route path="/newarrivals" component={newArrivalComponent} />
-          <Route path="/productDetails" component={ProductComponent} />
+          <AuthenticatedRoute path="/productDetails" component={ProductComponent} />
           <Route path="/basic" component={BasicCompnent} />
           <Route path="/new-arrivals" component={newArrivalComponent} />
           <Route path="/steals" component={StealsComponent} />
           <Route path="/exhibition" component={ExhibitionComponent} />
-          <Route path="/account" component={AccountComponent} />
+          <AuthenticatedRoute path="/account" component={AccountComponent} />
           <Route path="/block-making" component={BlockMakingComponent} />
+          <Route path="/cart" component={CartComponent} />
           <Route path="/aboutus" component={AboutComponent} />
         </Switch>
         <FooterComponent />
