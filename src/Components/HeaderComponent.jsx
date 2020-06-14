@@ -14,7 +14,7 @@ import Axios from 'axios'
 class HeaderComponent extends Component {
     constructor(props) {
         super(props)
-        this.state = { drawerActivate: false, drawer: false, notify: 0 };
+        this.state = { drawerActivate: false, drawer: false, notify: 0 ,flag : false};
     }
     componentWillMount() {
 
@@ -76,7 +76,7 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-const ForMobile = (props) => {
+const ForMobile = (state,props) => {
     const [modalShow, setModalShow] = React.useState(false);
     return (
         <header>
@@ -105,7 +105,7 @@ const ForMobile = (props) => {
                 <Nav>
                     <Link className="nav-link" to="/"><Search /></Link>
                     <Link className="nav-link" to="/"><Phone /></Link>
-                    <Link className="nav-link" onClick={() => setModalShow(true)}><User /></Link>
+                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : props.history.push('/account')}><User /></Link>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
@@ -157,8 +157,8 @@ const ForPC = (props) => {
                 <Nav>
                     <Link className="nav-link" to="/"><Search /></Link>
                     <Link className="nav-link" to="/"><Phone /></Link>
-                    <Link className="nav-link" onClick={() => setModalShow(true)}><User /></Link>
-
+                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/account'}><User /></Link>
+                    {/* {props.state.flag && <Red} */}
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}

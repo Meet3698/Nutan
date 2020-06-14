@@ -11,7 +11,14 @@ class AccountComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            order: []
+            order: [],
+            color:{
+                "Accepted" : "#b07c83",
+                "Dispatched" : "green",
+                "Delivered" : "blue",
+                "Cancelled" : "red",
+                "Returned" : "orange"
+            }
         }
     }
 
@@ -164,6 +171,10 @@ class AccountComponent extends Component {
                                                 <Card.Text>{order.productName}</Card.Text>
                                                 <Card.Text>Size : &nbsp;{order.productSize}&nbsp;&nbsp; Qty : &nbsp;{order.productQuantity}</Card.Text>
                                                 <Card.Text>price : {order.productPrice}</Card.Text>
+                                                <Card.Text> Order Staus : <div style={{width:'max-content', backgroundColor:`${this.state.color[order.orderStatus]}`,color: 'white', padding:'4px', display:'inline-block',borderRadius:'10%', border:'1px solid black'}}>
+                                                    {order.orderStatus}
+                                                </div>
+                                                </Card.Text>
                                             </Card.Body>
                                         </Card>
                                     )}
