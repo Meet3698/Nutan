@@ -91,10 +91,10 @@ const ForMobile = (props) => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav style={{ backgroundColor: 'white', zIndex: '100', width: '100vw' }}>
-                        <Link className="nav-link" to="/basic">NVB BASIC</Link>
+                        <Link className="nav-link" to="/basic">BASIC</Link>
                         <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                         <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                        <Link className="nav-link" to="/steals">NVB STEALS</Link>
+                        <Link className="nav-link" to="/steals">STEALS</Link>
                         <Link className="nav-link" to="/">EXHIBITIONS</Link>
                     </Nav>
                 </Navbar.Collapse>
@@ -169,7 +169,7 @@ const ForPC = (props) => {
                         placement='bottom'
                         overlay={
                             <Popover id='popover-positioned-bottom bg-info '>
-                                <h6 className="ml-1 mr-1 mb-1">No items</h6>
+                                <h6 className="ml-1 mr-1 mb-1">{props.state.notify} items</h6>
                                 <Link className="nav-link" style={{color:'white',backgroundColor: '#b07c83' ,border:'solid 1px', padding:'3px' ,margin:'3px'}} to="/cart">View Cart</Link>
                             </Popover>
                         }
@@ -187,13 +187,15 @@ const ForPC = (props) => {
                 </Nav>
             </Navbar>
             <Navbar collapseOnSelect className="header2" fixed="top">
-                <Nav style={{ marginLeft: '30%' }}>
-                    <Link className="nav-link" to="/basic">NVB BASIC</Link>
+            <div style={{width:'100%', textAlign:'center'}}>
+                <Nav style={{width:'480px', margin:'auto'}}>
+                    <Link className="nav-link" to="/basic">BASIC</Link>
                     <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                     <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                    <Link className="nav-link" to="/steals">NVB STEALS</Link>
+                    <Link className="nav-link" to="/steals">STEALS</Link>
                     <Link className="nav-link" to="/">EXHIBITIONS</Link>
                 </Nav>
+                </div>
             </Navbar>
         </header>
     )
