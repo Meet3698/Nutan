@@ -77,8 +77,9 @@ class ProductComponent extends Component {
                 alert('Please Login')
             }
             else {
-                Axios.post("http://localhost:4000/product/addorder", { email: email, productName: Storage.getOrder().productName, productQuantity: this.state.count, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
+                Axios.post("http://localhost:4000/product/addorder", { email: email, productName: Storage.getOrder().productName, productQuantity: this.state.count, productPrice:this.state.cards.productPrice, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
                     if (response.data === 'OK') {
+                        // Storage.removeLocal()
                         this.props.history.push('/cart')
                         window.location.reload(false)
                     } else {
@@ -158,7 +159,7 @@ class ProductComponent extends Component {
                             </Breadcrumb>
                             <h5>{this.state.cards.productName}</h5>
                             {this.state.cards.productDescription}<br />
-                            {this.state.cards.productPrice}
+                            ₹ {this.state.cards.productPrice}
                             <div className="hl">
                                 <hr style={{
                                     color: '#000000',
