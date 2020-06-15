@@ -34,11 +34,11 @@ class Storage {
     }
 
     setStatus(id,status){
-        localStorage.setItem(id,status);
+        localStorage.setItem(id, JSON.stringify(status));
     }
 
     getStatus(id){
-        return localStorage.getItem(id); 
+        return JSON.parse(localStorage.getItem(id))
     }
 
     setKey(id){
@@ -47,6 +47,14 @@ class Storage {
 
     getKey(){
         return localStorage.getItem("key");
+    }
+
+    setArray(id,val){
+        localStorage.setItem(id, JSON.stringify(val));
+    }
+
+    getArray(id){
+        return JSON.parse(localStorage.getItem(id))
     }
 }
 
