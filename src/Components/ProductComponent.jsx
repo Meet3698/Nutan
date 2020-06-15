@@ -77,7 +77,7 @@ class ProductComponent extends Component {
                 alert('Please Login')
             }
             else {
-                Axios.post("http://localhost:4000/product/addorder", { email: email, productName: Storage.getOrder().productName, productQuantity: this.state.count, productPrice:this.state.cards.productPrice, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
+                Axios.post("https://nutanb.herokuapp.com/product/addorder", { email: email, productName: Storage.getOrder().productName, productQuantity: this.state.count, productPrice:this.state.cards.productPrice, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
                     if (response.data === 'OK') {
                         // Storage.removeLocal()
                         this.props.history.push('/cart')

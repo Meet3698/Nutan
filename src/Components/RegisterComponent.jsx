@@ -45,7 +45,7 @@ class RegisterComponent extends Component {
             alert("Mobile number should be 10 digits only")
         }
         else {
-            Axios.post("http://localhost:4000/user/register", this.state).then((response) => {
+            Axios.post("https://nutanb.herokuapp.com/user/register", this.state).then((response) => {
 
                 if (response.data === "Email") {
                     alert(response.data + " is already registered")

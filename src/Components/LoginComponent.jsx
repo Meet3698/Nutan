@@ -32,7 +32,7 @@ class LoginComponent extends Component {
       alert("Password is required")
     }
     else {
-      Axios.post("http://localhost:4000/user/login", this.state).then((response) => {
+      Axios.post("https://nutanb.herokuapp.com/user/login", this.state).then((response) => {
 
         if (response.data.message === "success") {
           AuthenticationService.setSession(response.data.token,this.state.email)

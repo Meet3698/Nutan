@@ -54,7 +54,7 @@ class FilterComponent extends Component {
     handleClick(id, arr, val) {
         if (document.getElementById(id).checked) {
             this.state[arr].push(val)
-            Axios.post("http://localhost:4000/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
+            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
                 Storage.removeNewArrival()
                 Storage.setNewArrival(response.data)
                 Storage.setStatus(id,true)
@@ -62,7 +62,7 @@ class FilterComponent extends Component {
             })
         }else{
             this.state[arr].pop(val)
-            Axios.post("http://localhost:4000/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
+            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
                 Storage.removeNewArrival()
                 Storage.setNewArrival(response.data)
                 Storage.setStatus(id,false)

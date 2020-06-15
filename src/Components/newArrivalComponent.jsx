@@ -26,7 +26,7 @@ class newArrivalComponent extends Component {
         }
 
         if (Storage.getNewArrival() === null) {
-            Axios.get("http://localhost:4000/product/newarrival").then((response) => {
+            Axios.get("https://nutanb.herokuapp.com/product/newarrival").then((response) => {
                 Storage.setNewArrival(response.data)
                 this.setState({
                     cards: Storage.getNewArrival()
@@ -117,11 +117,11 @@ const ForPC = (props) => {
 }
 
 const buy = (props, name) => {
-    Axios.post("http://localhost:4000/product/productdetail", { productName: name }).then((response) => {
+    Axios.post("https://nutanb.herokuapp.com/product/productdetail", { productName: name }).then((response) => {
         Storage.setOrder(response.data[0])
     })
 
-    Axios.post("http://localhost:4000/product/getsize", { productName: name }).then((response) => {
+    Axios.post("https://nutanb.herokuapp.com/product/getsize", { productName: name }).then((response) => {
         Storage.setSize(response.data[0])
     })
     props.history.push('/productDetails')

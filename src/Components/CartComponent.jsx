@@ -17,7 +17,7 @@ class CartComponent extends Component {
     }
 
     componentDidMount() {
-        Axios.post("http://localhost:4000/product/getcart", { email: AuthenticationService.getSession() })
+        Axios.post("https://nutanb.herokuapp.com/product/getcart", { email: AuthenticationService.getSession() })
         .then((response) => {
             if (response.data.message === "empty") {
                 this.props.history.push('/new-arrivals')
@@ -36,13 +36,13 @@ class CartComponent extends Component {
     }
 
     delete() {
-        Axios.post("http://localhost:4000/product/deletecard", { id: this.state.order.id }).then((response) => {
+        Axios.post("https://nutanb.herokuapp.com/product/deletecard", { id: this.state.order.id }).then((response) => {
             window.location.reload(false)
         })
     }
 
     buy() {
-        Axios.post("http://localhost:4000/product/updatecart", { email : AuthenticationService.getSession() }).then((response) => {
+        Axios.post("https://nutanb.herokuapp.com/product/updatecart", { email : AuthenticationService.getSession() }).then((response) => {
             this.props.history.push('/account')
             window.location.reload(false)
         })

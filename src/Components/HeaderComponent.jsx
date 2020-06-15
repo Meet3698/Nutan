@@ -22,7 +22,7 @@ class HeaderComponent extends Component {
             this.setState({ drawerActivate: true });
         }
 
-        Axios.post("http://localhost:4000/product/getcount", { email: AuthenticationService.getSession()}).then((response) => {
+        Axios.post("https://nutanb.herokuapp.com/product/getcount", { email: AuthenticationService.getSession()}).then((response) => {
             if (response.data.message === "empty") {
                 this.setState({
                     notify: 0
