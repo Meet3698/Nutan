@@ -20,6 +20,18 @@ class Storage {
     getSize(){
         return JSON.parse(localStorage.getItem('size'))
     }
+
+    setNewArrival(data){
+        localStorage.setItem('newArrival', JSON.stringify(data));
+    }
+
+    removeNewArrival(){
+        sessionStorage.removeItem("newArrival")
+    }
+
+    getNewArrival(){
+        return JSON.parse(localStorage.getItem('newArrival'))
+    }
 }
 
 export default new Storage()

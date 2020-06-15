@@ -24,15 +24,20 @@ class newArrivalComponent extends Component {
             this.setState({ drawerActivate: true });
 
         }
-        Axios.get("http://localhost:4000/product/newarrival").then((response) => {
-            console.log(response.data);
 
-            this.setState({
-                cards: response.data
+        if (Storage.getNewArrival() === null) {
+            Axios.get("http://localhost:4000/product/newarrival").then((response) => {
+                Storage.setNewArrival(response.data)
+                this.setState({
+                    cards: Storage.getNewArrival()
+                })
             })
-            // console.log(this.state.cards);
+        }else{
+            this.setState({
+                cards: Storage.getNewArrival()
+            })
+        }
 
-        })
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 600) {
                 this.setState({ drawerActivate: true });
@@ -42,9 +47,6 @@ class newArrivalComponent extends Component {
             }
         });
         window.scrollTo(0, 0)
-
-        // window.addEventListener('scroll', this.listenScrollEvent)
-
     }
     render() {
         return (
@@ -59,7 +61,7 @@ const ForPC = (props) => {
     return (
         <div className="mainContainer">
             <Container fluid>
-                <Row style={{width:'100%'}}>
+                <Row style={{ width: '100%' }}>
                     <Col xs={2} className="sidebar-wrapper" >
                         <FilterComponent />
                     </Col>
@@ -96,7 +98,7 @@ const ForPC = (props) => {
                             {props.cards.map(card =>
                                 <div className="column mb-4">
                                     <div className="card">
-                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px'/>
+                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px' />
                                         <div className="card-body">
                                             <h5 className="card-title">{card.productName}</h5>
                                             <p className="card-text">{card.productDescription}</p>
