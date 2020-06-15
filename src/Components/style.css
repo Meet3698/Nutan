@@ -159,7 +159,7 @@ select {
     text-align: center;
   }
 .accordianToggle{
-  padding-left: 0px;
+  background-color: white;
 }
 
 .price{
