@@ -206,7 +206,11 @@ select {
   max-width: 33%;
   padding: 0 4px;
 }
-
+/* 
+.block{
+  margin-left: 5%;
+  margin-right: 5%;
+} */
 /* .panels{
   position:relative;
     height:100%;
