@@ -32,6 +32,22 @@ class Storage {
     getNewArrival(){
         return JSON.parse(localStorage.getItem('newArrival'))
     }
+
+    setStatus(id,status){
+        localStorage.setItem(id,status);
+    }
+
+    getStatus(id){
+        return localStorage.getItem(id); 
+    }
+
+    setKey(id){
+        localStorage.setItem("key",id);
+    }
+
+    getKey(){
+        return localStorage.getItem("key");
+    }
 }
 
 export default new Storage()

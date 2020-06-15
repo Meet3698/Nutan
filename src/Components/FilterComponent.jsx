@@ -43,11 +43,12 @@ class FilterComponent extends Component {
     }
 
     open(id) {
+        Storage.setKey(id)
         this.setState({
             curr: id
         })
         this.state.flag ? this.setState({ flag: false }) : this.setState({ flag: true })
-        console.log(this.state.flag)
+        
     }
 
     handleClick(id, arr, val) {
@@ -56,14 +57,16 @@ class FilterComponent extends Component {
             Axios.post("http://localhost:4000/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
                 Storage.removeNewArrival()
                 Storage.setNewArrival(response.data)
-                // window.location.href = '/new-arrivals'
+                Storage.setStatus(id,true)
+                window.location.href = '/new-arrivals'
             })
         }else{
             this.state[arr].pop(val)
             Axios.post("http://localhost:4000/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
                 Storage.removeNewArrival()
                 Storage.setNewArrival(response.data)
-                // window.location.href = '/new-arrivals'
+                Storage.setStatus(id,false)
+                window.location.href = '/new-arrivals'
             })
         }
     }
@@ -73,7 +76,7 @@ class FilterComponent extends Component {
             <div>
                 <Nav className="d-md-block sidebar">
                     <strong>FILTER BY</strong>
-                    <Accordion>
+                    <Accordion defaultActiveKey={Storage.getKey() || "0"}>
                         <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle pl-0" onClick={() => this.open(0)}>
                             CATEGORY <div style={{ float: 'right' }}>{(this.state.curr === 0 && this.state.flag) ? <h5>-</h5> : <h5>+</h5>}</div>
                         </Accordion.Toggle>
@@ -81,7 +84,7 @@ class FilterComponent extends Component {
                             <Card.Body>
                                 {this.state.filterCategory.map(category =>
                                     <>
-                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(category.id, category.listType, category.category)} style={{ width: '15px', height: '15px' }} id={category.id} /> &nbsp; {category.category}</label><br />
+                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(category.id, category.listType, category.category)} checked={Storage.getStatus(category.id)} style={{ width: '15px', height: '15px' }} id={category.id} /> &nbsp; {category.category}</label><br />
                                     </>
                                 )}
                             </Card.Body>
@@ -93,7 +96,7 @@ class FilterComponent extends Component {
                             <Card.Body>
                                 {this.state.filterSize.map(size =>
                                     <>
-                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(size.id, size.listType, size.size)} style={{ width: '15px', height: '15px' }} id={size.id} /> &nbsp; {size.size}</label><br />
+                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(size.id, size.listType, size.size)} checked={Storage.getStatus(size.id)} style={{ width: '15px', height: '15px' }} id={size.id} /> &nbsp; {size.size}</label><br />
                                     </>
                                 )}
                             </Card.Body>
@@ -111,7 +114,7 @@ class FilterComponent extends Component {
                             <Card.Body>
                                 {this.state.filterPrice.map(price =>
                                     <>
-                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(price.id, price.listType, price.group)} style={{ width: '15px', height: '15px' }} id={price.id} /> &nbsp; {price.price}</label><br />
+                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(price.id, price.listType, price.group)} checked={Storage.getStatus(price.id)} style={{ width: '15px', height: '15px' }} id={price.id} /> &nbsp; {price.price}</label><br />
                                     </>
                                 )}
                             </Card.Body>
