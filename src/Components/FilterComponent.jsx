@@ -8,8 +8,9 @@ class FilterComponent extends Component {
         super(props)
         this.state = {
             flag : false,
-            curr : 0
+            curr : 0,
         }
+
         this.open = this.open.bind(this)
     }
     open(id){
