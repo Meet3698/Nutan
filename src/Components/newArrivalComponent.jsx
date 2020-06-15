@@ -24,15 +24,20 @@ class newArrivalComponent extends Component {
             this.setState({ drawerActivate: true });
 
         }
-        Axios.get("http://localhost:4000/product/newarrival").then((response) => {
-            console.log(response.data);
 
-            this.setState({
-                cards: response.data
+        if (Storage.getNewArrival() === null) {
+            Axios.get("http://localhost:4000/product/newarrival").then((response) => {
+                Storage.setNewArrival(response.data)
+                this.setState({
+                    cards: Storage.getNewArrival()
+                })
             })
-            // console.log(this.state.cards);
+        }else{
+            this.setState({
+                cards: Storage.getNewArrival()
+            })
+        }
 
-        })
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 600) {
                 this.setState({ drawerActivate: true });
@@ -42,9 +47,6 @@ class newArrivalComponent extends Component {
             }
         });
         window.scrollTo(0, 0)
-
-        // window.addEventListener('scroll', this.listenScrollEvent)
-
     }
     render() {
         return (
@@ -59,11 +61,11 @@ const ForPC = (props) => {
     return (
         <div className="mainContainer">
             <Container fluid>
-                <Row>
-                    <Col xs={2} className="sidebar-wrapper">
+                <Row style={{ width: '100%' }}>
+                    <Col xs={2} className="sidebar-wrapper" >
                         <FilterComponent />
                     </Col>
-                    <Col xs={10} className="page-content-wrapper">
+                    <Col xs={10} className="page-content-wrapper ml-3">
 
                         <div className="card text-black text-center newarrivalcard">
                             <img src={banner} alt="banner" width="100%" height="500px"></img>
@@ -92,11 +94,11 @@ const ForPC = (props) => {
                                 borderColor: '#000000'
                             }} />
                         </div>
-                        <div className="GridContainer card-group mr-2 ml-2 row row-cols-1 row-cols-md-3">
+                        <div className="GridContainer card-group row row-cols-1 row-cols-md-3">
                             {props.cards.map(card =>
                                 <div className="column mb-4">
                                     <div className="card">
-                                        <img src={image} className="card-img-top" alt="img" width="100%" />
+                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px' />
                                         <div className="card-body">
                                             <h5 className="card-title">{card.productName}</h5>
                                             <p className="card-text">{card.productDescription}</p>

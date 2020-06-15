@@ -12,15 +12,12 @@ import AccountComponent from './Components/AccountComponent'
 import AboutComponent from './Components/AboutComponent'
 import FooterComponent from './Components/FooterComponent'
 import CartComponent from './Components/CartComponent'
-
-import './Components/style.css'
-import './Components/bootstrap.css'
 import './App.css';
 import AuthenticatedRoute from './Components/AuthenticatedRoute'
 
 function App() {
   return (
-    <div style={{ overflowX: 'hidden'}}>
+    <div style={{ overflowX: 'hidden',padding:'0px 0px 0px 0px'}}>
       <Router>
         <HeaderComponent />
         <Switch>

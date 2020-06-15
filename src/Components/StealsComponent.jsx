@@ -9,6 +9,7 @@ import { Instagram, Facebook } from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+
 class HomeComponent extends Component {
     constructor(props) {
         super(props)

@@ -1,16 +1,39 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-bootstrap";
+import {Card, Row, Col } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav'
 import Tab from 'react-bootstrap/Tab'
 import coin from '../images/coin.png'
-import './style.css'
 import AuthenticationService from "../AuthenticationService";
-import {Link} from 'react-router-dom'
-class AccountComponent extends Component {
-    componentDidMount() {
+import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
+class AccountComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            order: [],
+            color:{
+                "Accepted" : "#b07c83",
+                "Dispatched" : "green",
+                "Delivered" : "blue",
+                "Cancelled" : "red",
+                "Returned" : "orange"
+            }
+        }
+    }
+
+    componentDidMount() {
         window.scrollTo(0, 0)
-      }
+
+        Axios.post("http://localhost:4000/product/getorders", { email: AuthenticationService.getSession() }).then((response) => {
+            console.log(response.data);
+            this.setState({
+                order: response.data
+            })
+        })
+
+    }
+
     render() {
         return (
             <div className="mainContainer">
@@ -140,7 +163,21 @@ class AccountComponent extends Component {
                                     </div>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="fourth">
-                                    <div><h6>Welcome to your account. Nothing matters more to us than a Happy Consumer.</h6></div>
+                                    {this.state.order.map(order =>
+                                        <Card border="lightgray" className="mt-3" style={{ width: '80%' }}>
+                                            <Card.Body style={{ padding: '0px' }}>
+                                                <img src={require(`../images/${order.productName}.JPG`)} alt="" style={{ float: 'left', marginRight: '10px' }} width='20%' />
+                                                {/* <button className="btn mr-2" style={{ padding: '0px', fontSize: '14px', float: 'right' }} onClick={this.delete}>X</button> */}
+                                                <Card.Text>{order.productName}</Card.Text>
+                                                <Card.Text>Size : &nbsp;{order.productSize}&nbsp;&nbsp; Qty : &nbsp;{order.productQuantity}</Card.Text>
+                                                <Card.Text>price : {order.productPrice}</Card.Text>
+                                                <Card.Text> Order Staus : <div style={{width:'max-content', backgroundColor:`${this.state.color[order.orderStatus]}`,color: 'white', padding:'4px', display:'inline-block',borderRadius:'10%', border:'1px solid black'}}>
+                                                    {order.orderStatus}
+                                                </div>
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    )}
                                 </Tab.Pane>
                             </Tab.Content>
                         </Col>

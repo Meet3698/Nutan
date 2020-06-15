@@ -8,7 +8,7 @@ import ss from '../images/ss.jpg'
 import gb from '../images/gb.jpg'
 import nm from '../images/nm.gif'
 import conserve from '../images/conserve.jpg'
-import './style.css'
+
 class BlockMakingComponent extends Component {
     constructor(props) {
         super(props)
@@ -28,7 +28,7 @@ class BlockMakingComponent extends Component {
 
     render() {
         return (
-            <div className='mainContainer block'>
+            <div className='mainContainer ml-5 mr-5'>
                 <div>
                     <h5>Block-Making: Decoding the Art</h5>
                     By: Shiv Pasricha<br />
