@@ -33,11 +33,11 @@ class Storage {
         return JSON.parse(localStorage.getItem('newArrival'))
     }
 
-    setStatus(id, status) {
+    setStatus(id,status){
         localStorage.setItem(id, JSON.stringify(status));
     }
 
-    getStatus(id) {
+    getStatus(id){
         return JSON.parse(localStorage.getItem(id))
     }
 
@@ -49,20 +49,27 @@ class Storage {
         return localStorage.getItem("key");
     }
 
-    setArray(arr, val) {
-        localStorage.setItem(arr, JSON.stringify(val));
-    }
-
-    getArray(arr) {
-        return JSON.parse(localStorage.getItem(arr))
-    }
-
     setTab(val) {
         localStorage.setItem("tab", JSON.stringify(val));
     }
 
     getTab() {
         return JSON.parse(localStorage.getItem("tab"))
+    }
+    setArray(id,val){
+        localStorage.setItem(id, JSON.stringify(val));
+    }
+
+    getArray(id){
+        return JSON.parse(localStorage.getItem(id))
+    }
+
+    setPath(path){
+        localStorage.setItem("path", JSON.stringify(path));
+    }
+
+    getPath(){
+        return JSON.parse(localStorage.getItem("path"))   
     }
 }
 

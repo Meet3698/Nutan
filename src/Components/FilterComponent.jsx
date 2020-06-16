@@ -42,34 +42,70 @@ class FilterComponent extends Component {
 
     }
 
+    componentDidMount() {
+        if (Storage.getArray("productType") === null) {
+            Storage.setArray("productType", [])
+        }
+        if (Storage.getArray("productSize") === null) {
+            Storage.setArray("productSize", [])
+        }
+        if (Storage.getArray("productPriceGroup") === null) {
+            Storage.setArray("productPriceGroup", [])
+        }
+    }
     open(id) {
         Storage.setKey(id)
         this.setState({
             curr: id
         })
         this.state.flag ? this.setState({ flag: false }) : this.setState({ flag: true })
-        
+
     }
 
     handleClick(id, arr, val) {
+
         if (document.getElementById(id).checked) {
-            this.state[arr].push(val)
-            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
-                Storage.removeNewArrival()
-                Storage.setNewArrival(response.data)
-                console.log(response.data);
-                
-                Storage.setStatus(id,true)
-                // window.location.href = '/new-arrivals'
+            Storage.getArray(arr).map(val => {
+                this.state[arr].push(val)
             })
-        }else{
-            this.state[arr].pop(val)
-            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
+            this.state[arr].push(val)
+
+            if (arr === "productType") {
+                Storage.setArray("productType", this.state.productType)
+            } else if (arr === "productSize") {
+                Storage.setArray("productSize", this.state.productSize)
+            } else {
+                Storage.setArray("productPriceGroup", this.state.productPriceGroup)
+            }
+            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
                 Storage.removeNewArrival()
                 Storage.setNewArrival(response.data)
-                console.log(response.data);
-                Storage.setStatus(id,false)
-                // window.location.href = '/new-arrivals'
+                Storage.setStatus(id, true)
+                window.location.href = '/new-arrivals'
+            })
+        } else {
+
+            Storage.getArray(arr).map(val => {
+                this.state[arr].push(val)
+            })
+
+            const index = this.state[arr].indexOf(val);
+            if (index > -1) {
+                this.state[arr].splice(index, 1);
+            }
+
+            if (arr === "productType") {
+                Storage.setArray("productType", this.state.productType)
+            } else if (arr === "productSize") {
+                Storage.setArray("productSize", this.state.productSize)
+            } else {
+                Storage.setArray("productPriceGroup", this.state.productPriceGroup)
+            }
+            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
+                Storage.removeNewArrival()
+                Storage.setNewArrival(response.data)
+                Storage.setStatus(id, false)
+                window.location.href = '/new-arrivals'
             })
         }
     }

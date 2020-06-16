@@ -35,8 +35,8 @@ class CartComponent extends Component {
         })
     }
 
-    delete() {
-        Axios.post("https://nutanb.herokuapp.com/product/deletecard", { id: this.state.order.id }).then((response) => {
+    delete(id) {
+        Axios.post("https://nutanb.herokuapp.com/product/deletecard", { id: id }).then((response) => {
             window.location.reload(false)
         })
     }
@@ -63,7 +63,7 @@ class CartComponent extends Component {
                                 {/* { total = total + order.productPrice} */}
                                 <Card.Body style={{padding:'0px'}}>
                                     <img src={require(`../images/${order.productName}.JPG`)} alt="" style={{ float: 'left', marginRight: '10px' }} width='20%' />
-                                    <button className="btn mr-2" style={{ padding:'0px', fontSize:'14px',float:'right' }} onClick={this.delete}>X</button>
+                                    <button className="btn mr-2" style={{ padding:'0px', fontSize:'14px',float:'right' }} onClick={()=>this.delete(order._id)}>X</button>
                                     <Card.Text>{order.productName}</Card.Text>
                                     <Card.Text>Size : &nbsp;{order.productSize}&nbsp;&nbsp; Qty : &nbsp;{order.productQuantity}</Card.Text>
                             <Card.Text>price : {order.productPrice}</Card.Text>

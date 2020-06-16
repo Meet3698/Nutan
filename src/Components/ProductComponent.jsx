@@ -38,7 +38,8 @@ class ProductComponent extends Component {
     }
     componentWillMount() {
         window.scrollTo(0, 0)
-
+        Storage.setPath("/productDetails")
+        
         if (Storage.getOrder() === null) {
             this.props.history.push('/home')
         }

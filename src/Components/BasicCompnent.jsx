@@ -3,6 +3,7 @@ import image from '../images/sample.JPG'
 import banner from '../images/product_banner_desktop4june.jpg'
 import FilterComponent from './FilterComponent'
 import { Container, Row, Col } from "react-bootstrap";
+import Storage from '../Storage'
 
 class BasicComponent extends Component {
     constructor(props) {
@@ -16,6 +17,10 @@ class BasicComponent extends Component {
                 { title: "Item 5", description: "Description" }
             ]
         }
+    }
+
+    componentDidMount(){
+        Storage.setPath("/basic")
     }
     render() {
         return (

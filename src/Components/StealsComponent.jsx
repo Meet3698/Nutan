@@ -9,6 +9,7 @@ import { Instagram, Facebook } from 'react-feather'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import Storage from '../Storage'
 
 class HomeComponent extends Component {
     constructor(props) {
@@ -27,6 +28,10 @@ class HomeComponent extends Component {
                 { description: "BLOCK MAKING" }
             ]
         }
+    }
+
+    componentDidMount(){
+        Storage.setPath("/steals")
     }
     render() {
         return (

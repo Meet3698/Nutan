@@ -7,6 +7,8 @@ import CountUp from 'react-countup'
 import {Carousel, Button, Col, Form} from 'react-bootstrap'
 import nutan from '../images/nutan.jpg'
 import impact from '../images/impact.jpg'
+import Storage from '../Storage'
+
 class HomeComponent extends Component {
     constructor(props) {
         super(props)
@@ -24,6 +26,10 @@ class HomeComponent extends Component {
                 { description: "BLOCK MAKING" }
             ]
         }
+    }
+
+    componentDidMount(){
+        Storage.setPath("/home")
     }
     render() {
         return (

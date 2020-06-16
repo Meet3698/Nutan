@@ -24,6 +24,8 @@ class newArrivalComponent extends Component {
             this.setState({ drawerActivate: true });
 
         }
+        
+        Storage.setPath("/new-arrivals")
 
         if (Storage.getNewArrival() === null) {
             Axios.get("https://nutanb.herokuapp.com/product/newarrival").then((response) => {
@@ -119,12 +121,12 @@ const ForPC = (props) => {
 const buy = (props, name) => {
     Axios.post("https://nutanb.herokuapp.com/product/productdetail", { productName: name }).then((response) => {
         Storage.setOrder(response.data[0])
+        props.history.push('/productDetails')
     })
 
     Axios.post("https://nutanb.herokuapp.com/product/getsize", { productName: name }).then((response) => {
         Storage.setSize(response.data[0])
     })
-    props.history.push('/productDetails')
 }
 
 const ForMobile = (props) => {
