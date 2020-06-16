@@ -12,6 +12,8 @@ import AccountComponent from './Components/AccountComponent'
 import AboutComponent from './Components/AboutComponent'
 import FooterComponent from './Components/FooterComponent'
 import CartComponent from './Components/CartComponent'
+import AdminComponent from './Components/AdminComponent'
+
 import './App.css';
 import AuthenticatedRoute from './Components/AuthenticatedRoute'
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/block-making" component={BlockMakingComponent} />
           <Route path="/cart" component={CartComponent} />
           <Route path="/aboutus" component={AboutComponent} />
+          <Route path="/admin" component={AdminComponent} />
+
         </Switch>
         <FooterComponent />
       </Router>

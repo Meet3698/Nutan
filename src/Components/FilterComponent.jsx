@@ -57,16 +57,19 @@ class FilterComponent extends Component {
             Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
                 Storage.removeNewArrival()
                 Storage.setNewArrival(response.data)
+                console.log(response.data);
+                
                 Storage.setStatus(id,true)
-                window.location.href = '/new-arrivals'
+                // window.location.href = '/new-arrivals'
             })
         }else{
             this.state[arr].pop(val)
             Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: this.state.productType, productSize: this.state.productSize, productPriceGroup: this.state.productPriceGroup }).then((response) => {
                 Storage.removeNewArrival()
                 Storage.setNewArrival(response.data)
+                console.log(response.data);
                 Storage.setStatus(id,false)
-                window.location.href = '/new-arrivals'
+                // window.location.href = '/new-arrivals'
             })
         }
     }

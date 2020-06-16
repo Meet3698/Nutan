@@ -4,7 +4,7 @@ class Storage {
         localStorage.setItem('order', JSON.stringify(order));
     }
 
-    setSize(size){
+    setSize(size) {
         localStorage.setItem('size', JSON.stringify(size));
     }
 
@@ -13,40 +13,56 @@ class Storage {
         sessionStorage.removeItem("email")
     }
 
-    getOrder(){
+    getOrder() {
         return JSON.parse(localStorage.getItem('order'))
     }
 
-    getSize(){
+    getSize() {
         return JSON.parse(localStorage.getItem('size'))
     }
 
-    setNewArrival(data){
+    setNewArrival(data) {
         localStorage.setItem('newArrival', JSON.stringify(data));
     }
 
-    removeNewArrival(){
+    removeNewArrival() {
         sessionStorage.removeItem("newArrival")
     }
 
-    getNewArrival(){
+    getNewArrival() {
         return JSON.parse(localStorage.getItem('newArrival'))
     }
 
-    setStatus(id,status){
+    setStatus(id, status) {
         localStorage.setItem(id, JSON.stringify(status));
     }
 
-    getStatus(id){
+    getStatus(id) {
         return JSON.parse(localStorage.getItem(id))
     }
 
-    setKey(id){
-        localStorage.setItem("key",id);
+    setKey(id) {
+        localStorage.setItem("key", id);
     }
 
-    getKey(){
+    getKey() {
         return localStorage.getItem("key");
+    }
+
+    setArray(arr, val) {
+        localStorage.setItem(arr, JSON.stringify(val));
+    }
+
+    getArray(arr) {
+        return JSON.parse(localStorage.getItem(arr))
+    }
+
+    setTab(val) {
+        localStorage.setItem("tab", JSON.stringify(val));
+    }
+
+    getTab() {
+        return JSON.parse(localStorage.getItem("tab"))
     }
 }
 
