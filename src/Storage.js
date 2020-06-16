@@ -56,6 +56,14 @@ class Storage {
     getArray(id){
         return JSON.parse(localStorage.getItem(id))
     }
+
+    setPath(path){
+        localStorage.setItem("path", JSON.stringify(path));
+    }
+
+    getPath(){
+        return JSON.parse(localStorage.getItem("path"))   
+    }
 }
 
 export default new Storage()

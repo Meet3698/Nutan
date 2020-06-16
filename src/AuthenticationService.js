@@ -18,7 +18,7 @@ class AuthenticationService {
 
     isUserLoggedIn() {
         let token = sessionStorage.getItem("token")
-        return Axios.post("http://localhost:4000/user/verify", { token: token }).then((response) => {
+        return Axios.post("https://nutanb.herokuapp.com/user/verify", { token: token }).then((response) => {
             return response.data.message
         })
     }

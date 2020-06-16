@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom'
 import AuthenticationService from '../AuthenticationService'
+import Storage from '../Storage'
 
 class LoginComponent extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class LoginComponent extends Component {
             Login
             </Button>
         </Form>
-        {this.state.flag && <><Redirect to='/account' />{this.props.methods.onHide()}</>}
+        {this.state.flag && <><Redirect to={Storage.getPath()} />{this.props.methods.onHide()}</>}
       </div>
     )
   }

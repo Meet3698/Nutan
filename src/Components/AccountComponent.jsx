@@ -24,7 +24,6 @@ class AccountComponent extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
-
         Axios.post("https://nutanb.herokuapp.com/product/getorders", { email: AuthenticationService.getSession() }).then((response) => {
             console.log(response.data);
             this.setState({

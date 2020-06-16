@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import about1 from '../images/about1.jpg'
 import impact from '../images/impact.jpg'
+import Storage from '../Storage'
 
 class AboutComponent extends Component {
     componentDidMount() {
         window.scrollTo(0, 0)
+        Storage.setPath("/aboutus")
       }
     render() {
         return (

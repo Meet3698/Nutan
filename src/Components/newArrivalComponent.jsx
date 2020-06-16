@@ -24,6 +24,8 @@ class newArrivalComponent extends Component {
             this.setState({ drawerActivate: true });
 
         }
+        
+        Storage.setPath("/new-arrivals")
 
         if (Storage.getNewArrival() === null) {
             Axios.get("https://nutanb.herokuapp.com/product/newarrival").then((response) => {

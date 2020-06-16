@@ -170,7 +170,7 @@ const ForPC = (props) => {
                         overlay={
                             <Popover id='popover-positioned-bottom bg-info '>
                                 <h6 className="ml-1 mr-1 mb-1">{props.state.notify} items</h6>
-                                <Link className="nav-link" style={{color:'white',backgroundColor: '#b07c83' ,border:'solid 1px', padding:'3px' ,margin:'3px'}} to="/cart">View Cart</Link>
+                                <button className='btn' onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/cart'}>VIEW CART</button>
                             </Popover>
                         }
                     >
