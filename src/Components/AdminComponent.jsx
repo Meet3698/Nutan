@@ -52,7 +52,7 @@ class AdminComponent extends Component {
     }
     statusChange(e,id){
         
-        Axios.post("http://localhost:4000/product/changestatus", {id: id, value : e.target.value}).then((response) => {
+        Axios.post("https://nutanb.herokuapp.com/product/changestatus", {id: id, value : e.target.value}).then((response) => {
             if (response.data === 'OK') {
                 alert("Status Updated")
                 window.location.reload(false)
@@ -63,7 +63,7 @@ class AdminComponent extends Component {
         })
     }
     submit() {
-        Axios.post("http://localhost:4000/product/addproduct", {
+        Axios.post("https://nutanb.herokuapp.com/product/addproduct", {
             productName: this.state.productName,
             productDescription: this.state.productDescription,
             productPrice: this.state.productPrice,
@@ -90,13 +90,13 @@ class AdminComponent extends Component {
     componentDidMount() {
         window.scrollTo(0, 0)
 
-        Axios.post("http://localhost:4000/product/getallorders").then((response) => {
+        Axios.post("https://nutanb.herokuapp.com/product/getallorders").then((response) => {
             this.setState({
                 order: response.data
             })
         })
 
-        Axios.post("http://localhost:4000/product/getstatistics").then((response) => {
+        Axios.post("https://nutanb.herokuapp.com/product/getstatistics").then((response) => {
             this.setState({
                 stats: response.data
             })
