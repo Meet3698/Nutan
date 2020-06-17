@@ -19,14 +19,14 @@ class BasicComponent extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         Storage.setPath("/basic")
     }
     render() {
         return (
             <div className="mainContainer">
                 <Container fluid>
-                    <Row style={{width:'100%'}}>
+                    <Row style={{ width: '100%' }}>
                         <Col xs={2} className="sidebar-wrapper">
                             <FilterComponent />
                         </Col>

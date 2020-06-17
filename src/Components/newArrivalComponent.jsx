@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import './bootstrap.css'
-import './style.css'
 import image from '../images/sample.JPG'
 import banner from '../images/Nutan_opening.jpg'
 import FilterComponent from './FilterComponent'
-import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Axios from "axios";
 import Storage from '../Storage'
 import SwipeableDrawer from './SwipeableDrawerComponent'
@@ -24,7 +22,7 @@ class newArrivalComponent extends Component {
             this.setState({ drawerActivate: true });
 
         }
-        
+
         Storage.setPath("/new-arrivals")
 
         if (Storage.getNewArrival() === null) {
@@ -34,7 +32,7 @@ class newArrivalComponent extends Component {
                     cards: Storage.getNewArrival()
                 })
             })
-        }else{
+        } else {
             this.setState({
                 cards: Storage.getNewArrival()
             })
@@ -99,8 +97,8 @@ const ForPC = (props) => {
                         <div className="GridContainer card-group row row-cols-1 row-cols-md-3">
                             {props.cards.map(card =>
                                 <div className="column mb-4">
-                                    <div className="card" style={{borderRadius:'0',height:'600px'}}>
-                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px' style={{ borderRadius:'0px',marginTop:'0px'}} />
+                                    <div className="card" style={{ borderRadius: '0', height: '600px' }}>
+                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px' style={{ borderRadius: '0px', marginTop: '0px' }} />
                                         <div className="card-body">
                                             <h5 className="card-title">{card.productName}</h5>
                                             <p className="card-text">{card.productDescription}</p>
@@ -131,8 +129,6 @@ const buy = (props, name) => {
 
 const ForMobile = (props) => {
     return (
-        // <Container fluid>
-        //     <Row>
         <div className="page-content-wrapper">
             {console.log("hello")}
             <div className="card text-black text-center newarrivalcard">
@@ -154,17 +150,17 @@ const ForMobile = (props) => {
                 </div>
             </div>
             <div>
-                <SwipeableDrawer/>
+                <SwipeableDrawer />
 
             </div>
 
             <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-3">
                 {props.cards.map(card =>
                     <div className="col mb-4">
-                        <div className="card" style={{borderRadius:'0'}}>
-                            <img src={image} className="card-img-top" alt="img" width="20%" style={{ borderRadius:'0px',marginTop:'0px'}} />
+                        <div className="card" style={{ borderRadius: '0' }}>
+                            <img src={image} className="card-img-top" alt="img" width="20%" style={{ borderRadius: '0px', marginTop: '0px' }} />
                             <div className="card-body">
-                                <h5 className="card-title" style={{height:'40px'}}>{card.productName}</h5>
+                                <h5 className="card-title" style={{ height: '40px' }}>{card.productName}</h5>
                                 <h6 className="card-text text-lightgray">{card.productDescription}</h6>
                                 <h6 className="card-text text-lightgray">₹ {card.productPrice}</h6>
                                 <button className="btn" onClick={() => buy(props.props, card.productName)}>Buy</button>
@@ -176,8 +172,6 @@ const ForMobile = (props) => {
             </div>
 
         </div>
-        //     </Row>
-        // </Container>
     )
 }
 export default newArrivalComponent

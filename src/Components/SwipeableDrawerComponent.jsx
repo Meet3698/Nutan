@@ -3,13 +3,6 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
 import FilterComponent from './FilterComponent'
 const useStyles = makeStyles({
   list: {
@@ -40,12 +33,10 @@ export default function SwipeableDrawerComponent() {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
-    //   onClick={toggleDrawer(anchor, false)}
-    //   onKeyDown={toggleDrawer(anchor, false)}
     >
-        <div className = "ml-3">
-        <FilterComponent/>
-        </div>
+      <div className="ml-3">
+        <FilterComponent />
+      </div>
     </div>
   );
 
@@ -53,7 +44,7 @@ export default function SwipeableDrawerComponent() {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true) } style={{width:'100%', border:'1px solid black', marginBottom : '5px', borderRadius:'0px'}}>Filter</Button>
+          <Button onClick={toggleDrawer(anchor, true)} style={{ width: '100%', border: '1px solid black', marginBottom: '5px', borderRadius: '0px' }}>Filter</Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
@@ -63,7 +54,7 @@ export default function SwipeableDrawerComponent() {
             {list(anchor)}
           </SwipeableDrawer>
         </React.Fragment>
-      ))} 
+      ))}
     </div>
   );
 }

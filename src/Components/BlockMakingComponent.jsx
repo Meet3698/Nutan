@@ -8,9 +8,7 @@ import ss from '../images/ss.jpg'
 import gb from '../images/gb.jpg'
 import nm from '../images/nm.gif'
 import conserve from '../images/conserve.jpg'
-// import {Container} from 'react-bootstrap'
 import Storage from '../Storage'
-import { Container } from 'react-bootstrap'
 
 class BlockMakingComponent extends Component {
     constructor(props) {
@@ -28,7 +26,7 @@ class BlockMakingComponent extends Component {
     componentDidMount() {
         window.scrollTo(0, 0)
         Storage.setPath("/block-making")
-      }
+    }
 
     render() {
         return (

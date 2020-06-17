@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Card, Row, Col, Form, Button } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav'
 import Tab from 'react-bootstrap/Tab'
-import coin from '../images/coin.png'
 import AuthenticationService from "../AuthenticationService";
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
@@ -45,19 +44,19 @@ class AdminComponent extends Component {
         })
     }
 
-    setTab(value){
+    setTab(value) {
         console.log(value);
-        
+
         Storage.setTab(value)
     }
-    statusChange(e,id){
-        
-        Axios.post("https://nutanb.herokuapp.com/product/changestatus", {id: id, value : e.target.value}).then((response) => {
+    statusChange(e, id) {
+
+        Axios.post("https://nutanb.herokuapp.com/product/changestatus", { id: id, value: e.target.value }).then((response) => {
             if (response.data === 'OK') {
                 alert("Status Updated")
                 window.location.reload(false)
             }
-            else{
+            else {
                 alert("error")
             }
         })
@@ -106,7 +105,7 @@ class AdminComponent extends Component {
     render() {
         return (
             <div className="mainContainer">
-                <Tab.Container id="left-tabs-example" defaultActiveKey={Storage.getTab()  || "first"}>
+                <Tab.Container id="left-tabs-example" defaultActiveKey={Storage.getTab() || "first"}>
                     <Row>
                         <Col sm={3}>
                             <Nav variant="pills" className="flex-column">
@@ -131,18 +130,18 @@ class AdminComponent extends Component {
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
                                     <div style={{ width: '100%' }}>
-                                    
+
                                         <div style={{ float: 'left', textAlign: 'center', width: '50%', height: '200px', backgroundColor: 'lightgreen' }}><h4> Total Users : <br />{this.state.stats.users}</h4></div>
                                         <div style={{ float: 'left', textAlign: 'center', width: '50%', height: '200px', backgroundColor: 'lightblue' }}><h4> Total Products : <br />{this.state.stats.products}</h4></div>
                                     </div>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
                                     <div>
-                        
+
                                         {this.state.order.map(order =>
                                             <Card border="lightgray" className="mt-3" style={{ width: '80%' }}>
                                                 <Card.Body style={{ padding: '0px' }}>
-                                                    
+
                                                     <img src={require(`../images/${order.productName}.JPG`)} alt="" style={{ float: 'left', marginRight: '10px' }} width='20%' />
                                                     {/* <button className="btn mr-2" style={{ padding: '0px', fontSize: '14px', float: 'right' }} onClick={this.delete}>X</button> */}
                                                     <Card.Text>Customer : {order.email}</Card.Text>
@@ -150,7 +149,7 @@ class AdminComponent extends Component {
                                                     <Card.Text>Size : &nbsp;{order.productSize}&nbsp;&nbsp; Qty : &nbsp;{order.productQuantity}</Card.Text>
                                                     <Card.Text>price : {order.productPrice}</Card.Text>
                                                     <Card.Text> Order Staus :
-                                                        <select className="mdb-select md-form" onChange={(e)=>this.statusChange(e,order._id)} value={order.orderStatus}>
+                                                        <select className="mdb-select md-form" onChange={(e) => this.statusChange(e, order._id)} value={order.orderStatus}>
                                                             <option value="Accepted">Accepted</option>
                                                             <option value="Dispatched">Dispatched</option>
                                                             <option value="Delivered">Delivered</option>
@@ -196,7 +195,7 @@ class AdminComponent extends Component {
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third">
                                     <div>
-                                    
+
                                         <div className="mt-3" style={{ color: '#b07c83' }}>Product Information</div>
                                         <hr style={{
                                             color: '#000000',

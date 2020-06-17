@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import {Menu} from 'react-feather'
+import { Menu } from 'react-feather'
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
@@ -55,7 +55,7 @@ export default function HeaderSwipe() {
         <div>
             {['right'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)} style={{ width: '100%' }}><Menu/></Button>
+                    <Button onClick={toggleDrawer(anchor, true)} style={{ width: '100%' }}><Menu /></Button>
                     <SwipeableDrawer
                         anchor={anchor}
                         open={state[anchor]}

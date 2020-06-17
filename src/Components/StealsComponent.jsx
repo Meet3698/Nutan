@@ -30,7 +30,7 @@ class HomeComponent extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         Storage.setPath("/steals")
     }
     render() {
@@ -43,7 +43,7 @@ class HomeComponent extends Component {
                                 className="d-block w-100"
                                 src={nutan}
                                 alt="First slide"
-                                style={{ height: '400px'}}
+                                style={{ height: '400px' }}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
@@ -51,7 +51,7 @@ class HomeComponent extends Component {
                                 className="d-block w-100"
                                 src={nutan}
                                 alt="Third slide"
-                                style={{ height: '400px'}}
+                                style={{ height: '400px' }}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
@@ -59,7 +59,7 @@ class HomeComponent extends Component {
                                 className="d-block w-100"
                                 src={nutan}
                                 alt="Third slide"
-                                style={{ height: '400px'}}
+                                style={{ height: '400px' }}
                             />
                         </Carousel.Item>
                     </Carousel>

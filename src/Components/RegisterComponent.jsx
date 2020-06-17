@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import Axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class RegisterComponent extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class RegisterComponent extends Component {
             phone: "",
             password: "",
             cpassword: "",
-            flag:false
+            flag: false
         }
 
         this.change = this.change.bind(this)
@@ -55,7 +55,7 @@ class RegisterComponent extends Component {
                 }
                 else {
                     this.setState({
-                        flag:true
+                        flag: true
                     })
                 }
             })
@@ -66,22 +66,17 @@ class RegisterComponent extends Component {
             <div>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        {/* <Form.Label> Name </Form.Label> */}
                         <Form.Control type="text" placeholder="Enter Name" name="name" value={this.state.name} onChange={this.change} style={{ margin: '1%' }} />
-                        {/* <Form.Label>Email address</Form.Label> */}
                         <Form.Control type="email" placeholder="Enter email" name="email" value={this.state.email} onChange={this.change} style={{ margin: '1%' }} />
                         <Form.Control type="text" placeholder="Enter mobile number" name="phone" value={this.state.phone} onChange={this.change} style={{ margin: '1%' }} />
-
-                        {/* <Form.Label>Password</Form.Label> */}
                         <Form.Control type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.change} style={{ margin: '1%' }} />
-                        {/* <Form.Label>Confirm Password</Form.Label> */}
                         <Form.Control type="password" placeholder="Confirm Password" name="cpassword" value={this.state.cpassword} onChange={this.change} style={{ margin: '1%' }} />
                     </Form.Group>
                     <Button variant="primary" onClick={this.submit}>
                         Register
                     </Button>
                 </Form>
-                {this.state.flag && <><Redirect to='/account'/>{this.props.methods.onHide()}</>}
+                {this.state.flag && <><Redirect to='/account' />{this.props.methods.onHide()}</>}
 
             </div>
         )

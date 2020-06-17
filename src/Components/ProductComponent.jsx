@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import Sample from '../images/sample.JPG'
-// import './style.css'
 import { Table, Carousel, Card, Accordion } from 'react-bootstrap'
 import image from '../images/sample.JPG'
 // import CursorZoom from 'react-cursor-zoom';
 import AuthenticationService from '../AuthenticationService'
 import Axios from 'axios'
 import Storage from '../Storage'
-
 // import Tab from 'react-bootstrap/Tab'
+
 import { Container, Row, Col, Tab, Tabs, Nav, Breadcrumb, Form, Button } from "react-bootstrap";
 class ProductComponent extends Component {
     constructor(props) {
@@ -29,7 +28,6 @@ class ProductComponent extends Component {
             ],
             prev: '',
             sizes: {},
-            // flag: false
         }
         this.increment = this.increment.bind(this)
         this.decrement = this.decrement.bind(this)
@@ -39,7 +37,7 @@ class ProductComponent extends Component {
     componentWillMount() {
         window.scrollTo(0, 0)
         Storage.setPath("/productDetails")
-        
+
         if (Storage.getOrder() === null) {
             this.props.history.push('/home')
         }
@@ -78,9 +76,8 @@ class ProductComponent extends Component {
                 alert('Please Login')
             }
             else {
-                Axios.post("https://nutanb.herokuapp.com/product/addorder", { email: email, productName: Storage.getOrder().productName, productQuantity: this.state.count, productPrice:this.state.cards.productPrice, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
+                Axios.post("https://nutanb.herokuapp.com/product/addorder", { email: email, productName: Storage.getOrder().productName, productQuantity: this.state.count, productPrice: this.state.cards.productPrice, productSize: this.state.prev, orderStatus: "Cart" }).then((response) => {
                     if (response.data === 'OK') {
-                        // Storage.removeLocal()
                         this.props.history.push('/cart')
                         window.location.reload(false)
                     } else {
@@ -127,17 +124,6 @@ class ProductComponent extends Component {
         })
     }
 
-    // selectColor(id) {
-    //     try {
-    //         document.getElementById(this.state.prev).disabled = false
-    //     } catch (error) {
-
-    //     }
-    //     document.getElementById(id).disabled = true
-    //     this.setState({
-    //         prev: id
-    //     })
-    // }
     render() {
         return (
             <div className="mainContainer">
@@ -176,10 +162,7 @@ class ProductComponent extends Component {
                                     return <Button style={{ borderRadius: '50%', backgroundColor: 'white', color: 'black', borderColor: 'black', height: '50px', width: '50px', margin: '5px' }} name="size" value={button.id} key={button.id} id={button.id} onClick={() => this.select(button.id)}>{button.id}</Button>
                                 }
                             })}
-                            {/* <h6>Select Color : </h6>
-                            {this.state.cards.productColor.map(color => {
-                                return <Button style={{ borderRadius: '50%', backgroundColor: color, height: '30px', width: '30px', margin: '5px' }} name="color" value={color} key={color} id={color} onClick={() => this.selectColor(color)}/>
-                            })} */}
+
                             <div>
                                 <h6 style={{ float: 'left' }}>Quantity : &nbsp;&nbsp;</h6>
 
@@ -234,8 +217,6 @@ class ProductComponent extends Component {
                         </div>
                     </div>
                 </Container>
-                {/* </>
-                } */}
             </div>
         )
     }
@@ -415,19 +396,6 @@ const ForPC = (props) => {
                     <Tab.Content>
                         <Tab.Pane eventKey="first">
                             <img src={Sample} alt="sample" style={{ width: "100%", height: "80vh" }} />
-                            {/* <CursorZoom
-                                image={{
-                                    src: Sample,
-                                    width: 400,
-                                    height: 500
-                                }}
-                                zoomImage={{
-                                    src: Sample,
-                                    width: 400,
-                                    height: 550
-                                }}
-                                cursorOffset={{ x: 80, y: -80 }}
-                            /> */}
                         </Tab.Pane>
                         <Tab.Pane eventKey="second">
                             <img src={Sample} alt="sample" style={{ width: "100%", height: "80vh" }} />

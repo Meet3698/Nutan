@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Modal, Button } from 'react-bootstrap'
+import { Navbar, Nav, Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import { Search, Phone, User, ShoppingBag } from 'react-feather'
+import {Phone, User, ShoppingBag } from 'react-feather'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import IconButton from '@material-ui/core/IconButton';
 import StyledBadge from '@material-ui/core/Badge';
-import './bootstrap.css'
 import { Popover } from "react-bootstrap";
 import LoginTab from './LoginTabComponents'
 import AuthenticationService from "../AuthenticationService";
@@ -14,7 +13,7 @@ import HeaderSwipe from './HeaderSwipe'
 class HeaderComponent extends Component {
     constructor(props) {
         super(props)
-        this.state = { drawerActivate: false, drawer: false, notify: 0 ,flag : false};
+        this.state = { drawerActivate: false, drawer: false, notify: 0, flag: false };
     }
     componentWillMount() {
 
@@ -22,7 +21,7 @@ class HeaderComponent extends Component {
             this.setState({ drawerActivate: true });
         }
 
-        Axios.post("https://nutanb.herokuapp.com/product/getcount", { email: AuthenticationService.getSession()}).then((response) => {
+        Axios.post("https://nutanb.herokuapp.com/product/getcount", { email: AuthenticationService.getSession() }).then((response) => {
             if (response.data.message === "empty") {
                 this.setState({
                     notify: 0
@@ -33,7 +32,7 @@ class HeaderComponent extends Component {
                 })
             }
         })
-        
+
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 600) {
                 this.setState({ drawerActivate: true });
@@ -47,7 +46,7 @@ class HeaderComponent extends Component {
     render() {
         return (
             <div>
-                {this.state.drawerActivate ? <ForMobile state={this.state}/> : <ForPC state={this.state} />}
+                {this.state.drawerActivate ? <ForMobile state={this.state} /> : <ForPC state={this.state} />}
             </div>
         )
     }
@@ -85,17 +84,15 @@ const ForMobile = (props) => {
             </Navbar>
             <Navbar collapseOnSelect expand='lg' className="header1" fixed="top">
                 <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
-                <HeaderSwipe/>
+                <HeaderSwipe />
 
 
             </Navbar>
 
-            <Navbar collapseOnSelect className="header2_Mobile " style={{paddingLeft:'30%'}} fixed="top">
+            <Navbar collapseOnSelect className="header2_Mobile " style={{ paddingLeft: '30%' }} fixed="top">
                 <Nav>
-                    
-                    {/* <Link className="nav-link" to="/"><Search /></Link> */}
                     <Link className="nav-link" to="/"><Phone /></Link>
-                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/account'}><User /></Link>
+                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href = '/account'}><User /></Link>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
@@ -107,7 +104,7 @@ const ForMobile = (props) => {
                         overlay={
                             <Popover id='popover-positioned-bottom bg-info '>
                                 <h6 className="ml-1 mr-1 mb-1">{props.state.notify} items</h6>
-                                <button className='btn' onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/cart'}>VIEW CART</button>
+                                <button className='btn' onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href = '/cart'}>VIEW CART</button>
                             </Popover>
                         }
                     >
@@ -139,10 +136,8 @@ const ForPC = (props) => {
                 <Nav className="mr-auto">
                 </Nav>
                 <Nav>
-                    {/* <Link className="nav-link" to="/"><Search /></Link> */}
                     <Link className="nav-link" to="/"><Phone /></Link>
-                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/account'}><User /></Link>
-                    {/* {props.state.flag && <Red} */}
+                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href = '/account'}><User /></Link>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
@@ -154,7 +149,7 @@ const ForPC = (props) => {
                         overlay={
                             <Popover id='popover-positioned-bottom bg-info '>
                                 <h6 className="ml-1 mr-1 mb-1">{props.state.notify} items</h6>
-                                <button className='btn' onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/cart'}>VIEW CART</button>
+                                <button className='btn' onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href = '/cart'}>VIEW CART</button>
                             </Popover>
                         }
                     >
@@ -167,13 +162,13 @@ const ForPC = (props) => {
                 </Nav>
             </Navbar>
             <Navbar collapseOnSelect className="header2" fixed="top">
-            <div style={{width:'100%', textAlign:'center'}}>
-                <Nav style={{width:'480px', margin:'auto'}}>
-                    <Link className="nav-link" to="/basic">BASIC</Link>
-                    <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
-                    <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                    <Link className="nav-link" to="/">EXHIBITIONS</Link>
-                </Nav>
+                <div style={{ width: '100%', textAlign: 'center' }}>
+                    <Nav style={{ width: '480px', margin: 'auto' }}>
+                        <Link className="nav-link" to="/basic">BASIC</Link>
+                        <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
+                        <Link className="nav-link" to="/clothing">CLOTHING</Link>
+                        <Link className="nav-link" to="/">EXHIBITIONS</Link>
+                    </Nav>
                 </div>
             </Navbar>
         </header>

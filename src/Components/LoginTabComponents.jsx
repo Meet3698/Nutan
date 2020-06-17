@@ -85,10 +85,10 @@ const FullWidthTabs = (props) => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <LoginComponent methods={props.methods}/>
+          <LoginComponent methods={props.methods} />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <RegisterComponent  methods={props.methods}/>
+          <RegisterComponent methods={props.methods} />
         </TabPanel>
       </SwipeableViews>
     </div>
@@ -96,15 +96,15 @@ const FullWidthTabs = (props) => {
   // }
 }
 
-export default class LoginTabComponent extends Component{
-  constructor(props){
+export default class LoginTabComponent extends Component {
+  constructor(props) {
     super(props)
-    this.state={}
+    this.state = {}
   }
-  render(){
-    return(
+  render() {
+    return (
       <div>
-        <FullWidthTabs methods={this.props.methods}/>
+        <FullWidthTabs methods={this.props.methods} />
       </div>
     )
   }
