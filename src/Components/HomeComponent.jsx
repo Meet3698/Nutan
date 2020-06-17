@@ -84,8 +84,8 @@ class HomeComponent extends Component {
                                         <div className="img-hover-zoom">
                                             <Link to="/newarrivals"><img src={image} className="card-img-top" alt="img" /></Link>
                                         </div>
-                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.7', textAlign: 'center', width: '100%', marginTop: '70%' }}>
-                                            <h5>{card.description}</h5>
+                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.7', textAlign: 'center', width: '100%',height:'20px', marginTop: '70%' }}>
+                                            <h6>{card.description}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -131,8 +131,8 @@ class HomeComponent extends Component {
                                         <div className="img1-hover-zoom">
                                             <Link to="/block-making"><img src={block} className="card-img-top" alt="img" width="100%" /></Link>
                                         </div>
-                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.5', textAlign: 'center', width: '100%', height:'10%',marginTop: '70%' }}>
-                                            <h3>{craft.description}</h3>
+                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.5', textAlign: 'center', width: '100%', height:'30px',marginTop: '70%' }}>
+                                            <h4>{craft.description}</h4>
                                         </div>
                                     </div>
                                 </div>
