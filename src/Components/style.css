@@ -56,7 +56,7 @@
   height:8vh;
   z-index:50;
   width:100vw;
-  padding-top: 10%;
+  /* padding-top: 10%; */
   padding-bottom: 5%;
 }
 option{
@@ -275,6 +275,27 @@ select {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .accountForm {
+    text-align:center;
+  }
+  .floatText{
+    float:none !important;
+    margin-right: 0px !important;
+    margin-top : 12px !important;
+    width:100%;
+    padding:0px;
+  }
+  .inputSize{
+    width:100%;
+    margin-left: 5px;
+  }
+  .marginTab{
+    margin-top:10%;
+  }
+}
+
+
 /* .parallax_section{
     height: 600px;
     background-repeat: no-repeat;
@@ -295,4 +316,13 @@ select {
 
 .GridContainer{
   width: 100%;
+}
+
+.countUpBgImg{
+  background-image: url('../images/block_banner.jpg');
+  width: 100%;
+  height: 500px;
+  opacity: 0.8;
+  text-align: center;
+  padding:5%;
 }

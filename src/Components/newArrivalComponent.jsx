@@ -99,7 +99,7 @@ const ForPC = (props) => {
                         <div className="GridContainer card-group row row-cols-1 row-cols-md-3">
                             {props.cards.map(card =>
                                 <div className="column mb-4">
-                                    <div className="card" style={{borderRadius:'0'}}>
+                                    <div className="card" style={{borderRadius:'0',height:'600px'}}>
                                         <img src={image} className="card-img-top" alt="img" width="100%" height='400px' style={{ borderRadius:'0px',marginTop:'0px'}} />
                                         <div className="card-body">
                                             <h5 className="card-title">{card.productName}</h5>
@@ -153,15 +153,6 @@ const ForMobile = (props) => {
                     </select>
                 </div>
             </div>
-
-            <div className="hl mt-5">
-                <hr style={{
-                    color: '#000000',
-                    backgroundColor: '#000000',
-                    height: .5,
-                    borderColor: '#000000'
-                }} />
-            </div>
             <div>
                 <SwipeableDrawer/>
 
@@ -173,9 +164,9 @@ const ForMobile = (props) => {
                         <div className="card" style={{borderRadius:'0'}}>
                             <img src={image} className="card-img-top" alt="img" width="20%" style={{ borderRadius:'0px',marginTop:'0px'}} />
                             <div className="card-body">
-                                <h5 className="card-title">{card.productName}</h5>
-                                <p className="card-text">{card.productDescription}</p>
-                                <p className="card-text">₹ {card.productPrice}</p>
+                                <h5 className="card-title" style={{height:'40px'}}>{card.productName}</h5>
+                                <h6 className="card-text text-lightgray">{card.productDescription}</h6>
+                                <h6 className="card-text text-lightgray">₹ {card.productPrice}</h6>
                                 <button className="btn" onClick={() => buy(props.props, card.productName)}>Buy</button>
                             </div>
                         </div>

@@ -59,7 +59,7 @@ class CartComponent extends Component {
                         <Col xs={12} md={8}>
                             <h5>My Shopping Cart</h5>
                             {order.map(order => 
-                                <Card border="lightgray" className="mt-3" style={{ width: '80%' }}>
+                                <Card border="lightgray" className="mt-3" style={{ width: '80%', borderRadius:'0px' }}>
                                 {/* { total = total + order.productPrice} */}
                                 <Card.Body style={{padding:'0px'}}>
                                     <img src={require(`../images/${order.productName}.JPG`)} alt="" style={{ float: 'left', marginRight: '10px' }} width='20%' />

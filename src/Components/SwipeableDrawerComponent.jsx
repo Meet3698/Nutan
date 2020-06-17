@@ -46,23 +46,6 @@ export default function SwipeableDrawerComponent() {
         <div className = "ml-3">
         <FilterComponent/>
         </div>
-      {/* <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-            {/* <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}> */}
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-            {/* <ListItemText primary={text} />
-          </ListItem>
-        ))} */}
-      {/* </List> */}
     </div>
   );
 
@@ -70,12 +53,12 @@ export default function SwipeableDrawerComponent() {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true) } style={{width:'100%'}}>Filter</Button>
+          <Button onClick={toggleDrawer(anchor, true) } style={{width:'100%', border:'1px solid black', marginBottom : '5px', borderRadius:'0px'}}>Filter</Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
-            // onClose={toggleDrawer(anchor, false)}
-            // onOpen={toggleDrawer(anchor, true)}
+            onClose={toggleDrawer(anchor, false)}
+            onOpen={toggleDrawer(anchor, true)}
           >
             {list(anchor)}
           </SwipeableDrawer>

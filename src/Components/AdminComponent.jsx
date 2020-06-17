@@ -153,7 +153,7 @@ class AdminComponent extends Component {
                                                         <select className="mdb-select md-form" onChange={(e)=>this.statusChange(e,order._id)} value={order.orderStatus}>
                                                             <option value="Accepted">Accepted</option>
                                                             <option value="Dispatched">Dispatched</option>
-                                                            <option value="Delievered">Delivered</option>
+                                                            <option value="Delivered">Delivered</option>
                                                             <option value="Cancel">Cancel</option>
                                                             <option value="Returned">Returned</option>
                                                         </select>

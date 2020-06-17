@@ -3,11 +3,12 @@ import image from '../images/sample.JPG'
 import block from '../images/block.jpg'
 import { Instagram, Facebook } from 'react-feather'
 import { Link } from 'react-router-dom'
-import CountUp from 'react-countup'
-import {Carousel, Button, Col, Form} from 'react-bootstrap'
+import CountUp, { startAnimation } from 'react-countup'
+import { Carousel, Button, Col, Form, Card, Container, Row } from 'react-bootstrap'
 import nutan from '../images/nutan.jpg'
 import impact from '../images/impact.jpg'
 import Storage from '../Storage'
+import VisibilitySensor from 'react-visibility-sensor';
 
 class HomeComponent extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class HomeComponent extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         Storage.setPath("/home")
     }
     render() {
@@ -41,7 +42,7 @@ class HomeComponent extends Component {
                                 className="d-block w-100"
                                 src={nutan}
                                 alt="First slide"
-                                style={{ height: '400px'}}
+                                style={{ height: '400px' }}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
@@ -49,7 +50,7 @@ class HomeComponent extends Component {
                                 className="d-block w-100"
                                 src={nutan}
                                 alt="Third slide"
-                                style={{ height: '400px'}}
+                                style={{ height: '400px' }}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
@@ -57,7 +58,7 @@ class HomeComponent extends Component {
                                 className="d-block w-100"
                                 src={nutan}
                                 alt="Third slide"
-                                style={{ height: '400px'}}
+                                style={{ height: '400px' }}
                             />
                         </Carousel.Item>
                     </Carousel>
@@ -73,10 +74,10 @@ class HomeComponent extends Component {
                 </div>
                 <div style={{ textAlign: 'center' }}>
                     <h3 >NVB CATEGORIES</h3>
-                    <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
+                    <div className="GridContainer mr-2 row row-cols-2 row-cols-md-4">
                         {this.state.cards.map(card =>
                             <div className="col mb-4">
-                                <div className="card" style={{borderRadius:'0'}}>
+                                <div className="card" style={{ borderRadius: '0' }}>
                                     <div className="img-hover-zoom">
                                         <Link to="/newarrivals"><img src={image} className="card-img-top" alt="img" /></Link>
                                     </div>
@@ -128,10 +129,10 @@ class HomeComponent extends Component {
                 </div>
                 <div style={{ textAlign: 'center' }}>
                     <h3 >NVB CRAFTS</h3>
-                    <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
+                    <div className="GridContainer mr-2 row row-cols-2 row-cols-md-4">
                         {this.state.crafts.map(craft =>
                             <div className="col mb-4">
-                                <div className="card" style={{borderRadius:'0'}}>
+                                <div className="card" style={{ borderRadius: '0' }}>
                                     <div className="img1-hover-zoom">
                                         <Link to="/block-making"><img src={block} className="card-img-top" alt="img" width="100%" /></Link>
                                     </div>
@@ -164,30 +165,82 @@ class HomeComponent extends Component {
                         )}
                     </marquee>
                 </div>
-                <div className="message">
-                    <h4>Stay up to date</h4>
-                    <Form style={{ display: 'inline-block' }}>
-                        <Form.Row className="align-items-center">
-                            <Col xs="auto">
-                                <Form.Label htmlFor="inlineFormInput" srOnly>
-                                    Mobile Number
-                            </Form.Label>
-                                <Form.Control
-                                    className="mb-2"
-                                    id="inlineFormInput"
-                                    placeholder="Mobile Number"
-                                />
+                <div className="countUpBgImg">
+                    <h1 style={{ color: 'white' }}>Fashion Redefined</h1>
+                    <Container style={{marginTop:'5%'}}>
+                        <Row>
+                            <Col xs={12} md={6}>
+                            <Card style={{ width: '80%', backgroundColor: 'rgba(125,125,125,.5)', textAlign:'center' }}>
+                        <Card.Body>
+                            <Card.Title>
+                                <h1 style={{ color: 'white', fontStyle: 'bold' }}>
+                                    <CountUp end={12390} redraw={true}>
+                                        {({ countUpRef, start }) => (
+                                            <VisibilitySensor onChange={start} delayedCall>
+                                                <span ref={countUpRef} />
+                                            </VisibilitySensor>
+                                        )}
+                                    </CountUp>
+                                </h1>
+                            </Card.Title>
+                            <Card.Text>
+
+                                <h1 style={{ color: 'white' }}>Happy Customers</h1>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                             </Col>
-                            <Col xs="auto">
-                                <Button type="submit" className="mb-2">
-                                    Subscribe
-                            </Button>
+                            <Col xs={12} md={6}>
+                            <Card style={{ width: '80%', backgroundColor: 'rgba(125,125,125,.5)', textAlign:'center' }}>
+                        <Card.Body>
+                            <Card.Title>
+                                <h1 style={{ color: 'white', fontStyle: 'bold' }}>
+                                    <CountUp end={86} redraw={true}>
+                                        {({ countUpRef, start }) => (
+                                            <VisibilitySensor onChange={start} delayedCall>
+                                                <span ref={countUpRef} />
+                                            </VisibilitySensor>
+                                        )}
+                                    </CountUp>
+                                </h1>
+                            </Card.Title>
+                            <Card.Text>
+
+                                <h1 style={{ color: 'white' }}>Years</h1>
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                             </Col>
-                        </Form.Row>
-                    </Form>
-                </div>
+                        </Row>
+                    
+                    
+                    </Container>
 
             </div>
+            <div className="message">
+                <h4>Stay up to date</h4>
+                <Form style={{ display: 'inline-block' }}>
+                    <Form.Row className="align-items-center">
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" srOnly>
+                                Mobile Number
+                            </Form.Label>
+                            <Form.Control
+                                className="mb-2"
+                                id="inlineFormInput"
+                                placeholder="Mobile Number"
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Button type="submit" className="mb-2">
+                                Subscribe
+                            </Button>
+                        </Col>
+                    </Form.Row>
+                </Form>
+            </div>
+
+            </div >
         )
     }
 }

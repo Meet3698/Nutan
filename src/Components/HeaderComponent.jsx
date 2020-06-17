@@ -69,9 +69,6 @@ function MyVerticallyCenteredModal(props) {
             <Modal.Body style={{ padding: '0px', textAlign: 'center' }}>
                 <LoginTab methods={props} />
             </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
         </Modal>
     );
 }
@@ -89,16 +86,6 @@ const ForMobile = (props) => {
             <Navbar collapseOnSelect expand='lg' className="header1" fixed="top">
                 <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
                 <HeaderSwipe/>
-                {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav style={{ backgroundColor: 'white', zIndex: '1000', width: '100vw' }}>
-                        <Link className="nav-link" to="/basic">BASIC</Link>
-                        <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
-                        <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                        <Link className="nav-link" to="/steals">STEALS</Link>
-                        <Link className="nav-link" to="/">EXHIBITIONS</Link>
-                    </Nav>
-                </Navbar.Collapse> */}
 
 
             </Navbar>
@@ -130,10 +117,6 @@ const ForMobile = (props) => {
                             </StyledBadge>
                         </IconButton>
                     </OverlayTrigger>
-                    {/* <select className="mdb-select md-form price" >
-                        <option value="1">INR</option>
-                        <option value="2">USD</option>
-                    </select> */}
                 </Nav>
             </Navbar>
         </header>
@@ -153,8 +136,6 @@ const ForPC = (props) => {
             </Navbar>
             <Navbar collapseOnSelect className="header1" fixed="top">
                 <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
-                {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav"> */}
                 <Nav className="mr-auto">
                 </Nav>
                 <Nav>
@@ -183,10 +164,6 @@ const ForPC = (props) => {
                             </StyledBadge>
                         </IconButton>
                     </OverlayTrigger>
-                    {/* <select className="mdb-select md-form price">
-                        <option value="1">INR</option>
-                        <option value="2">USD</option>
-                    </select> */}
                 </Nav>
             </Navbar>
             <Navbar collapseOnSelect className="header2" fixed="top">
