@@ -148,7 +148,7 @@ class FilterComponent extends Component {
     render() {
         return (
             <div>
-                <Nav className="d-md-block sidebar">
+                <Nav className="d-md-block sidebar" style={{height:'75vh',paddingBottom:'0%'}}>
                     <div style={{ width: '100%' }}>
                         <Container style={{ width: '100%', padding: '5px 0px 0px 5px' }}>
                             <Row style={{ width: '100%' }}>

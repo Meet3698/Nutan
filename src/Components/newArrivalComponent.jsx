@@ -94,9 +94,9 @@ const ForPC = (props) => {
                                 borderColor: '#000000'
                             }} />
                         </div>
-                        <div className="GridContainer card-group row row-cols-1 row-cols-md-3">
+                        <div className="GridContainer card-group row-cols-1 row-cols-md-3">
                             {props.cards.map(card =>
-                                <div className="column mb-4">
+                                <div className="col mb-4">
                                     <div className="card" style={{ borderRadius: '0', height: '600px' }}>
                                         <img src={image} className="card-img-top" alt="img" width="100%" height='400px' style={{ borderRadius: '0px', marginTop: '0px' }} />
                                         <div className="card-body">
