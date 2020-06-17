@@ -99,8 +99,8 @@ const ForPC = (props) => {
                         <div className="GridContainer card-group row row-cols-1 row-cols-md-3">
                             {props.cards.map(card =>
                                 <div className="column mb-4">
-                                    <div className="card">
-                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px' />
+                                    <div className="card" style={{borderRadius:'0'}}>
+                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px' style={{ borderRadius:'0px',marginTop:'0px'}} />
                                         <div className="card-body">
                                             <h5 className="card-title">{card.productName}</h5>
                                             <p className="card-text">{card.productDescription}</p>
@@ -154,7 +154,7 @@ const ForMobile = (props) => {
                 </div>
             </div>
 
-            <div className="hl">
+            <div className="hl mt-5">
                 <hr style={{
                     color: '#000000',
                     backgroundColor: '#000000',
@@ -170,8 +170,8 @@ const ForMobile = (props) => {
             <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-3">
                 {props.cards.map(card =>
                     <div className="col mb-4">
-                        <div className="card">
-                            <img src={image} className="card-img-top" alt="img" width="20%" />
+                        <div className="card" style={{borderRadius:'0'}}>
+                            <img src={image} className="card-img-top" alt="img" width="20%" style={{ borderRadius:'0px',marginTop:'0px'}} />
                             <div className="card-body">
                                 <h5 className="card-title">{card.productName}</h5>
                                 <p className="card-text">{card.productDescription}</p>

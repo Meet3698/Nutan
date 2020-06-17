@@ -10,6 +10,7 @@ import nm from '../images/nm.gif'
 import conserve from '../images/conserve.jpg'
 // import {Container} from 'react-bootstrap'
 import Storage from '../Storage'
+import { Container } from 'react-bootstrap'
 
 class BlockMakingComponent extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class BlockMakingComponent extends Component {
 
     render() {
         return (
-            <div className='mainContainer ml-5 mr-5'>
+            <div className='mainContainer container'>
                 <div>
                     <h5>Block-Making: Decoding the Art</h5>
                     By: Shiv Pasricha<br />

@@ -10,7 +10,7 @@ import { Popover } from "react-bootstrap";
 import LoginTab from './LoginTabComponents'
 import AuthenticationService from "../AuthenticationService";
 import Axios from 'axios'
-
+import HeaderSwipe from './HeaderSwipe'
 class HeaderComponent extends Component {
     constructor(props) {
         super(props)
@@ -47,7 +47,7 @@ class HeaderComponent extends Component {
     render() {
         return (
             <div>
-                {this.state.drawerActivate ? <ForMobile /> : <ForPC state={this.state} />}
+                {this.state.drawerActivate ? <ForMobile state={this.state}/> : <ForPC state={this.state} />}
             </div>
         )
     }
@@ -76,7 +76,7 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-const ForMobile = (state,props) => {
+const ForMobile = (props) => {
     const [modalShow, setModalShow] = React.useState(false);
     return (
         <header>
@@ -88,24 +88,27 @@ const ForMobile = (state,props) => {
             </Navbar>
             <Navbar collapseOnSelect expand='lg' className="header1" fixed="top">
                 <Navbar.Brand><Link to="/Nutan" className="logoLink nav-link">Nutan Vastra Bhandar</Link></Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <HeaderSwipe/>
+                {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav style={{ backgroundColor: 'white', zIndex: '100', width: '100vw' }}>
+                    <Nav style={{ backgroundColor: 'white', zIndex: '1000', width: '100vw' }}>
                         <Link className="nav-link" to="/basic">BASIC</Link>
                         <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                         <Link className="nav-link" to="/clothing">CLOTHING</Link>
                         <Link className="nav-link" to="/steals">STEALS</Link>
                         <Link className="nav-link" to="/">EXHIBITIONS</Link>
                     </Nav>
-                </Navbar.Collapse>
+                </Navbar.Collapse> */}
 
 
             </Navbar>
-            <Navbar collapseOnSelect className="header2_Mobile" fixed="top">
+
+            <Navbar collapseOnSelect className="header2_Mobile " style={{paddingLeft:'30%'}} fixed="top">
                 <Nav>
-                    <Link className="nav-link" to="/"><Search /></Link>
+                    
+                    {/* <Link className="nav-link" to="/"><Search /></Link> */}
                     <Link className="nav-link" to="/"><Phone /></Link>
-                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : props.history.push('/account')}><User /></Link>
+                    <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/account'}><User /></Link>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
@@ -116,13 +119,13 @@ const ForMobile = (state,props) => {
                         placement='bottom'
                         overlay={
                             <Popover id='popover-positioned-bottom bg-info '>
-                                <h6 className="ml-1 mr-1 mb-1">No items</h6>
-                                <button className="btn ml-1 mr-1 mb-1 text-white">View Cart</button>
+                                <h6 className="ml-1 mr-1 mb-1">{props.state.notify} items</h6>
+                                <button className='btn' onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/cart'}>VIEW CART</button>
                             </Popover>
                         }
                     >
                         <IconButton aria-label="cart">
-                            <StyledBadge badgeContent={1} color="secondary">
+                            <StyledBadge badgeContent={props.state.notify} color="secondary">
                                 <ShoppingBag />
                             </StyledBadge>
                         </IconButton>
@@ -155,7 +158,7 @@ const ForPC = (props) => {
                 <Nav className="mr-auto">
                 </Nav>
                 <Nav>
-                    <Link className="nav-link" to="/"><Search /></Link>
+                    {/* <Link className="nav-link" to="/"><Search /></Link> */}
                     <Link className="nav-link" to="/"><Phone /></Link>
                     <Link className="nav-link" onClick={() => AuthenticationService.getSession() == null ? setModalShow(true) : window.location.href='/account'}><User /></Link>
                     {/* {props.state.flag && <Red} */}
@@ -192,7 +195,6 @@ const ForPC = (props) => {
                     <Link className="nav-link" to="/basic">BASIC</Link>
                     <Link className="nav-link" to="/new-arrivals">NEW ARRIVALS</Link>
                     <Link className="nav-link" to="/clothing">CLOTHING</Link>
-                    <Link className="nav-link" to="/steals">STEALS</Link>
                     <Link className="nav-link" to="/">EXHIBITIONS</Link>
                 </Nav>
                 </div>

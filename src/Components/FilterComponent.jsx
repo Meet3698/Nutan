@@ -174,7 +174,7 @@ class FilterComponent extends Component {
                 <Nav className="d-md-block sidebar">
                     {/* <div  style={{width:'100%', textAlign:'center'}}><strong>FILTER BY</strong><br/></div> */}
                     <div style={{width:'100%'}}>
-                    <Container style={{width:'100%', padding:'0px 0px 0px 5px'}}>
+                    <Container style={{width:'100%', padding:'5px 0px 0px 5px'}}>
                         <Row style={{width:'100%'}}>
                             <Col xs={6} md = {12} lg={6} style={{textAlign:'center', width:'100%', border:'1px black solid'}}>
                             <Link className="nav-link" onClick={this.clearButton} style={{ padding:'0px', backgroundColor:'white', color:'black', border:'1px black '}}>Clear </Link>

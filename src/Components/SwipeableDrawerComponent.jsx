@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SwipeableTemporaryDrawer() {
+export default function SwipeableDrawerComponent() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,
@@ -74,8 +74,8 @@ export default function SwipeableTemporaryDrawer() {
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
+            // onClose={toggleDrawer(anchor, false)}
+            // onOpen={toggleDrawer(anchor, true)}
           >
             {list(anchor)}
           </SwipeableDrawer>

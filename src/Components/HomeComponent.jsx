@@ -62,9 +62,6 @@ class HomeComponent extends Component {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-                {/* <div className="parallax_section parallax_image_first">
-                    
-                </div> */}
                 <div className="hl">
                     <hr style={{
                         color: '#000000',
@@ -79,7 +76,7 @@ class HomeComponent extends Component {
                     <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
                         {this.state.cards.map(card =>
                             <div className="col mb-4">
-                                <div className="card">
+                                <div className="card" style={{borderRadius:'0'}}>
                                     <div className="img-hover-zoom">
                                         <Link to="/newarrivals"><img src={image} className="card-img-top" alt="img" /></Link>
                                     </div>
@@ -134,7 +131,7 @@ class HomeComponent extends Component {
                     <div className="GridContainer mr-2 ml-2 row row-cols-2 row-cols-md-4">
                         {this.state.crafts.map(craft =>
                             <div className="col mb-4">
-                                <div className="card">
+                                <div className="card" style={{borderRadius:'0'}}>
                                     <div className="img1-hover-zoom">
                                         <Link to="/block-making"><img src={block} className="card-img-top" alt="img" width="100%" /></Link>
                                     </div>
