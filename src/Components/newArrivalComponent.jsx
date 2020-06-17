@@ -7,7 +7,7 @@ import FilterComponent from './FilterComponent'
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 import Axios from "axios";
 import Storage from '../Storage'
-
+import SwipeableDrawer from './SwipeableDrawerComponent'
 class newArrivalComponent extends Component {
     constructor(props) {
         super(props)
@@ -163,9 +163,10 @@ const ForMobile = (props) => {
                 }} />
             </div>
             <div>
+                <SwipeableDrawer/>
                 {/* <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
                 <Tab eventKey="filter" title="filter"> */}
-                <Accordion>
+                {/* <Accordion>
                     <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle">
                         Filter
                             </Accordion.Toggle>
@@ -230,7 +231,7 @@ const ForMobile = (props) => {
 
                         </Card.Body>
                     </Accordion.Collapse>
-                </Accordion>
+                </Accordion> */}
 
             </div>
 

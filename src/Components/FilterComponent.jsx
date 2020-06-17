@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Nav } from "react-bootstrap";
+import { Nav, Button } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Axios from "axios";
@@ -39,6 +39,7 @@ class FilterComponent extends Component {
 
         this.open = this.open.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.applyButton = this.applyButton.bind(this)
 
     }
 
@@ -77,12 +78,12 @@ class FilterComponent extends Component {
             } else {
                 Storage.setArray("productPriceGroup", this.state.productPriceGroup)
             }
-            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
-                Storage.removeNewArrival()
-                Storage.setNewArrival(response.data)
+            // Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
+            //     Storage.removeNewArrival()
+            //     Storage.setNewArrival(response.data)
                 Storage.setStatus(id, true)
-                window.location.href = '/new-arrivals'
-            })
+            //     window.location.href = '/new-arrivals'
+            // })
         } else {
 
             Storage.getArray(arr).map(val => {
@@ -101,20 +102,30 @@ class FilterComponent extends Component {
             } else {
                 Storage.setArray("productPriceGroup", this.state.productPriceGroup)
             }
-            Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
-                Storage.removeNewArrival()
-                Storage.setNewArrival(response.data)
+            // Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
+            //     Storage.removeNewArrival()
+            //     Storage.setNewArrival(response.data)
                 Storage.setStatus(id, false)
-                window.location.href = '/new-arrivals'
-            })
+            //     window.location.href = '/new-arrivals'
+            // })
         }
     }
 
+    applyButton(){
+        Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
+            Storage.removeNewArrival()
+            Storage.setNewArrival(response.data)
+            window.location.href = '/new-arrivals'
+        })
+    }
     render() {
         return (
             <div>
+                {console.log("Hello")}
+                
                 <Nav className="d-md-block sidebar">
                     <strong>FILTER BY</strong>
+                    <Button onClick={this.applyButton}> Apply </Button>
                     <Accordion defaultActiveKey={Storage.getKey() || "0"}>
                         <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle pl-0" onClick={() => this.open(0)}>
                             CATEGORY <div style={{ float: 'right' }}>{(this.state.curr === 0 && this.state.flag) ? <h5>-</h5> : <h5>+</h5>}</div>
