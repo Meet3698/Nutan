@@ -36,7 +36,7 @@ class HomeComponent extends Component {
         return (
             <div className="mainContainer" >
                 <div >
-                    <video autoplay loop class="embed-responsive-item"  width="100%" height="550px">
+                    <video autoPlay loop class="embed-responsive-item"  width="100%" height="550px">
                         <source src={require('../images/nutan_video.mp4')} type="video/mp4"/>
                     </video>
                         {/* <Carousel>
