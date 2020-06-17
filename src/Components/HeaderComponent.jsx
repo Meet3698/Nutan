@@ -127,10 +127,10 @@ const ForMobile = (state,props) => {
                             </StyledBadge>
                         </IconButton>
                     </OverlayTrigger>
-                    <select className="mdb-select md-form price" >
+                    {/* <select className="mdb-select md-form price" >
                         <option value="1">INR</option>
                         <option value="2">USD</option>
-                    </select>
+                    </select> */}
                 </Nav>
             </Navbar>
         </header>
@@ -180,10 +180,10 @@ const ForPC = (props) => {
                             </StyledBadge>
                         </IconButton>
                     </OverlayTrigger>
-                    <select className="mdb-select md-form price">
+                    {/* <select className="mdb-select md-form price">
                         <option value="1">INR</option>
                         <option value="2">USD</option>
-                    </select>
+                    </select> */}
                 </Nav>
             </Navbar>
             <Navbar collapseOnSelect className="header2" fixed="top">

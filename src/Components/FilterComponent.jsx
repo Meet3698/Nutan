@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { Nav, Button } from "react-bootstrap";
+import { Nav, Button, Container, Row, Col } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Axios from "axios";
 import Storage from '../Storage'
+import update from "immutability-helper";
+import {Link} from 'react-router-dom'
 
 class FilterComponent extends Component {
     constructor(props) {
@@ -31,6 +33,22 @@ class FilterComponent extends Component {
                 { "listType": "productPriceGroup", "price": "₹1300 - ₹1600", "group": 4, "id": 13 },
                 { "listType": "productPriceGroup", "price": "₹1600 - ₹2000", "group": 5, "id": 14 }
             ],
+            buttonState : {
+                1 : false,
+                2 : false,
+                3 : false,
+                4 : false,
+                5 : false,
+                6 : false,
+                7 : false,
+                8 : false,
+                9 : false,
+                10 : false,
+                11 : false,
+                12 : false,
+                13 : false,
+                14 : false
+            },
             productType: [],
             productSize: [],
             productPriceGroup: [],
@@ -44,6 +62,11 @@ class FilterComponent extends Component {
     }
 
     componentDidMount() {
+        if(Storage.getStatus() !== null){
+            this.setState({
+                buttonState : Storage.getStatus()
+            })
+        }
         if (Storage.getArray("productType") === null) {
             Storage.setArray("productType", [])
         }
@@ -64,11 +87,19 @@ class FilterComponent extends Component {
     }
 
     handleClick(id, arr, val) {
-
+        
         if (document.getElementById(id).checked) {
-            Storage.getArray(arr).map(val => {
-                this.state[arr].push(val)
+            this.setState({
+                buttonState: update(this.state.buttonState, {[id]: {$set: true}})
+            }, () => {
+                console.log(this.state.buttonState);
+                Storage.setStatus(this.state.buttonState)
             })
+            // Storage.setStatus(id, true)
+            // Storage.getArray(arr).map(val => {
+            //     this.state[arr].push(val)
+            // })
+
             this.state[arr].push(val)
 
             if (arr === "productType") {
@@ -81,16 +112,25 @@ class FilterComponent extends Component {
             // Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
             //     Storage.removeNewArrival()
             //     Storage.setNewArrival(response.data)
-                Storage.setStatus(id, true)
+               
             //     window.location.href = '/new-arrivals'
             // })
         } else {
-
-            Storage.getArray(arr).map(val => {
-                this.state[arr].push(val)
-            })
-
-            const index = this.state[arr].indexOf(val);
+            this.setState({
+                buttonState: update(this.state.buttonState, {[id]: {$set: false}})
+            }, () => {
+                console.log(this.state.buttonState);
+                
+                Storage.setStatus(this.state.buttonState)
+                })
+            
+        //     if(Storage.getArray(arr) === null){
+        //     Storage.getArray(arr).map(val => {
+        //         this.state[arr].push(val)
+        //     })
+        // }
+            // const index = this.state[arr].indexOf(val);
+            const index = Storage.getArray(arr).indexOf(val)
             if (index > -1) {
                 this.state[arr].splice(index, 1);
             }
@@ -105,7 +145,7 @@ class FilterComponent extends Component {
             // Axios.post("https://nutanb.herokuapp.com/product/filter", { productType: Storage.getArray("productType"), productSize: Storage.getArray("productSize"), productPriceGroup: Storage.getArray("productPriceGroup") }).then((response) => {
             //     Storage.removeNewArrival()
             //     Storage.setNewArrival(response.data)
-                Storage.setStatus(id, false)
+                
             //     window.location.href = '/new-arrivals'
             // })
         }
@@ -118,15 +158,36 @@ class FilterComponent extends Component {
             window.location.href = '/new-arrivals'
         })
     }
+    clearButton(){
+        Storage.removeStatus()
+        Storage.removeNewArrival()
+        Storage.removeArray("productType")
+        Storage.removeArray("productPriceGroup")
+        Storage.removeArray("productSize")
+        window.location.href = '/new-arrivals'
+    }
     render() {
         return (
             <div>
-                {console.log("Hello")}
+                {/* {console.log("Hello")} */}
                 
                 <Nav className="d-md-block sidebar">
-                    <strong>FILTER BY</strong>
-                    <Button onClick={this.applyButton}> Apply </Button>
-                    <Accordion defaultActiveKey={Storage.getKey() || "0"}>
+                    {/* <div  style={{width:'100%', textAlign:'center'}}><strong>FILTER BY</strong><br/></div> */}
+                    <div style={{width:'100%'}}>
+                    <Container style={{width:'100%', padding:'0px 0px 0px 5px'}}>
+                        <Row style={{width:'100%'}}>
+                            <Col xs={6} md = {12} lg={6} style={{textAlign:'center', width:'100%', border:'1px black solid'}}>
+                            <Link className="nav-link" onClick={this.clearButton} style={{ padding:'0px', backgroundColor:'white', color:'black', border:'1px black '}}>Clear </Link>
+                            </Col>
+                            <Col xs = {6} md = {12} lg={6} style={{textAlign:'center', width:'100%', border:'1px black solid'}}>
+                            <Link className="nav-link" onClick={this.applyButton} style={{ padding:'0px', backgroundColor:'white', color:'black', border:'1px black ' }}> Apply </Link>
+                            </Col>
+                        </Row>
+                        </Container>
+                        
+                    
+                    </div>
+                    <Accordion defaultActiveKey={Storage.getKey() || "0"} style={{width:'100%'}}> 
                         <Accordion.Toggle as={Card.Header} eventKey="0" className="accordianToggle pl-0" onClick={() => this.open(0)}>
                             CATEGORY <div style={{ float: 'right' }}>{(this.state.curr === 0 && this.state.flag) ? <h5>-</h5> : <h5>+</h5>}</div>
                         </Accordion.Toggle>
@@ -134,7 +195,7 @@ class FilterComponent extends Component {
                             <Card.Body>
                                 {this.state.filterCategory.map(category =>
                                     <>
-                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(category.id, category.listType, category.category)} checked={Storage.getStatus(category.id)} style={{ width: '15px', height: '15px' }} id={category.id} /> &nbsp; {category.category}</label><br />
+                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(category.id, category.listType, category.category)} checked={this.state.buttonState[category.id]} style={{ width: '15px', height: '15px' }} id={category.id} /> &nbsp; {category.category}</label><br />
                                     </>
                                 )}
                             </Card.Body>
@@ -146,7 +207,7 @@ class FilterComponent extends Component {
                             <Card.Body>
                                 {this.state.filterSize.map(size =>
                                     <>
-                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(size.id, size.listType, size.size)} checked={Storage.getStatus(size.id)} style={{ width: '15px', height: '15px' }} id={size.id} /> &nbsp; {size.size}</label><br />
+                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(size.id, size.listType, size.size)} checked={this.state.buttonState[size.id]} style={{ width: '15px', height: '15px' }} id={size.id} /> &nbsp; {size.size}</label><br />
                                     </>
                                 )}
                             </Card.Body>
@@ -164,7 +225,7 @@ class FilterComponent extends Component {
                             <Card.Body>
                                 {this.state.filterPrice.map(price =>
                                     <>
-                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(price.id, price.listType, price.group)} checked={Storage.getStatus(price.id)} style={{ width: '15px', height: '15px' }} id={price.id} /> &nbsp; {price.price}</label><br />
+                                        <label style={{ fontSize: '15px' }}><input type='checkbox' onChange={() => this.handleClick(price.id, price.listType, price.group)} checked={this.state.buttonState[price.id]} style={{ width: '15px', height: '15px' }} id={price.id} /> &nbsp; {price.price}</label><br />
                                     </>
                                 )}
                             </Card.Body>

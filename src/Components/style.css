@@ -73,11 +73,27 @@ select {
 
 .sidebar {
     position: fixed;
-    height: 100vh;
+    height: 80vh;
     border: none;
     /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1); */
     background-color: white;
     width: 16%;
+    overflow-y: scroll;
+    padding-bottom: 50%;
+
+}
+@media screen and (max-width: 600px) {
+  .sidebar {
+    /* position: fixed; */
+    /* height: 80vh; */
+    border: none;
+    /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1); */
+    background-color: white;
+    width: 70%;
+    /* overflow-y: scroll; */
+    /* padding-bottom: 50%; */
+
+  }
 }
 
 .sidebar-wrapper{

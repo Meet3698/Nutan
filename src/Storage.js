@@ -26,19 +26,22 @@ class Storage {
     }
 
     removeNewArrival() {
-        sessionStorage.removeItem("newArrival")
+        localStorage.removeItem("newArrival")
     }
 
     getNewArrival() {
         return JSON.parse(localStorage.getItem('newArrival'))
     }
 
-    setStatus(id,status){
-        localStorage.setItem(id, JSON.stringify(status));
+    setStatus(status){
+        localStorage.setItem("status", JSON.stringify(status));
     }
 
-    getStatus(id){
-        return JSON.parse(localStorage.getItem(id))
+    getStatus(){
+        return JSON.parse(localStorage.getItem("status"))
+    }
+    removeStatus() {
+        localStorage.removeItem("status")
     }
 
     setKey(id) {
@@ -64,6 +67,9 @@ class Storage {
         return JSON.parse(localStorage.getItem(id))
     }
 
+    removeArray(id){
+        localStorage.removeItem(id)
+    }
     setPath(path){
         localStorage.setItem("path", JSON.stringify(path));
     }

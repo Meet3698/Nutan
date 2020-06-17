@@ -13,7 +13,7 @@ import Divider from '@material-ui/core/Divider';
 import FilterComponent from './FilterComponent'
 const useStyles = makeStyles({
   list: {
-    width: 150,
+    width: '80vw',
   },
   fullList: {
     width: 'auto',
@@ -70,7 +70,7 @@ export default function SwipeableTemporaryDrawer() {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>Filter</Button>
+          <Button onClick={toggleDrawer(anchor, true) } style={{width:'100%'}}>Filter</Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
