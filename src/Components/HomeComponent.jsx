@@ -1,25 +1,25 @@
 import React, { Component } from "react";
-import image from '../images/saari1.jpg'
-import image1 from '../images/saari2.jpg'
 import block from '../images/block_banner.jpg'
 import { Instagram, Facebook } from 'react-feather'
 import { Link } from 'react-router-dom'
 import CountUp from 'react-countup'
 import { Carousel, Button, Col, Form, Card, Container, Row } from 'react-bootstrap'
-// import nutan from '../images/nutan.jpg'
 import impact from '../images/impact.jpg'
 import Storage from '../Storage'
 import VisibilitySensor from 'react-visibility-sensor';
-
+import N1 from '../images/Nutan/saree1.JPG'
+import N2 from '../images/Nutan/saree2.JPG'
+import N3 from '../images/Nutan/saree3.JPG'
+import N4 from '../images/Nutan/saree4.JPG'
 class HomeComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
             cards: [
-                { description: "NEW ARRIVALS" },
-                { description: "TOP WEAR" },
-                { description: "DRAPES" },
-                { description: "BOTTOM WEAR" }
+                { description: "NEW ARRIVALS", img: N1},
+                { description: "TOP WEAR", img: N2},
+                { description: "DRAPES" , img: N3},
+                { description: "BOTTOM WEAR", img: N4}
             ],
             crafts: [
                 { description: "BLOCK MAKING" },
@@ -36,35 +36,41 @@ class HomeComponent extends Component {
         return (
             <div className="mainContainer" >
                 <div >
-                    <video autoPlay loop class="embed-responsive-item"  width="100%" height="550px">
-                        <source src={require('../images/nutan_video.mp4')} type="video/mp4"/>
-                    </video>
-                        {/* <Carousel>
+                    
+                        <Carousel>
                         <Carousel.Item >
                             <img
                                 className="d-block w-100"
-                                src={nutan}
+                                src={require('../images/Nutan/carousel1.JPG')}
                                 alt="First slide"
-                                style={{ height: '400px' }}
+                                style={{ height: '450px' }}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src={nutan}
+                                src={require('../images/Nutan/carousel2.JPG')}
                                 alt="Third slide"
-                                style={{ height: '400px' }}
+                                style={{ height: '450px' }}
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src={nutan}
+                                src={require('../images/Nutan/carousel3.JPG')}
                                 alt="Third slide"
-                                style={{ height: '400px' }}
+                                style={{ height: '450px' }}
                             />
                         </Carousel.Item>
-                    </Carousel> */}
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src={require('../images/Nutan/carousel4.JPG')}
+                                alt="Third slide"
+                                style={{ height: '450px' }}
+                            />
+                        </Carousel.Item>
+                    </Carousel>
                 </div>
                     <div className="hl">
                         <hr style={{
@@ -82,7 +88,7 @@ class HomeComponent extends Component {
                                 <div className="col mb-4">
                                     <div className="card" style={{ borderRadius: '0' }}>
                                         <div className="img-hover-zoom">
-                                            <Link to="/newarrivals"><img src={image} className="card-img-top" alt="img" /></Link>
+                                            <Link to="/newarrivals"><img src={card.img} className="card-img-top" alt="img" height='300px'/></Link>
                                         </div>
                                         <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.7', textAlign: 'center', width: '100%',height:'20px', marginTop: '70%' }}>
                                             <h6>{card.description}</h6>
@@ -148,6 +154,10 @@ class HomeComponent extends Component {
                             borderColor: '#000000'
                         }} />
                     </div>
+
+                    <video autoPlay loop class="embed-responsive-item"  width="100%" height="550px">
+                        <source src={require('../images/nutan_video.mp4')} type="video/mp4"/>
+                    </video>
                     <div style={{ textAlign: 'center' }}>
                         <h3 >NVB CLIENT DIARIES</h3>
                         <div>
@@ -155,8 +165,8 @@ class HomeComponent extends Component {
                         </div>
                         {/* eslint-disable-next-line */}
                         <marquee behavior="alternate" width="100%" height="300px" style={{ marginBottom: "10%" }}>
-                            {this.state.crafts.map(craft =>
-                                <img src={image1} alt="img" width="30%" height="400px" style={{ margin: "1%" }} />
+                            {this.state.cards.map(card =>
+                                <img src={card.img} alt="img" width="30%" height="300px" style={{ margin: "1%" }} />
                             )}
                         </marquee>
                     </div>

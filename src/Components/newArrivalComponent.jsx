@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import image from '../images/sample.JPG'
-import banner from '../images/Nutan_opening.jpg'
+import image from '../images/Nutan/saree1.JPG'
+import banner from '../images/Nutan/carousel4.JPG'
 import FilterComponent from './FilterComponent'
 import { Container, Row, Col } from "react-bootstrap";
 import Axios from "axios";
@@ -98,7 +98,7 @@ const ForPC = (props) => {
                             {props.cards.map(card =>
                                 <div className="col mb-4">
                                     <div className="card" style={{ borderRadius: '0', height: '600px' }}>
-                                        <img src={image} className="card-img-top" alt="img" width="100%" height='400px' style={{ borderRadius: '0px', marginTop: '0px' }} />
+                                        <img src={require(`../images/Nutan/${card.productName}.JPG`)} className="card-img-top" alt="img" width="100%" height='400px' style={{ borderRadius: '0px', marginTop: '0px' }} />
                                         <div className="card-body">
                                             <h5 className="card-title">{card.productName}</h5>
                                             <p className="card-text">{card.productDescription}</p>

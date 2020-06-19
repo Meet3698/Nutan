@@ -14,7 +14,7 @@ class FilterComponent extends Component {
             flag: false,
             curr: 0,
             filterCategory: [
-                { "listType": "productType", "category": "Kurti", "id": 1 },
+                { "listType": "productType", "category": "Saree", "id": 1 },
                 { "listType": "productType", "category": "Bottom", "id": 2 },
                 { "listType": "productType", "category": "Three Piece", "id": 3 }
             ],

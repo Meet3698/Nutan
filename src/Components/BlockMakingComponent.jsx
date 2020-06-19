@@ -33,7 +33,7 @@ class BlockMakingComponent extends Component {
             <div className='mainContainer container'>
                 <div>
                     <h5>Block-Making: Decoding the Art</h5>
-                    By: Shiv Pasricha<br />
+                    By: Darshil Shah<br />
                     19 Feb, 2020
                 </div>
 
@@ -66,7 +66,7 @@ class BlockMakingComponent extends Component {
                 </div>
 
                 <div className="mt-5 text-center">
-                    <h3>More FG Blog Posts</h3>
+                    <h3>More NVB Blog Posts</h3>
                     <div>
                         <hr style={{
                             color: '#000000',

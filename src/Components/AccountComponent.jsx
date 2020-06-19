@@ -164,7 +164,7 @@ class AccountComponent extends Component {
                                     {this.state.order.map(order =>
                                         <Card border="lightgray" className="mt-3" style={{ width: '80%', borderRadius: '0px' }}>
                                             <Card.Body style={{ padding: '0px' }}>
-                                                <img src={require(`../images/${order.productName}.JPG`)} alt="" style={{ float: 'left', marginRight: '10px' }} width='20%' />
+                                                <img src={require(`../images/Nutan/${order.productName}.JPG`)} alt="" style={{ float: 'left', marginRight: '10px' }} width='20%' />
                                                 {/* <button className="btn mr-2" style={{ padding: '0px', fontSize: '14px', float: 'right' }} onClick={this.delete}>X</button> */}
                                                 <Card.Text>{order.productName}</Card.Text>
                                                 <Card.Text>Size : &nbsp;{order.productSize}&nbsp;&nbsp; Qty : &nbsp;{order.productQuantity}</Card.Text>

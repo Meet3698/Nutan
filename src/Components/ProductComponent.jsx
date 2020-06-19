@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Sample from '../images/sample.JPG'
+import Sample from '../images/Nutan/saree1.JPG'
 import { Table, Carousel, Card, Accordion } from 'react-bootstrap'
-import image from '../images/sample.JPG'
+import image from '../images/Nutan/saree1.JPG'
 // import CursorZoom from 'react-cursor-zoom';
 import AuthenticationService from '../AuthenticationService'
 import Axios from 'axios'
