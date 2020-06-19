@@ -31,6 +31,7 @@ class HomeComponent extends Component {
 
     componentDidMount() {
         Storage.setPath("/home")
+        window.alert("This website is yet to deploy officially. All the images and text are set as a demo. Production will be done soon")
     }
     render() {
         return (
