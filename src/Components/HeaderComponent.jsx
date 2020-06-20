@@ -128,7 +128,7 @@ const ForPC = (props) => {
             <Navbar collapseOnSelect expand="lg" className="header text-white" fixed="top">
                 <div style={{ width: '100%' }}>
                     {/* eslint-disable-next-line */}
-                    <marquee>New Orders Will Be Dispatched Within 12-15 Days | Prepaid Orders Only </marquee>
+                    <marquee>This site contains demo images and unique functional templates. New images and some links will be added/duplicated at the time of final deployment. </marquee>
                 </div>
             </Navbar>
             <Navbar collapseOnSelect className="header1" fixed="top">
