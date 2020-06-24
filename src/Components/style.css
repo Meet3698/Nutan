@@ -2,6 +2,9 @@
     background-color: #e2d3c3;
 }
 
+body{
+  font-family: 'Martel', serif;
+}
 .mainContainer{
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     margin-top: 22vh;

@@ -4,7 +4,7 @@ import { Instagram, Facebook } from 'react-feather'
 import { Link } from 'react-router-dom'
 import CountUp from 'react-countup'
 import { Carousel, Button, Col, Form, Card, Container, Row } from 'react-bootstrap'
-import impact from '../images/impact.jpg'
+import impact from '../images/Nutan/carousel2.JPG'
 import Storage from '../Storage'
 import VisibilitySensor from 'react-visibility-sensor';
 import N1 from '../images/Nutan/saree1.JPG'
@@ -91,7 +91,7 @@ class HomeComponent extends Component {
                                         <div className="img-hover-zoom">
                                             <Link to="/newarrivals"><img src={card.img} className="card-img-top" alt="img" height='300px'/></Link>
                                         </div>
-                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.7', textAlign: 'center', width: '100%',height:'20px', marginTop: '70%' }}>
+                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.7', textAlign: 'center', width: '100%',height:'20px', marginTop: '80%' }}>
                                             <h6>{card.description}</h6>
                                         </div>
                                     </div>
@@ -136,10 +136,12 @@ class HomeComponent extends Component {
                                 <div className="col mb-4">
                                     <div className="card" style={{ borderRadius: '0' }}>
                                         <div className="img1-hover-zoom">
-                                            <Link to="/block-making"><img src={block} className="card-img-top" alt="img" width="100%" /></Link>
+                                            {/* <Link to="/block-making"> */}
+                                                <img src={block} className="card-img-top" alt="img" width="100%" />
+                                                {/* </Link> */}
                                         </div>
-                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.5', textAlign: 'center', width: '100%', height:'30px',marginTop: '70%' }}>
-                                            <h4>{craft.description}</h4>
+                                        <div style={{ backgroundColor: 'lightgray', position: 'absolute', opacity: '0.5', textAlign: 'center', width: '100%', height:'20px',marginTop: '70%' }}>
+                                            <h6>{craft.description}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +167,7 @@ class HomeComponent extends Component {
                             <Instagram /> <Facebook />
                         </div>
                         {/* eslint-disable-next-line */}
-                        <marquee behavior="alternate" width="100%" height="300px" style={{ marginBottom: "10%" }}>
+                        <marquee width="100%" height="300px" style={{ marginBottom: "10%" }}>
                             {this.state.cards.map(card =>
                                 <img src={card.img} alt="img" width="30%" height="300px" style={{ margin: "1%" }} />
                             )}
